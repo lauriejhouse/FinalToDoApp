@@ -17,6 +17,7 @@ class TaskViewController: UITableView, UITableViewDelegate, UITableViewDataSourc
     
     
     
+    @IBOutlet weak var taskLabel: UILabel!
     
     
     

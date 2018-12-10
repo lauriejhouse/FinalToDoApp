@@ -16,6 +16,10 @@
 		8CAD828721BEE99C008AE224 /* ToDoFinalAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD828621BEE99C008AE224 /* ToDoFinalAppUITests.swift */; };
 		8CAD829521BF017A008AE224 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829421BF017A008AE224 /* GoalsViewController.swift */; };
 		8CAD829721BF0487008AE224 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829621BF0487008AE224 /* TaskViewController.swift */; };
+		8CAD829C21BF0845008AE224 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829821BF0845008AE224 /* Task+CoreDataClass.swift */; };
+		8CAD829D21BF0845008AE224 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */; };
+		8CAD829E21BF0845008AE224 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */; };
+		8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		8CAD828821BEE99C008AE224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CAD829421BF017A008AE224 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		8CAD829621BF0487008AE224 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		8CAD829821BF0845008AE224 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,10 @@
 		8CAD825721BEE99B008AE224 = {
 			isa = PBXGroup;
 			children = (
+				8CAD829821BF0845008AE224 /* Task+CoreDataClass.swift */,
+				8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */,
+				8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */,
+				8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */,
 				8CAD826221BEE99B008AE224 /* ToDoFinalApp */,
 				8CAD827A21BEE99C008AE224 /* ToDoFinalAppTests */,
 				8CAD828521BEE99C008AE224 /* ToDoFinalAppUITests */,
@@ -263,8 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */,
+				8CAD829E21BF0845008AE224 /* Goal+CoreDataClass.swift in Sources */,
+				8CAD829C21BF0845008AE224 /* Task+CoreDataClass.swift in Sources */,
 				8CAD829721BF0487008AE224 /* TaskViewController.swift in Sources */,
 				8CAD826C21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld in Sources */,
+				8CAD829D21BF0845008AE224 /* Task+CoreDataProperties.swift in Sources */,
+				8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */,
 				8CAD829521BF017A008AE224 /* GoalsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
