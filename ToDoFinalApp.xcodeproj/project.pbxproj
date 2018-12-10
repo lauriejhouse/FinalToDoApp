@@ -15,6 +15,7 @@
 		8CAD827C21BEE99C008AE224 /* ToDoFinalAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD827B21BEE99C008AE224 /* ToDoFinalAppTests.swift */; };
 		8CAD828721BEE99C008AE224 /* ToDoFinalAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD828621BEE99C008AE224 /* ToDoFinalAppUITests.swift */; };
 		8CAD829521BF017A008AE224 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829421BF017A008AE224 /* GoalsViewController.swift */; };
+		8CAD829721BF0487008AE224 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829621BF0487008AE224 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8CAD828621BEE99C008AE224 /* ToDoFinalAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFinalAppUITests.swift; sourceTree = "<group>"; };
 		8CAD828821BEE99C008AE224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CAD829421BF017A008AE224 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		8CAD829621BF0487008AE224 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				8CAD826321BEE99B008AE224 /* AppDelegate.swift */,
 				8CAD826721BEE99B008AE224 /* Main.storyboard */,
+				8CAD829621BF0487008AE224 /* TaskViewController.swift */,
 				8CAD829421BF017A008AE224 /* GoalsViewController.swift */,
 				8CAD826D21BEE99C008AE224 /* Assets.xcassets */,
 				8CAD826F21BEE99C008AE224 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */,
+				8CAD829721BF0487008AE224 /* TaskViewController.swift in Sources */,
 				8CAD826C21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld in Sources */,
 				8CAD829521BF017A008AE224 /* GoalsViewController.swift in Sources */,
 			);
