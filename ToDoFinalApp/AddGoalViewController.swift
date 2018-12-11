@@ -1,19 +1,15 @@
 //
-//  GoalsViewController.swift
+//  AddGoalViewController.swift
 //  ToDoFinalApp
 //
-//  Created by Jackie on 12/10/18.
+//  Created by Jackie on 12/11/18.
 //  Copyright © 2018 LAS. All rights reserved.
-//
 //
 
 import UIKit
 
-class GoalsViewController: UITableViewController {
-    
-    
-    
-    
+class AddGoalViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,15 +32,15 @@ class GoalsViewController: UITableViewController {
         return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath)
-//            cell.goalLabel.text = "any text"
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
 
         return cell
     }
- 
+    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -20,6 +20,8 @@
 		8CAD829D21BF0845008AE224 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */; };
 		8CAD829E21BF0845008AE224 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */; };
 		8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */; };
+		8CAD82A321BFF9C1008AE224 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A221BFF9C1008AE224 /* AddGoalViewController.swift */; };
+		8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8CAD82A221BFF9C1008AE224 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
+		8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +117,12 @@
 		8CAD826221BEE99B008AE224 /* ToDoFinalApp */ = {
 			isa = PBXGroup;
 			children = (
+				8CAD82A221BFF9C1008AE224 /* AddGoalViewController.swift */,
 				8CAD826321BEE99B008AE224 /* AppDelegate.swift */,
 				8CAD826721BEE99B008AE224 /* Main.storyboard */,
 				8CAD829621BF0487008AE224 /* TaskViewController.swift */,
 				8CAD829421BF017A008AE224 /* GoalsViewController.swift */,
+				8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */,
 				8CAD826D21BEE99C008AE224 /* Assets.xcassets */,
 				8CAD826F21BEE99C008AE224 /* LaunchScreen.storyboard */,
 				8CAD827221BEE99C008AE224 /* Info.plist */,
@@ -274,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAD82A321BFF9C1008AE224 /* AddGoalViewController.swift in Sources */,
 				8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */,
 				8CAD829E21BF0845008AE224 /* Goal+CoreDataClass.swift in Sources */,
 				8CAD829C21BF0845008AE224 /* Task+CoreDataClass.swift in Sources */,
@@ -281,6 +288,7 @@
 				8CAD826C21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld in Sources */,
 				8CAD829D21BF0845008AE224 /* Task+CoreDataProperties.swift in Sources */,
 				8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */,
+				8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */,
 				8CAD829521BF017A008AE224 /* GoalsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
