@@ -10,6 +10,9 @@ import UIKit
 
 class GoalTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var goalLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

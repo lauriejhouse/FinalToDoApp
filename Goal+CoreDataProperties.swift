@@ -2,7 +2,7 @@
 //  Goal+CoreDataProperties.swift
 //  ToDoFinalApp
 //
-//  Created by Jackie on 12/10/18.
+//  Created by Jackie on 12/11/18.
 //  Copyright © 2018 LAS. All rights reserved.
 //
 //

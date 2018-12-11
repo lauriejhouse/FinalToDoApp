@@ -117,9 +117,9 @@
 		8CAD826221BEE99B008AE224 /* ToDoFinalApp */ = {
 			isa = PBXGroup;
 			children = (
-				8CAD82A221BFF9C1008AE224 /* AddGoalViewController.swift */,
 				8CAD826321BEE99B008AE224 /* AppDelegate.swift */,
 				8CAD826721BEE99B008AE224 /* Main.storyboard */,
+				8CAD82A221BFF9C1008AE224 /* AddGoalViewController.swift */,
 				8CAD829621BF0487008AE224 /* TaskViewController.swift */,
 				8CAD829421BF017A008AE224 /* GoalsViewController.swift */,
 				8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */,
@@ -401,6 +401,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -455,6 +456,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -473,6 +475,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENABLE_BATCH_MODE = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -491,6 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENABLE_BATCH_MODE = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
