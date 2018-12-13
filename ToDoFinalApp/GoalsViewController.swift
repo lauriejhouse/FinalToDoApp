@@ -11,8 +11,10 @@ import UIKit
 
 class GoalsViewController: UITableViewController {
     
-    
-    
+    var goals = [Goal]()
+//    var goals: [Goal]? = []
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +40,15 @@ class GoalsViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath)
-//            cell.goalLabel.text = "any text"
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath) as! GoalTableViewCell
 
+//        if let goalItems = goals {
+//            let goalItem = goals?[indexPath.row]
+////            configure(cell, with: goalItem)
+//        }
+        
+        
+        
         return cell
     }
  

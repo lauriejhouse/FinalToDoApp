@@ -10,9 +10,10 @@ import UIKit
 
 
 
-class TaskViewController: UITableView, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
+class TaskViewController: UITableViewController, UITextViewDelegate {
     
-    
+    //would var task make more sense? Since its task VC? Keep everything goal for now
+    var goal: Goal?
     
     
     
@@ -28,12 +29,12 @@ class TaskViewController: UITableView, UITableViewDelegate, UITableViewDataSourc
     
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         
         return cell
     }

@@ -6,48 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Task View Controller-->
-        <scene sceneID="BPE-G7-gW6">
-            <objects>
-                <viewController id="UUV-PC-rQN" customClass="TaskViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bTA-2P-ji4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6by-z1-a5L">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="68" id="rep-B6-r23">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="68"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rep-B6-r23" id="a5c-hc-E6N">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Roh-Yf-qM7" firstAttribute="trailing" secondItem="6by-z1-a5L" secondAttribute="trailing" id="WH7-ki-XLb"/>
-                            <constraint firstItem="Roh-Yf-qM7" firstAttribute="bottom" secondItem="6by-z1-a5L" secondAttribute="bottom" id="k01-YL-lSw"/>
-                            <constraint firstItem="6by-z1-a5L" firstAttribute="top" secondItem="Roh-Yf-qM7" secondAttribute="top" id="wjA-3B-6wT"/>
-                            <constraint firstItem="6by-z1-a5L" firstAttribute="leading" secondItem="Roh-Yf-qM7" secondAttribute="leading" id="yVE-fh-bQa"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Roh-Yf-qM7"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Task View Controller" id="OD4-FR-smj"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="28k-v1-iN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1024.8" y="301.79910044977515"/>
-        </scene>
         <!--Goals View Controller-->
         <scene sceneID="ONY-ux-UDp">
             <objects>
@@ -87,7 +48,7 @@
                     <navigationItem key="navigationItem" title="Goals View Controller" id="FFn-Hd-QvM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vdY-RG-uBf">
                             <connections>
-                                <segue destination="6BH-Dz-abL" kind="presentation" identifier="ShowGoal" id="vIh-Yu-K0R"/>
+                                <segue destination="6BH-Dz-abL" kind="presentation" identifier="AddGoal" id="vIh-Yu-K0R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -96,21 +57,30 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="-438.53073463268368"/>
         </scene>
-        <!--Add Goal-->
+        <!--Add Goal View Controller-->
         <scene sceneID="in9-tH-PLG">
             <objects>
-                <tableViewController id="Du9-O1-1Wu" customClass="AddGoal" sceneMemberID="viewController">
+                <tableViewController id="Du9-O1-1Wu" customClass="AddGoalViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hip-9l-kSx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddGoalCell" id="Ua7-uN-6Wk">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddGoalCell" rowHeight="59" id="Ua7-uN-6Wk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ua7-uN-6Wk" id="oOS-Eg-c3a">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Goal...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dju-Pm-epo">
+                                            <rect key="frame" x="24" y="11" width="198" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -165,12 +135,41 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="UUV-PC-rQN" kind="relationship" relationship="rootViewController" id="fXY-v2-mc7"/>
+                        <segue destination="QDg-SP-uYo" kind="relationship" relationship="rootViewController" id="spR-hS-m5b"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Olt-fZ-HBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47" y="302"/>
+        </scene>
+        <!--Task View Controller-->
+        <scene sceneID="jD6-ve-PXh">
+            <objects>
+                <tableViewController id="QDg-SP-uYo" customClass="TaskViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SOz-W9-Ape">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="zYf-R5-9PR">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zYf-R5-9PR" id="xkU-7P-w4J">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QDg-SP-uYo" id="nMT-54-TJ6"/>
+                            <outlet property="delegate" destination="QDg-SP-uYo" id="Wge-lV-X3l"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="xBN-rt-MHM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7CO-hh-uXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983" y="289"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S7t-6N-6RT">
