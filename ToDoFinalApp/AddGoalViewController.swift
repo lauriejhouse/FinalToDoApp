@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Seam3
 
 class AddGoalViewController: UITableViewController {
 
+    var goals = [Goal]()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

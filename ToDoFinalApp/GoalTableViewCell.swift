@@ -6,6 +6,9 @@
 //  Copyright © 2018 LAS. All rights reserved.
 //
 
+
+
+//Trying to go off of the example app, may not use this.
 import UIKit
 
 class GoalTableViewCell: UITableViewCell {

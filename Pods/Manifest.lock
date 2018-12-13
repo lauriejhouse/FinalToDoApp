@@ -1,0 +1,16 @@
+PODS:
+  - Seam3 (1.4.8)
+
+DEPENDENCIES:
+  - Seam3
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Seam3
+
+SPEC CHECKSUMS:
+  Seam3: ef5b2c0ee2b64b498c84298b3c087e044ff3c21b
+
+PODFILE CHECKSUM: a0d63b37b027af77e24fe6b1acb0227d4b825e21
+
+COCOAPODS: 1.5.3
