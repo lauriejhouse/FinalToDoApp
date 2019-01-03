@@ -25,6 +25,7 @@
 		8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */; };
 		8CAD82A321BFF9C1008AE224 /* AddGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A221BFF9C1008AE224 /* AddGoalViewController.swift */; };
 		8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */; };
+		8CB8160D21DD3986005AB480 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8160C21DD3986005AB480 /* CloudKit.framework */; };
 		B6270F9B3E4215E46BC88BEE /* Pods_ToDoFinalAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8CAD82A221BFF9C1008AE224 /* AddGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalViewController.swift; sourceTree = "<group>"; };
 		8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
+		8CB8160B21DD3964005AB480 /* ToDoFinalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoFinalApp.entitlements; sourceTree = "<group>"; };
+		8CB8160C21DD3986005AB480 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		BB8E00A678A73A61AC8F05C6 /* Pods-ToDoFinalAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoFinalAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoFinalAppUITests/Pods-ToDoFinalAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA411C0BCBC31135617CA7D8 /* Pods-ToDoFinalAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoFinalAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoFinalAppUITests/Pods-ToDoFinalAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E2F5070C9A36A133FD041367 /* Pods_ToDoFinalAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07376DF365CCD41C17C1B612 /* Pods_ToDoFinalApp.framework in Frameworks */,
+				8CB8160D21DD3986005AB480 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +148,7 @@
 		8CAD826221BEE99B008AE224 /* ToDoFinalApp */ = {
 			isa = PBXGroup;
 			children = (
+				8CB8160B21DD3964005AB480 /* ToDoFinalApp.entitlements */,
 				8C1C41C321C2C1590099AF6A /* CoreDataManager */,
 				8CAD826321BEE99B008AE224 /* AppDelegate.swift */,
 				8CAD826721BEE99B008AE224 /* Main.storyboard */,
@@ -180,6 +185,7 @@
 		94C2F1E39C2C821C26AD6827 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CB8160C21DD3986005AB480 /* CloudKit.framework */,
 				8A51FE5E47DC13C956AFF2EC /* Pods_ToDoFinalApp.framework */,
 				E2F5070C9A36A133FD041367 /* Pods_ToDoFinalAppTests.framework */,
 				8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */,
@@ -272,6 +278,14 @@
 				TargetAttributes = {
 					8CAD825F21BEE99B008AE224 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					8CAD827621BEE99C008AE224 = {
 						CreatedOnToolsVersion = 10.1;
@@ -598,6 +612,7 @@
 			baseConfigurationReference = 73FCE2A3AF53BFB09CECAEF2 /* Pods-ToDoFinalApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ToDoFinalApp/ToDoFinalApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LLP3H85GZ9;
 				INFOPLIST_FILE = ToDoFinalApp/Info.plist;
@@ -618,6 +633,7 @@
 			baseConfigurationReference = FF1EF120F746EB388F4E89AF /* Pods-ToDoFinalApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ToDoFinalApp/ToDoFinalApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LLP3H85GZ9;
 				INFOPLIST_FILE = ToDoFinalApp/Info.plist;
