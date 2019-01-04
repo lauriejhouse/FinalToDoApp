@@ -25,14 +25,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="85.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w6-7z-tk3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w6-7z-tk3">
                                             <rect key="frame" x="25" y="11" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7w6-7z-tk3" firstAttribute="leading" secondItem="hl3-92-1Nz" secondAttribute="leadingMargin" constant="9" id="0Gc-RI-UTJ"/>
+                                        <constraint firstItem="7w6-7z-tk3" firstAttribute="top" secondItem="hl3-92-1Nz" secondAttribute="topMargin" id="CUh-EH-8UU"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7w6-7z-tk3" secondAttribute="trailing" constant="20" symbolic="YES" id="GIW-Cg-QVZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="7w6-7z-tk3" secondAttribute="bottom" constant="43" id="u4i-3w-xWB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="goalLabel" destination="7w6-7z-tk3" id="2YP-Hz-ZUX"/>
@@ -57,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="-438.53073463268368"/>
         </scene>
-        <!--Add Goal View Controller-->
+        <!--Add Goal-->
         <scene sceneID="in9-tH-PLG">
             <objects>
                 <tableViewController id="Du9-O1-1Wu" customClass="AddGoalViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,7 +94,7 @@
                             <outlet property="delegate" destination="Du9-O1-1Wu" id="oKh-Le-EZR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="629-MH-1TQ"/>
+                    <navigationItem key="navigationItem" title="Add Goal" id="629-MH-1TQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQd-Ds-QPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
