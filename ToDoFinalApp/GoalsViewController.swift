@@ -10,6 +10,8 @@
 import UIKit
 
 class GoalsViewController: UITableViewController {
+  
+    
     
     var goals = [Goal]()
 //    var goals: [Goal]? = []

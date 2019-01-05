@@ -1,9 +1,8 @@
 //
 //  Goal+CoreDataProperties.swift
-//  ToDoFinalApp
+//  
 //
-//  Created by Jackie on 12/11/18.
-//  Copyright © 2018 LAS. All rights reserved.
+//  Created by Jackie Norstrom on 1/4/19.
 //
 //
 
@@ -18,7 +17,8 @@ extension Goal {
     }
 
     @NSManaged public var goalName: String?
-    @NSManaged public var tasks: NSOrderedSet?
+    @NSManaged public var iconName: String?
+    @NSManaged public var tasks: NSSet?
 
 }
 

@@ -26,14 +26,14 @@ struct CoreDataManager {
         }
     }
     
-    func addGoal(with name: String) -> Goal? {
+    func addGoal(with name: String, iconName: String) -> Goal? {
         //Need to add persistant container instead? Or in addition to
         let entity = NSEntityDescription.entity(forEntityName: "Goal", in: managedContext)!
         let goal = NSManagedObject(entity: entity, insertInto: managedContext) as! Goal
         
         //or goal.name = name
         goal.setValue(name, forKeyPath: "goalName")
-        
+        goal.iconName = iconName
         return self.save() ? goal : nil
     }
     

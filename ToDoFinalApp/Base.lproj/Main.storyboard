@@ -62,44 +62,6 @@
             </objects>
             <point key="canvasLocation" x="1024.8" y="-438.53073463268368"/>
         </scene>
-        <!--Add Goal-->
-        <scene sceneID="in9-tH-PLG">
-            <objects>
-                <tableViewController id="Du9-O1-1Wu" customClass="AddGoalViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hip-9l-kSx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddGoalCell" rowHeight="59" id="Ua7-uN-6Wk">
-                                <rect key="frame" x="0.0" y="28" width="375" height="59"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ua7-uN-6Wk" id="oOS-Eg-c3a">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Goal...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dju-Pm-epo">
-                                            <rect key="frame" x="24" y="11" width="198" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Du9-O1-1Wu" id="T0g-Zf-XiU"/>
-                            <outlet property="delegate" destination="Du9-O1-1Wu" id="oKh-Le-EZR"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Add Goal" id="629-MH-1TQ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SQd-Ds-QPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2884" y="-464.6176911544228"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2f0-yi-pyA">
             <objects>
@@ -187,14 +149,111 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Du9-O1-1Wu" kind="relationship" relationship="rootViewController" id="uBz-We-aep"/>
+                        <segue destination="huw-Cc-mJY" kind="relationship" relationship="rootViewController" id="TLZ-ei-JDJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaT-pw-mAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1944.8" y="-464.6176911544228"/>
         </scene>
+        <!--Add Long Term Goal-->
+        <scene sceneID="Xfj-R8-zH3">
+            <objects>
+                <tableViewController title="Add Long Term Goal" id="huw-Cc-mJY" customClass="NewGoalViewController" customModule="FinalProjectDone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="n6B-TC-DMk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Long Term Goal" id="Rzt-3G-UQq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="p73-q2-dMW">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p73-q2-dMW" id="U9W-fz-8t1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Long term goal..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rpv-22-O8v">
+                                                    <rect key="frame" x="16" y="6.5" width="343" height="30.5"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Rpv-22-O8v" firstAttribute="centerY" secondItem="U9W-fz-8t1" secondAttribute="centerY" id="LHc-9k-tUz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Rpv-22-O8v" secondAttribute="bottom" constant="-4" id="Z5S-On-Ctp"/>
+                                                <constraint firstItem="Rpv-22-O8v" firstAttribute="leading" secondItem="U9W-fz-8t1" secondAttribute="leadingMargin" id="ZSx-RJ-jkV"/>
+                                                <constraint firstItem="Rpv-22-O8v" firstAttribute="trailing" secondItem="U9W-fz-8t1" secondAttribute="trailingMargin" id="nOB-rw-D8u"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Icon" id="h0d-mw-mJZ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kDt-Lr-uMN">
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kDt-Lr-uMN" id="W1B-so-WXQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBt-MF-VjG">
+                                                    <rect key="frame" x="45" y="10.5" width="82" height="22.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Business" translatesAutoresizingMaskIntoConstraints="NO" id="lFu-SI-w1c">
+                                                    <rect key="frame" x="295" y="10" width="26" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vBt-MF-VjG" firstAttribute="leading" secondItem="W1B-so-WXQ" secondAttribute="leadingMargin" constant="29" id="3jb-Eg-bcg"/>
+                                                <constraint firstItem="vBt-MF-VjG" firstAttribute="centerY" secondItem="W1B-so-WXQ" secondAttribute="centerY" id="Gej-4L-c0u"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vBt-MF-VjG" secondAttribute="trailing" constant="20" symbolic="YES" id="UlG-xI-OLE"/>
+                                                <constraint firstItem="vBt-MF-VjG" firstAttribute="bottom" secondItem="W1B-so-WXQ" secondAttribute="bottomMargin" id="YLa-mP-frs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="huw-Cc-mJY" id="med-eI-ajX"/>
+                            <outlet property="delegate" destination="huw-Cc-mJY" id="dX6-3q-x4b"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Long Term Goal" id="ueI-a2-aHr">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="osx-cb-JaM">
+                            <connections>
+                                <action selector="cancel:" destination="huw-Cc-mJY" id="bDQ-kC-oe7"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="56V-Sw-qvY">
+                            <connections>
+                                <action selector="done:" destination="huw-Cc-mJY" id="6p0-Fk-mW3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneBtn" destination="56V-Sw-qvY" id="9Sj-nL-9K7"/>
+                        <outlet property="goalTextField" destination="Rpv-22-O8v" id="KYh-UR-oJ3"/>
+                        <outlet property="iconLabel" destination="vBt-MF-VjG" id="QYD-kd-Ur8"/>
+                        <outlet property="imageViewIcon" destination="lFu-SI-w1c" id="5Sn-c0-HCh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcs-w6-vvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2705" y="-465"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Business" width="16" height="16"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SQ5-x2-dYA"/>
     </inferredMetricsTieBreakers>
