@@ -11,8 +11,7 @@ import Foundation
 import CoreData
 import CloudKit
 
-class NewGoalViewController: UITableViewController, UITextFieldDelegate
-/*IconPickerViewControllerDelegate */ {
+class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPickerViewControllerDelegate {
     
     // MARK: - Properties
     
@@ -156,11 +155,11 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate
     
     // MARK: - Icon Picker Delegate
 //
-//    func iconPicker(_ picker: IconPickerViewController, didPick iconName: String) {
-//        imageViewIcon.image = UIImage(named: iconName)
-//        iconLabel.text = iconName
-//        navigationController?.popViewController(animated: true)
-//    }
+    func iconPicker(_ picker: IconPickerViewController, didPick iconName: String) {
+        imageViewIcon.image = UIImage(named: iconName)
+        iconLabel.text = iconName
+        navigationController?.popViewController(animated: true)
+    }
     
     
     
@@ -169,12 +168,12 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate
     
     // MARK: - Segue
 //
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "PickIcon" {
-//            let vc = segue.destination as! IconPickerViewController
-//            vc.delegate = self
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PickIcon" {
+            let vc = segue.destination as! IconPickerViewController
+            vc.delegate = self
+        }
+    }
     
     @objc func addGoal() {
         guard let name = goalTextField.text, name != "" else

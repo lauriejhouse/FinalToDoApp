@@ -14,6 +14,20 @@ import UIKit
 class GoalTableViewCell: UITableViewCell {
 
     @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var taskCountLabel: UILabel!
+//    @IBOutlet weak var iconImage: UIImageView!
+    //Instead of using default on line 28, use this one. to populate the image.
+    //use self.iconImage. insted of self.imageView. Will remove using default and will use custom property on line 18.
+    
+    
+    func configure (incomingGoal: Goal) {
+        goalLabel.text = incomingGoal.goalName
+//        taskCountLabel.text = "\(goal.tasks?.count ?? 0)"
+        //or
+//        taskCountLabel.text = String(describing: goal.tasks?.count ?? 0)
+        
+        self.imageView?.image = UIImage(named: incomingGoal.iconName ?? "No Icon")
+    }
     
     
     override func awakeFromNib() {

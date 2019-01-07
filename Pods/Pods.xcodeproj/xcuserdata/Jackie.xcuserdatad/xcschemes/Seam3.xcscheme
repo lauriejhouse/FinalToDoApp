@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD168C6C7FDBB30670404CDA02A46BC4"
+               BlueprintIdentifier = "CE744AC4F65B4C777B35C108789925CB"
                BlueprintName = "Seam3"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Seam3.framework">

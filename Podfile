@@ -8,6 +8,8 @@ target 'ToDoFinalApp' do
   # Pods for ToDoFinalApp
 #pod TableViewDragger
 pod 'Seam3'
+pod 'TableViewDragger'
+
 
   target 'ToDoFinalAppTests' do
     inherit! :search_paths
