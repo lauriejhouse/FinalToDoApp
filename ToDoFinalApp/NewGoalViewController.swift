@@ -39,9 +39,8 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     var goalToEdit: Goal?
     
     
-    let icons = ["No Icon", "Sport", "Self", "Business", "Computer", "Fun"]
+    let icons = ["No Icon", "Sporst", "Self", "Business", "Computers", "Fun"]
     var placeholderGoals = ["Learn Programming", "Learn Piano", "Build Rome", "Become Enlightened", "Breathe Underwater", "Turn Back Time", "Run A Marathon", "Read 10 Books", "Quit Job", "Deactivate Facebook"]
-    
     
     
     @IBOutlet weak var doneBtn: UIBarButtonItem!
@@ -62,9 +61,9 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         if let goal = goalToEdit {
             title = "Edit Goal"
             goalTextField.text = goal.goalName
-            doneBtn.isEnabled = true
+//            doneBtn.isEnabled = true
             iconLabel.text = goal.iconName
-            imageViewIcon.image = UIImage(named: goal.iconName!)
+            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
         } else {
             let randomGoals = placeholderGoals.randomItem()
             goalTextField.placeholder = "\(randomGoals!)..."
@@ -73,7 +72,7 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
             iconLabel.text = random
         }
         
-        
+
         
     }
     
@@ -104,16 +103,30 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         self.dismiss(animated: true, completion: nil)
     }
     
-    //need to make this save to icloud when pressed
-    //But done button also needs to save locally to the table and do all the things it did before.
-    
-
-
+    @IBAction func done(_ sender: Any) {
         
-
+        //used to try and get edit button in cell to work correctly.
+        if let goal = goalToEdit {
+            title = "Edit Goal"
+            goalTextField.text = goal.goalName
+            doneBtn.isEnabled = true
+            iconLabel.text = goal.iconName
+            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
+        } else {
+            let randomGoals = placeholderGoals.randomItem()
+            goalTextField.placeholder = "\(randomGoals!)..."
+            let random = icons.randomItem()
+            imageViewIcon.image = UIImage(named: random!)
+            iconLabel.text = random
+        }
         
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
-    
+
+ 
     
     // MARK: - Table View Delegate
     
@@ -183,7 +196,9 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         
         
         
-        let _ = CoreDataManager.shared.addGoal(with: name, iconName: iconLabel.text!)
+        let _ = CoreDataManager.shared.addGoal(with: name, iconName: iconLabel.text ?? "No Icon")
+        dismiss(animated: true, completion: nil)
+
     }
     
     

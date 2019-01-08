@@ -166,7 +166,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="K10-2b-PkR" kind="presentation" identifier="PickIcon" id="a2o-88-13c"/>
+                                            <segue destination="K10-2b-PkR" kind="show" identifier="PickIcon" id="a2o-88-13c"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -183,10 +183,8 @@
                                 <action selector="cancel:" destination="huw-Cc-mJY" id="bDQ-kC-oe7"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="56V-Sw-qvY"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="doneBtn" destination="56V-Sw-qvY" id="9Sj-nL-9K7"/>
                         <outlet property="goalTextField" destination="Rpv-22-O8v" id="KYh-UR-oJ3"/>
                         <outlet property="iconLabel" destination="vBt-MF-VjG" id="QYD-kd-Ur8"/>
                         <outlet property="imageViewIcon" destination="lFu-SI-w1c" id="5Sn-c0-HCh"/>
@@ -268,6 +266,10 @@
                                                 <segue destination="6BH-Dz-abL" kind="presentation" identifier="EditGoal" id="eJT-vf-Zxj"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="71O-dy-u6D">
+                                            <rect key="frame" x="257" y="11" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="C54-2B-33D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qLi-7I-ZBT" secondAttribute="trailing" constant="8" symbolic="YES" id="Def-jT-dZs"/>
@@ -284,6 +286,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="goalLabel" destination="DgH-cR-UAU" id="svU-rM-Vzm"/>
+                                    <outlet property="iconImage" destination="71O-dy-u6D" id="dfr-sS-7xc"/>
                                     <outlet property="taskCountLabel" destination="C54-2B-33D" id="YVk-Sn-WQU"/>
                                     <segue destination="a9Q-CG-yCY" kind="showDetail" identifier="ShowGoal" id="0IO-Fy-WQ8"/>
                                 </connections>
@@ -297,7 +300,9 @@
                     <navigationItem key="navigationItem" title="Long Term Goal" id="M7h-cM-flW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7ND-8c-rF6">
                             <connections>
-                                <segue destination="6BH-Dz-abL" kind="presentation" identifier="AddGoal" id="n1V-El-y3B"/>
+                                <segue destination="6BH-Dz-abL" kind="popoverPresentation" identifier="AddGoal" popoverAnchorBarButtonItem="7ND-8c-rF6" id="n1V-El-y3B">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -311,7 +316,7 @@
         <image name="Business" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eJT-vf-Zxj"/>
+        <segue reference="n1V-El-y3B"/>
         <segue reference="0IO-Fy-WQ8"/>
     </inferredMetricsTieBreakers>
 </document>

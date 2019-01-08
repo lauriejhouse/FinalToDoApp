@@ -34,7 +34,9 @@ struct CoreDataManager {
         //or goal.name = name
         goal.setValue(name, forKeyPath: "goalName")
         goal.iconName = iconName
+
         return self.save() ? goal : nil
+
     }
     
     func addTask(to goal: Goal, with name: String) -> Task? {

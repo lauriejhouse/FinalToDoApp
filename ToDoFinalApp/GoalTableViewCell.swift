@@ -15,7 +15,7 @@ class GoalTableViewCell: UITableViewCell {
 
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var taskCountLabel: UILabel!
-//    @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var iconImage: UIImageView!
     //Instead of using default on line 28, use this one. to populate the image.
     //use self.iconImage. insted of self.imageView. Will remove using default and will use custom property on line 18.
     
@@ -26,7 +26,8 @@ class GoalTableViewCell: UITableViewCell {
         //or
 //        taskCountLabel.text = String(describing: goal.tasks?.count ?? 0)
         
-        self.imageView?.image = UIImage(named: incomingGoal.iconName ?? "No Icon")
+//        self.imageView?.image = UIImage(named: incomingGoal.iconName ?? "No Icon") //using the iboutlet instead of this.
+        self.iconImage.image = UIImage(named: incomingGoal.iconName ?? "No Icon" )
     }
     
     

@@ -241,8 +241,8 @@ class MainGoalsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddGoal" {
             let nav = segue.destination as! UINavigationController
-            let goalVC = nav.topViewController as! NewGoalViewController
-            goalVC.managedContext = managedContext
+            let _ = nav.topViewController as! NewGoalViewController
+//            goalVC.managedContext = managedContext
             
         } else if segue.identifier == "EditGoal" {
             let nav = segue.destination as! UINavigationController
@@ -303,7 +303,7 @@ class MainGoalsViewController: UITableViewController {
     }
     
     
-    
+    //Do I need these here if everything is being managed in CoreDataManager?
     func save() {
         do {
             try managedContext.save()
@@ -312,6 +312,8 @@ class MainGoalsViewController: UITableViewController {
         }
     }
     
+    
+    //Do i need these here if everything is being managed in CoreDataManager?
     func fetch() {
         let request = NSFetchRequest<Goal>(entityName: "Goal")
         
@@ -323,7 +325,7 @@ class MainGoalsViewController: UITableViewController {
         }
     }
     
-    //reorganize move all methods into the core data manager. Called from anywhere. Then build out goal table view cell class. Cell class can figure out "if checked items"
+    
     func fetchCheckedItems(with goal: Goal) {
         let request = NSFetchRequest<Task>(entityName: "Task")
         request.predicate = NSPredicate(format: "goal == %@ AND isChecked == %@ ", goal, NSNumber(booleanLiteral: true))
@@ -360,125 +362,3 @@ extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerD
         return true
     }
 }
-
-
-//Try 1 of making podfile work
-
-//extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerDelegate {
-//    func dragger(_ dragger: TableViewDragger, moveDraggingAt indexPath: IndexPath, newIndexPath: IndexPath) -> Bool {
-//        let movedObject = self.goalItems?[indexPath.row]
-//                goalItems?.remove(at: indexPath.row)
-//                goalItems?.insert(movedObject!, at: newIndexPath.row)
-//
-//        tableView.moveRow(at: indexPath, to: newIndexPath)
-//
-//        return true
-//    }
-//
-//    func dragger(_ dragger: TableViewDragger, willBeginDraggingAt indexPath: IndexPath) {
-//        if let tableView = dragger.tableView {
-//            let scale = min(max(tableView.bounds.height / tableView.contentSize.height, 0.4), 1)
-//            dragger.scrollVelocity = scale
-//
-//
-//            UIView.animate(withDuration: 0.3) {
-//                self.statusBarHidden = true
-//                self.navigationController?.setNavigationBarHidden(true, animated: true)
-//
-//                if let tabBarHeight = self.tabBarController?.tabBar.bounds.height {
-//                    self.tabBarController?.tabBar.frame.origin.y += tabBarHeight
-//                }
-//
-//                self.tableViewHeightConstraint.constant = (tableView.bounds.height) / scale - tableView.bounds.height
-//                tableView.transform = CGAffineTransform(scaleX: scale, y: scale)
-//                self.view.layoutIfNeeded()
-//            }
-//        }
-//    }
-//
-//    func dragger(_ dragger: TableViewDragger, willEndDraggingAt indexPath: IndexPath) {
-//
-//        UIView.animate(withDuration: 0.3) {
-//            self.statusBarHidden = false
-//            self.navigationController?.setNavigationBarHidden(false, animated: false)
-//
-//            if let tabBarHeight = self.tabBarController?.tabBar.bounds.height {
-//                self.tabBarController?.tabBar.frame.origin.y -= tabBarHeight
-//            }
-//
-//            self.tableViewHeightConstraint.constant = 0
-//            if let tableView = dragger.tableView {
-//                tableView.transform = CGAffineTransform.identity
-//                self.view.layoutIfNeeded()
-//                tableView.scrollToRow(at: indexPath, at: .top, animated: false)
-//            }
-//        }
-//    }
-//}
-
-
-
-
-//Part of cloudKit
-
-//extension CKError {
-//    public func isRecordNotFound() -> Bool {
-//        return isZoneNotFound() || isUnknownItem()
-//    }
-//    public func isZoneNotFound() -> Bool {
-//        return isSpecificErrorCode(code: .zoneNotFound)
-//    }
-//    public func isUnknownItem() -> Bool {
-//        return isSpecificErrorCode(code: .unknownItem)
-//    }
-//    public func isConflict() -> Bool {
-//        return isSpecificErrorCode(code: .serverRecordChanged)
-//    }
-//    public func isSpecificErrorCode(code: CKError.Code) -> Bool {
-//        var match = false
-//        if self.code == code {
-//            match = true
-//        }
-//        else if self.code == .partialFailure {
-//            // This is a multiple-issue error. Check the underlying array
-//            // of errors to see if it contains a match for the error in question.
-//            guard let errors = partialErrorsByItemID else {
-//                return false
-//            }
-//            for (_, error) in errors {
-//                if let cke = error as? CKError {
-//                    if cke.code == code {
-//                        match = true
-//                        break
-//                    }
-//                }
-//            }
-//        }
-//        return match
-//    }
-//    // ServerRecordChanged errors contain the CKRecord information
-//    // for the change that failed, allowing the client to decide
-//    // upon the best course of action in performing a merge.
-//    public func getMergeRecords() -> (CKRecord?, CKRecord?) {
-//        if code == .serverRecordChanged {
-//            // This is the direct case of a simple serverRecordChanged Error.
-//            return (clientRecord, serverRecord)
-//        }
-//        guard code == .partialFailure else {
-//            return (nil, nil)
-//        }
-//        guard let errors = partialErrorsByItemID else {
-//            return (nil, nil)
-//        }
-//        for (_, error) in errors {
-//            if let cke = error as? CKError {
-//                if cke.code == .serverRecordChanged {
-//                    // This is the case of a serverRecordChanged Error
-//                    // contained within a multi-error PartialFailure Error.
-//                    return cke.getMergeRecords()
-//                }
-//            }
-//        }
-//        return (nil, nil)
-//    }
-//}
