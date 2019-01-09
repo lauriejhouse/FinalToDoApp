@@ -22,6 +22,7 @@ extension Goal {
 
 }
 
+
 // MARK: Generated accessors for tasks
 extension Goal {
 

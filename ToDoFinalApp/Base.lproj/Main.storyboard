@@ -49,41 +49,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="QDg-SP-uYo" kind="relationship" relationship="rootViewController" id="spR-hS-m5b"/>
+                        <segue destination="Irb-lf-ZfA" kind="relationship" relationship="rootViewController" id="29Y-4M-8To"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Olt-fZ-HBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47" y="302"/>
-        </scene>
-        <!--Task View Controller-->
-        <scene sceneID="jD6-ve-PXh">
-            <objects>
-                <tableViewController id="QDg-SP-uYo" customClass="TaskViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SOz-W9-Ape">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" id="zYf-R5-9PR">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zYf-R5-9PR" id="xkU-7P-w4J">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="QDg-SP-uYo" id="nMT-54-TJ6"/>
-                            <outlet property="delegate" destination="QDg-SP-uYo" id="Wge-lV-X3l"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="xBN-rt-MHM"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7CO-hh-uXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="983" y="289"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S7t-6N-6RT">
@@ -106,7 +77,7 @@
         <!--Add Long Term Goal-->
         <scene sceneID="Xfj-R8-zH3">
             <objects>
-                <tableViewController title="Add Long Term Goal" id="huw-Cc-mJY" customClass="NewGoalViewController" customModule="FinalProjectDone" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Add Long Term Goal" id="huw-Cc-mJY" customClass="NewGoalViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="n6B-TC-DMk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +168,7 @@
         <!--Choose Icon-->
         <scene sceneID="UfI-ZA-1FS">
             <objects>
-                <tableViewController title="Choose Icon" id="K10-2b-PkR" customClass="IconPickerViewController" customModule="FinalProjectDone" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Choose Icon" id="K10-2b-PkR" customClass="IconPickerViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cWg-gm-6um">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +205,7 @@
         <!--Long Term Goal-->
         <scene sceneID="ego-2X-hOW">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="juV-Ub-eQc" customClass="MainGoalsViewController" customModule="FinalProjectDone" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="juV-Ub-eQc" customClass="MainGoalsViewController" customModule="ToDoFinalApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jHX-N6-Csw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,6 +281,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxs-Va-a8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008.8" y="-439.43028485757122"/>
+        </scene>
+        <!--Name of Task-->
+        <scene sceneID="8LS-Bh-2Va">
+            <objects>
+                <tableViewController title="Name of Task" id="Irb-lf-ZfA" customClass="TaskViewController" customModule="FinalProjectDone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="p4K-ja-QyM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="69" id="2F7-0u-T0e" customClass="TaskTableViewCell" customModule="ToDoFinalApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2F7-0u-T0e" id="t5s-j9-ucF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5X-Ge-EzU">
+                                            <rect key="frame" x="54" y="23.5" width="42" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="3000" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pRQ-l5-pWI">
+                                            <rect key="frame" x="319" y="21.5" width="26" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="JKU-br-QP0"/>
+                                                <constraint firstAttribute="width" constant="26" id="bhK-D7-HvB"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pRQ-l5-pWI" secondAttribute="trailing" constant="14" id="0c2-zz-kOs"/>
+                                        <constraint firstItem="x5X-Ge-EzU" firstAttribute="centerY" secondItem="t5s-j9-ucF" secondAttribute="centerY" id="2OS-5G-kiH"/>
+                                        <constraint firstItem="x5X-Ge-EzU" firstAttribute="leading" secondItem="t5s-j9-ucF" secondAttribute="leadingMargin" constant="38" id="9GF-bt-lTD"/>
+                                        <constraint firstItem="pRQ-l5-pWI" firstAttribute="centerY" secondItem="x5X-Ge-EzU" secondAttribute="centerY" id="bXy-oD-8I8"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="x5X-Ge-EzU" secondAttribute="trailing" id="dNY-RO-7Vj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="x5X-Ge-EzU" secondAttribute="bottom" constant="13" id="sWh-9E-iWi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="taskLabel" destination="x5X-Ge-EzU" id="clq-RN-dLK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Irb-lf-ZfA" id="cuc-ht-aQ2"/>
+                            <outlet property="delegate" destination="Irb-lf-ZfA" id="bQ8-jf-sAw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Name of Task" id="17x-KR-Gv0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="boV-1e-PhY"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wD-JX-WUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935" y="356"/>
         </scene>
     </scenes>
     <resources>

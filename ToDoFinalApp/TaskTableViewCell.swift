@@ -11,7 +11,14 @@ import UIKit
 class TaskTableViewCell: UITableViewCell {
 
 
+    @IBOutlet weak var taskLabel: UILabel!
+    
 
-
+    
+    func configureTask (incomingGoal: Task) {
+        taskLabel.text = incomingGoal.taskName
+    }
+    
+    
 
 }

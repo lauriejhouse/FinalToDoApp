@@ -12,5 +12,14 @@ import CoreData
 
 @objc(Goal)
 public class Goal: NSManagedObject {
+    
+//    var goal: [Goal]?
+//    
+//    subscript(index: Int) -> Goal? {
+//        guard let coordinate = goal?[index] else {
+//            return nil
+//        }
+//        return coordinate
+//    }
 
 }

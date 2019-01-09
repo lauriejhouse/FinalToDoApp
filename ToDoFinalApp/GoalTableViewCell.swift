@@ -8,7 +8,6 @@
 
 
 
-//Trying to go off of the example app, may not use this.
 import UIKit
 
 class GoalTableViewCell: UITableViewCell {
