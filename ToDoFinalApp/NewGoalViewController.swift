@@ -9,7 +9,17 @@
 import UIKit
 import Foundation
 import CoreData
+import Seam3
 import CloudKit
+
+
+protocol NewGoalViewControllerDelegate: class {
+    func newGoalViewControllerDidCancel(_ controller: NewGoalViewController)
+    func newGoalViewController(_ controller: NewGoalViewController, didFinishAdding goal: Goal)
+    func newGoalViewController(_ controller: NewGoalViewController, didFinishEditing goal: Goal)
+}
+
+
 
 class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPickerViewControllerDelegate {
     
@@ -36,20 +46,23 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     
     var managedContext: NSManagedObjectContext!
     
+    
+
     var goalToEdit: Goal?
     
     
-    let icons = ["No Icon", "Sporst", "Self", "Business", "Computers", "Fun"]
-    var placeholderGoals = ["Learn Programming", "Learn Piano", "Build Rome", "Become Enlightened", "Breathe Underwater", "Turn Back Time", "Run A Marathon", "Read 10 Books", "Quit Job", "Deactivate Facebook"]
+    let icons = ["No Icon", "Sports", "Self", "Business", "Computers", "Fun"]
+    var placeholderGoals = ["Learn Programming", "Learn Guitar", "Build an Empire", "Become Enlightened", "Breathe Underwater", "Turn Back Time", "Run A Marathon", "Read 100 Books", "Quit Job", "Deactivate Facebook"]
     
     
-    @IBOutlet weak var doneBtn: UIBarButtonItem!
     @IBOutlet weak var iconLabel: UILabel!
     @IBOutlet weak var goalTextField: UITextField!
     @IBOutlet weak var imageViewIcon: UIImageView!
     
-   
-    // MARK: - BPs
+    
+   // MARK: - BPs
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +122,7 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         if let goal = goalToEdit {
             title = "Edit Goal"
             goalTextField.text = goal.goalName
-            doneBtn.isEnabled = true
+//            doneBtn.isEnabled = true
             iconLabel.text = goal.iconName
             imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
         } else {
@@ -156,12 +169,26 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         let oldText = textField.text! as NSString
         let newText = oldText.replacingCharacters(in: range, with: string) as NSString
         
-        doneBtn.isEnabled = newText.length > 0
+//        doneBtn.isEnabled = newText.length > 0
         
         return true
         
     }
     
+    
+     //DO i need to add the New Goal Delegate back in to get the edit button to function properly?
+//    func saveEdits() {
+//        guard let newRowIndex = goalToEdit?.count else { return }
+//        let indexPath = IndexPath(row: newRowIndex, section: 0)
+//        goalItems?.append(goal)
+//        tableView.insertRows(at: [indexPath], with: .automatic)
+//        dismiss(animated: true, completion: nil)
+//
+//    }
+    
+    
+    
+
     
     
     

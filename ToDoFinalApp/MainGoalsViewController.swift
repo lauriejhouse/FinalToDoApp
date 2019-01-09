@@ -55,10 +55,10 @@ class MainGoalsViewController: UITableViewController {
     // MARK: - Properties
     
     let rowHeight: CGFloat = 75
-    lazy var managedContext = {
-       return CoreDataManager.shared.managedContext!
-        
-    }()
+//    lazy var managedContext = {
+//       return CoreDataManager.shared.managedContext!
+//        
+//    }()
     var goalItems: [Goal]? = []
     var checkedItems: Int?
     
@@ -305,11 +305,9 @@ class MainGoalsViewController: UITableViewController {
     
     //Do I need these here if everything is being managed in CoreDataManager?
     func save() {
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print(error)
-        }
+            CoreDataManager.shared.save()
+        
+        
     }
     
     
@@ -337,6 +335,17 @@ class MainGoalsViewController: UITableViewController {
             print(error)
         }
         
+    }
+    
+    func newGoalViewController(_ controller: NewGoalViewController, didFinishEditing goal: Goal) {
+        if let index = goalItems?.index(of: goal) {
+            let indexPath = IndexPath(row: index, section: 0)
+            if let cell = tableView.cellForRow(at: indexPath) {
+                configure(cell as! GoalTableViewCell, with: goal)
+            }
+        }
+        save()
+        dismiss(animated: true, completion: nil)
     }
     
     func selectNewGoal() {

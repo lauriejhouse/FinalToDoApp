@@ -153,7 +153,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Business" translatesAutoresizingMaskIntoConstraints="NO" id="lFu-SI-w1c">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Self" translatesAutoresizingMaskIntoConstraints="NO" id="lFu-SI-w1c">
                                                     <rect key="frame" x="295" y="10" width="26" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -313,10 +313,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Business" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="Self" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n1V-El-y3B"/>
+        <segue reference="eJT-vf-Zxj"/>
         <segue reference="0IO-Fy-WQ8"/>
     </inferredMetricsTieBreakers>
 </document>
