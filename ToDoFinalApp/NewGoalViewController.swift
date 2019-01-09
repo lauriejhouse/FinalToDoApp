@@ -9,15 +9,14 @@
 import UIKit
 import Foundation
 import CoreData
-import Seam3
 import CloudKit
 
 
-protocol NewGoalViewControllerDelegate: class {
-    func newGoalViewControllerDidCancel(_ controller: NewGoalViewController)
-    func newGoalViewController(_ controller: NewGoalViewController, didFinishAdding goal: Goal)
-    func newGoalViewController(_ controller: NewGoalViewController, didFinishEditing goal: Goal)
-}
+//protocol NewGoalViewControllerDelegate: class {
+//    func newGoalViewControllerDidCancel(_ controller: NewGoalViewController)
+//    func newGoalViewController(_ controller: NewGoalViewController, didFinishAdding goal: Goal)
+//    func newGoalViewController(_ controller: NewGoalViewController, didFinishEditing goal: Goal)
+//}
 
 
 

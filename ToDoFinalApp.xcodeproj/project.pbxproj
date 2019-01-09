@@ -10,6 +10,7 @@
 		07376DF365CCD41C17C1B612 /* Pods_ToDoFinalApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A51FE5E47DC13C956AFF2EC /* Pods_ToDoFinalApp.framework */; };
 		5394CA2037A565D8139F6400 /* Pods_ToDoFinalAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F5070C9A36A133FD041367 /* Pods_ToDoFinalAppTests.framework */; };
 		8C1C41C521C2C1660099AF6A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1C41C421C2C1660099AF6A /* CoreDataManager.swift */; };
+		8C31031A21E658C90013733C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31031921E658C90013733C /* TaskTableViewCell.swift */; };
 		8C3E646E21E0240100CCFE07 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E646D21E0240100CCFE07 /* NewGoalViewController.swift */; };
 		8C3E647021E02E2700CCFE07 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E646F21E02E2700CCFE07 /* CloudKitManager.swift */; };
 		8C3E647221E1168C00CCFE07 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */; };
@@ -55,6 +56,7 @@
 		8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A51FE5E47DC13C956AFF2EC /* Pods_ToDoFinalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1C41C421C2C1660099AF6A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8C31031921E658C90013733C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		8C3E646D21E0240100CCFE07 /* NewGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
 		8C3E646F21E02E2700CCFE07 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				8CAD829621BF0487008AE224 /* TaskViewController.swift */,
 				8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */,
 				8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */,
+				8C31031921E658C90013733C /* TaskTableViewCell.swift */,
 				8C3E646D21E0240100CCFE07 /* NewGoalViewController.swift */,
 				8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */,
 				8CAD826D21BEE99C008AE224 /* Assets.xcassets */,
@@ -432,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C31031A21E658C90013733C /* TaskTableViewCell.swift in Sources */,
 				8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */,
 				8CAD829E21BF0845008AE224 /* Goal+CoreDataClass.swift in Sources */,
 				8C3E647021E02E2700CCFE07 /* CloudKitManager.swift in Sources */,
