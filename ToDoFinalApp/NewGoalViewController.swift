@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import CoreData
 import CloudKit
+import Seam3
 
 
 //protocol NewGoalViewControllerDelegate: class {
@@ -39,14 +40,8 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     //https://github.com/paulw11/Seam3/blob/master/Sources/Classes/NSManagedObject%2BCKRecord.swift - NSManagedObject+CKRecord.swift
     
     
-    var recordZone: CKRecordZone!
     
-    
-  //Going to need custom zone?
-    
-//    let recordZone = CKRecordZone.ID(zoneName: "_defaultZone", ownerName: "_6c6777e3b8e64bf08735b7eddc6cf782")
-//    let ckRecordID = CKRecord.ID(recordName: recordIDString, zoneID: recordZone)
-//    let ckRecord = CKRecord(recordType: myRecordType, recordID: ckRecordID)
+
 
     let container = CKContainer.default()
     var currentRecord: CKRecord?
@@ -60,6 +55,8 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     
 
     var goalToEdit: Goal?
+    var goals = [Goal]()
+
     
     
     let icons = ["No Icon", "Sports", "Self", "Business", "Computers", "Fun"]
@@ -74,31 +71,108 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
    // MARK: - BPs
     
     
+    //Modified to try and incoperate original and CoreData eXample.
+        override func viewDidLoad() {
+            super.viewDidLoad()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addGoal))
-        self.navigationItem.rightBarButtonItem = rightBarButton
-        
-        
-        if let goal = goalToEdit {
-            title = "Edit Goal"
-            goalTextField.text = goal.goalName
-//            doneBtn.isEnabled = true
-            iconLabel.text = goal.iconName
-            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
-        } else {
-            let randomGoals = placeholderGoals.randomItem()
-            goalTextField.placeholder = "\(randomGoals!)..."
-            let random = icons.randomItem()
-            imageViewIcon.image = UIImage(named: random!)
-            iconLabel.text = random
+            let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addGoal))
+            self.navigationItem.rightBarButtonItem = rightBarButton
+    
+    
+            //may not need this stuff.
+            if let goal = goalToEdit {
+                title = "Edit Goal"
+                goalTextField.text = goal.goalName
+    //            doneBtn.isEnabled = true
+                iconLabel.text = goal.iconName
+                imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
+            } else {
+                let randomGoals = placeholderGoals.randomItem()
+                goalTextField.placeholder = "\(randomGoals!)..."
+                let random = icons.randomItem()
+                imageViewIcon.image = UIImage(named: random!)
+                iconLabel.text = random
+            }
+    
+            
+            CloudKitManager.shared.triggerSyncWithCloudKit()
+            
+                    NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: SMStoreNotification.SyncDidFinish), object: nil, queue: nil) { notification in
+            
+                        if notification.userInfo != nil {
+                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                            appDelegate.smStore?.triggerSync(complete: true)
+                        }
+            //commenting out to get rid of the error.
+//                        self.managedContext.refreshAllObjects()
+//
+                        DispatchQueue.main.async {
+                            self.goals = CoreDataManager.shared.getAllGoals() ?? []
+                            self.tableView.reloadData()
+                        }
+                    }
+    
+    
         }
-        
+    
+    
+    
+    
+    //Copied from CoreDataExample App.
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal))
+//        self.navigationItem.rightBarButtonItem = rightBarButton
+//
+//        CloudKitManager.shared.triggerSyncWithCloudKit()
+//
+//        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: SMStoreNotification.SyncDidFinish), object: nil, queue: nil) { notification in
+//
+//            if notification.userInfo != nil {
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                appDelegate.smStore?.triggerSync(complete: true)
+//            }
+//
+////            self.managedContext.refreshAllObjects()
+////
+////            DispatchQueue.main.async {
+////                self.goals = CoreDataManager.shared.getAllGoals() ?? []
+////                self.tableView.reloadData()
+////            }
+//        }
+//    }
 
-        
-    }
+    
+    
+    
+   //Original
+    
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addGoal))
+//        self.navigationItem.rightBarButtonItem = rightBarButton
+//
+//
+//        if let goal = goalToEdit {
+//            title = "Edit Goal"
+//            goalTextField.text = goal.goalName
+////            doneBtn.isEnabled = true
+//            iconLabel.text = goal.iconName
+//            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
+//        } else {
+//            let randomGoals = placeholderGoals.randomItem()
+//            goalTextField.placeholder = "\(randomGoals!)..."
+//            let random = icons.randomItem()
+//            imageViewIcon.image = UIImage(named: random!)
+//            iconLabel.text = random
+//        }
+//
+//
+//
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

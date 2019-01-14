@@ -94,29 +94,6 @@ class MainGoalsViewController: UITableViewController {
         dragger.alphaForCell = 0.7
         dragger.opacityForShadowOfCell = 1
         
-//        let predicate = NSPredicate(format: "Task = %@", "Task to complete")
-//        let query = CKQuery(recordType: "Goal", predicate: predicate)
-//
-//        publicDB.perform(query, inZoneWith: nil) { [unowned self] results, error in
-//            if let error = error {
-//                DispatchQueue.main.async {
-//                    print("Cloud Query Error - Fetch Establishments: \(error)")
-//                }
-//                return
-//            }
-//
-//            self.goalItems?.removeAll(keepingCapacity: true)
-//            results?.forEach({ (record: CKRecord) in
-//
-//                let goalItem = Goal.goalItemFromRecord(record: record, managedContext: self.managedContext)
-//                self.goalItems?.append (goalItem)
-//                print(record)
-//            })
-//            DispatchQueue.main.async {
-////                self.delegate?.modelUpdated()
-//                self.tableView.reloadData()
-//
-//            }}
         
     }
     
