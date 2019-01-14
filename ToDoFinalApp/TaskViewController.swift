@@ -35,6 +35,25 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
         self.navigationItem.rightBarButtonItem = rightBarButton
         //Add the name of the goal that has a task?
         //        self.nameField.text = self.selectedGoal?.goalName
+        
+        //Trying to save to cloudkit.
+        CloudKitManager.shared.triggerSyncWithCloudKit()
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: SMStoreNotification.SyncDidFinish), object: nil, queue: nil) { notification in
+            
+            if notification.userInfo != nil {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.smStore?.triggerSync(complete: true)
+            }
+            //commenting out to get rid of the error.
+            //                        self.managedContext.refreshAllObjects()
+            //
+            //Need to get tasks working correctly.
+//            DispatchQueue.main.async {
+//                self.tasks = CoreDataManager.shared.getAllGoals() ?? []
+//                self.tableView.reloadData()
+//            }
+        }
     }
     
     

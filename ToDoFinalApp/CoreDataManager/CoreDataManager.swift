@@ -36,7 +36,20 @@ struct CoreDataManager {
         goal.iconName = iconName
 
         return self.save() ? goal : nil
-
+    }
+    
+    func editGoal(with oldName: String, newName: String, iconName: String) -> Goal? {
+        let goalsFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
+        goalsFetch.predicate = NSPredicate(format: "goalName = %@", oldName)
+        do {
+            let goals = try managedContext.fetch(goalsFetch) as! [Goal]
+            let foundGoal = goals[0]
+            foundGoal.setValue(newName, forKey: "goalName")
+            return foundGoal
+        } catch {
+            print("Failed to fetch goals: \(error)")
+            return nil
+        }
     }
     
     func addTask(to goal: Goal, with name: String) -> Task? {

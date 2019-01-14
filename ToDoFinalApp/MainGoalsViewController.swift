@@ -10,10 +10,8 @@
 
 //Things left to do:
 /*
- Use CloudKit/Firebase to sync tasts across devices. iCloud maybe easiest that way I don't have to rewrite the CoreData. Or use
- //https://github.com/couchbase/couchbase-lite-ios to possibly use Firebase and not have to rewrite the code. - Most Difficult
  
- 
+
  Today Widget - Most difficult
  Custom animations 2-4 of them
  Custom view controller transitions to animate - I think I Have that with present modually
@@ -23,8 +21,7 @@
  Monetization - adds on app through google. - pretty easy
  Document and press kit. - easy
  
- 
- I have one cocoaPod already, that moves around the tasks. Does that also count as an animation?
+
  
  
  
@@ -75,9 +72,7 @@ class MainGoalsViewController: UITableViewController {
     //publicdatabase.saverecord - for one record at a time
     //CKModifyRecordsOperation - save batch records.
 
-    //frankie@fbombmedia.com
-    
-    
+
 
     // MARK: - BPs
     

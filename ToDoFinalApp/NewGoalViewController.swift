@@ -56,7 +56,8 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
 
     var goalToEdit: Goal?
     var goals = [Goal]()
-
+    var oldGoalName: String? = ""
+    var inEditMode = false
     
     
     let icons = ["No Icon", "Sports", "Self", "Business", "Computers", "Fun"]
@@ -82,7 +83,9 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
             //Allows edit button to be clicked on and current cell be edited. But when save is clicked it adds a new cell. Need to add an if else statement to add goal?
             if let goal = goalToEdit {
                 title = "Edit Goal"
+                inEditMode = true
                 goalTextField.text = goal.goalName
+                oldGoalName = goal.goalName
     //            doneBtn.isEnabled = true
             
                 iconLabel.text = goal.iconName
@@ -305,16 +308,17 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         }
         
         
-        
-        let _ = CoreDataManager.shared.addGoal(with: name, iconName: iconLabel.text ?? "No Icon")
-        let _ = CoreDataManager.shared.save()
+        if inEditMode {
+            let _ = CoreDataManager.shared.editGoal(with: oldGoalName!, newName: name, iconName: iconLabel.text ?? "No Icon")
+            let _ = CoreDataManager.shared.save()
+        } else {
+            let _ = CoreDataManager.shared.addGoal(with: name, iconName: iconLabel.text ?? "No Icon")
+            let _ = CoreDataManager.shared.save()
+        }
 
         dismiss(animated: true, completion: nil)
         ///added save to try and save editws.
     }
-    
-    
-    
     
 }
 
