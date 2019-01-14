@@ -79,11 +79,12 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
             self.navigationItem.rightBarButtonItem = rightBarButton
     
     
-            //may not need this stuff.
+            //Allows edit button to be clicked on and current cell be edited. But when save is clicked it adds a new cell. Need to add an if else statement to add goal?
             if let goal = goalToEdit {
                 title = "Edit Goal"
                 goalTextField.text = goal.goalName
     //            doneBtn.isEnabled = true
+            
                 iconLabel.text = goal.iconName
                 imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
             } else {
@@ -146,7 +147,7 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     
     
     
-   //Original
+   //Original I was working with
     
     
 //    override func viewDidLoad() {
@@ -201,27 +202,29 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func done(_ sender: Any) {
-        
-        //used to try and get edit button in cell to work correctly.
-        if let goal = goalToEdit {
-            title = "Edit Goal"
-            goalTextField.text = goal.goalName
-//            doneBtn.isEnabled = true
-            iconLabel.text = goal.iconName
-            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
-        } else {
-            let randomGoals = placeholderGoals.randomItem()
-            goalTextField.placeholder = "\(randomGoals!)..."
-            let random = icons.randomItem()
-            imageViewIcon.image = UIImage(named: random!)
-            iconLabel.text = random
-        }
-        
-        
-        
-        self.dismiss(animated: true, completion: nil)
-    }
+    
+    
+//    @IBAction func done(_ sender: Any) {
+//
+//        //used to try and get edit button in cell to work correctly.
+//        if let goal = goalToEdit {
+//            title = "Edit Goal"
+//            goalTextField.text = goal.goalName
+////            doneBtn.isEnabled = true
+//            iconLabel.text = goal.iconName
+//            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
+//        } else {
+//            let randomGoals = placeholderGoals.randomItem()
+//            goalTextField.placeholder = "\(randomGoals!)..."
+//            let random = icons.randomItem()
+//            imageViewIcon.image = UIImage(named: random!)
+//            iconLabel.text = random
+//        }
+//
+//
+//
+//        self.dismiss(animated: true, completion: nil)
+//    }
     
 
  
@@ -249,34 +252,29 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     
     // MARK: - Text Field Delegate
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let oldText = textField.text! as NSString
-        let newText = oldText.replacingCharacters(in: range, with: string) as NSString
-        
-//        doneBtn.isEnabled = newText.length > 0
-        
-        return true
-        
-    }
-    
-    
-     //DO i need to add the New Goal Delegate back in to get the edit button to function properly?
-//    func saveEdits() {
-//        guard let newRowIndex = goalToEdit?.count else { return }
-//        let indexPath = IndexPath(row: newRowIndex, section: 0)
-//        goalItems?.append(goal)
-//        tableView.insertRows(at: [indexPath], with: .automatic)
-//        dismiss(animated: true, completion: nil)
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//
+//        let oldText = textField.text! as NSString
+//        let newText = oldText.replacingCharacters(in: range, with: string) as NSString
+//
+////        doneBtn.isEnabled = newText.length > 0
+//
+//        return true
 //
 //    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        if let name = textField.text {
+            self.goalToEdit?.goalName = name
+            let _ = CoreDataManager.shared.save()
+        }
+        
+        return true
+    }
     
-    
-
-    
-    
-    
+   
     
     // MARK: - Icon Picker Delegate
 //
@@ -309,8 +307,10 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         
         
         let _ = CoreDataManager.shared.addGoal(with: name, iconName: iconLabel.text ?? "No Icon")
-        dismiss(animated: true, completion: nil)
+        let _ = CoreDataManager.shared.save()
 
+        dismiss(animated: true, completion: nil)
+        ///added save to try and save editws.
     }
     
     

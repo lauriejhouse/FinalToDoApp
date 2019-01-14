@@ -236,7 +236,7 @@ class MainGoalsViewController: UITableViewController {
                 if let goalItems = goalItems {
                     if !goalItems.isEmpty {
                         let item = goalItems[indexPath.row]
-                        vc.goal = item
+                        vc.selectedGoal = item
                         vc.title = item.goalName
                     } else {
                         // If the goalItems array has nothing in it, then we show this below

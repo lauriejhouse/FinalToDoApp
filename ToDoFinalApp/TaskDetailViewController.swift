@@ -1,22 +1,18 @@
 //
-//  TaskViewController.swift
-//  ToDoFinalApp
+//  GoalDetailViewController.swift
+//  CoreDataSyncExample
 //
-//  Created by Jackie on 12/10/18.
-//  Copyright © 2018 LAS. All rights reserved.
+//  Created by Frankie Cleary on 12/4/18.
+//  Copyright © 2018 FbombMedia. All rights reserved.
 //
 
 import UIKit
-import Seam3
-import CoreData
 
-
-//Can have an alert style pop up to save the tasks. Because there is an add button that takes users to a new view controller to add a new task already.
-//May not even need the new task VC. Beacuse of using the alert style from the example app.
-
-class TaskViewController: UITableViewController, UITextViewDelegate {
+class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
     
-  
+    @IBOutlet weak var nameField: UILabel!
+    
+
     var selectedGoal: Goal?
     
     lazy var tasks: [Task] = {
@@ -27,65 +23,30 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
         }
     }()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
         self.navigationItem.rightBarButtonItem = rightBarButton
         //Add the name of the goal that has a task?
-        //        self.nameField.text = self.selectedGoal?.goalName
+//        self.nameField.text = self.selectedGoal?.goalName
     }
     
+    // MARK: - Table view data source
     
-    
-    
-    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let taskItem = tasks {
-//            if let tasks = taskItem.tasks {
-//                return tasks.count
-//            }
-//        }
         return tasks.count
     }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskTableViewCell
-//        //commenting that out didn't do much, still need to fix the edit button.
-////        guard let task = goal?.tasks?[indexPath.row] as? Task  else
-////        {
-////
-////            return cell
-////
-////        }
-//        //These can be added to taskVC later.
-////        configureText(for: cell, with: task)
-////        configureCheckmark(for: cell, with: task)
-//        return cell
-    
-//    }
-    
-    //commenting out for now because it doesnt go with the example app.
-//    func configureText(for cell: TaskTableViewCell, with task: Task) {
-//        //        let taskLabel = cell.viewWithTag(2000) as! UILabel
-//        //look up the UIImage one. Or make a task cell.
-//        cell.taskLabel.text = task.taskName
-//    }
-
-    
-    
-    
-    //adding from example app
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
         cell.textLabel?.text = tasks[indexPath.row].taskName
         return cell
     }
-
-    
     
     // MARK: - UITextFieldDelegate
     
@@ -133,7 +94,7 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
     @objc func editTask(task: Task) {
         
         guard let goal = self.selectedGoal else { return }
-        
+
         let alertController = UIAlertController(title: "Edit Task", message: nil , preferredStyle: .alert)
         
         alertController.addTextField { textField in
@@ -159,8 +120,4 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
         
         self.present(alertController, animated: true, completion: nil)
     }
-    
-    
-    
-    
 }

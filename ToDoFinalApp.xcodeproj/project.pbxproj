@@ -15,6 +15,8 @@
 		8C3E647021E02E2700CCFE07 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E646F21E02E2700CCFE07 /* CloudKitManager.swift */; };
 		8C3E647221E1168C00CCFE07 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */; };
 		8C3E647421E1190400CCFE07 /* MainGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */; };
+		8C8773ED21ECD94900E6694E /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */; };
+		8C8773EF21ECDF8100E6694E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8773EE21ECDF8000E6694E /* TaskDetailViewController.swift */; };
 		8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826321BEE99B008AE224 /* AppDelegate.swift */; };
 		8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD826721BEE99B008AE224 /* Main.storyboard */; };
 		8CAD826C21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826A21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld */; };
@@ -61,6 +63,8 @@
 		8C3E646F21E02E2700CCFE07 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGoalsViewController.swift; sourceTree = "<group>"; };
+		8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		8C8773EE21ECDF8000E6694E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		8CAD826021BEE99B008AE224 /* ToDoFinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAD826321BEE99B008AE224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CAD826821BEE99B008AE224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,9 +164,11 @@
 				8CAD826321BEE99B008AE224 /* AppDelegate.swift */,
 				8CAD826721BEE99B008AE224 /* Main.storyboard */,
 				8CAD829621BF0487008AE224 /* TaskViewController.swift */,
+				8C8773EE21ECDF8000E6694E /* TaskDetailViewController.swift */,
 				8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */,
 				8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */,
 				8C31031921E658C90013733C /* TaskTableViewCell.swift */,
+				8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */,
 				8C3E646D21E0240100CCFE07 /* NewGoalViewController.swift */,
 				8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */,
 				8CAD826D21BEE99C008AE224 /* Assets.xcassets */,
@@ -436,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C31031A21E658C90013733C /* TaskTableViewCell.swift in Sources */,
+				8C8773ED21ECD94900E6694E /* NewTaskViewController.swift in Sources */,
 				8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */,
 				8CAD829E21BF0845008AE224 /* Goal+CoreDataClass.swift in Sources */,
 				8C3E647021E02E2700CCFE07 /* CloudKitManager.swift in Sources */,
@@ -448,6 +455,7 @@
 				8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */,
 				8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */,
 				8C3E647221E1168C00CCFE07 /* IconPickerViewController.swift in Sources */,
+				8C8773EF21ECDF8100E6694E /* TaskDetailViewController.swift in Sources */,
 				8C1C41C521C2C1660099AF6A /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
