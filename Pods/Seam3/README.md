@@ -78,7 +78,7 @@ This considers the client record as the true record.
 
 - Declare a SMStore type property in the class where your CoreData stack resides.
 ```swift
-var smStore: SMStore
+var smStore: SMStore?
 ```
 - For iOS9 and earlier or macOS, add a store type of `SMStore.type` to your app's NSPersistentStoreCoordinator and assign it to the property created in the previous step.
 ```swift
@@ -133,6 +133,31 @@ lazy var persistentContainer: NSPersistentContainer = {
         
     }()
 ```
+By default, logs will be written to `os_log`, but you can route log messages to your own class by extending `SMLogger`:
+```
+class AppDelegate: SMLogDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        SMStore.logger = self
+    }
+    // MARK: SMLogDelegate
+    func log(_ message: @autoclosure() -> String, type: SMLogType) {
+        #if DEBUG
+        switch type {
+        case .debug:
+        print("Debug: \(message())")
+        case .info:
+        print("Info: \(message())")
+        case .error:
+        print("Error: \(message())")
+        case .fault:
+        print("Fault: \(message())")
+        case .defaultType:
+        print("Default: \(message())")
+        }
+        #endif
+    }
+}
+```
 You can access the `SMStore` instance using:
 ```
 self.smStore = container.persistentStoreCoordinator.persistentStores.first as? SMStore
@@ -173,10 +198,13 @@ self.smStore?.verifyCloudKitConnectionAndUser() { (status, user, error) in
 ![](http://s29.postimg.org/rb9vj0egn/Screen_Shot_2015_08_23_at_5_44_59_pm.png)
 - Implement didReceiveRemoteNotification Method in your AppDelegate and call `handlePush` on the instance of SMStore created earlier.
 ```swift
- func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) 
- {
-    self.smStore?.handlePush(userInfo: userInfo)
- }
+func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("Received push")
+
+        smStore?.handlePush(userInfo: userInfo) { (result) in
+            completionHandler(result.uiBackgroundFetchResult)
+        }
+    }
 ```
 - Enjoy
 

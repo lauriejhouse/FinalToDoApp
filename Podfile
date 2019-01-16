@@ -20,5 +20,9 @@ pod 'TableViewDragger'
     inherit! :search_paths
     # Pods for testing
   end
+  
+  target 'TodayWidget' do
+      pod 'Seam3'
+      end
 
 end
