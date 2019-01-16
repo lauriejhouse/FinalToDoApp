@@ -31,6 +31,8 @@
 		8C87743121EF6CC500E6694E /* Seam3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C87743021EF6CC500E6694E /* Seam3.framework */; };
 		8C87743321EF6CE700E6694E /* Pods_ToDoFinalApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C87743221EF6CE700E6694E /* Pods_ToDoFinalApp.framework */; };
 		8C87743521EF6FCC00E6694E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C87743421EF6FCC00E6694E /* CoreData.framework */; };
+		8C87743821EF941E00E6694E /* TodayWidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87743621EF919900E6694E /* TodayWidgetTableViewCell.swift */; };
+		8C87743921EF945900E6694E /* TodayWidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87743621EF919900E6694E /* TodayWidgetTableViewCell.swift */; };
 		8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826321BEE99B008AE224 /* AppDelegate.swift */; };
 		8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD826721BEE99B008AE224 /* Main.storyboard */; };
 		8CAD826C21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826A21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld */; };
@@ -109,6 +111,7 @@
 		8C87743021EF6CC500E6694E /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C87743221EF6CE700E6694E /* Pods_ToDoFinalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ToDoFinalApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C87743421EF6FCC00E6694E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8C87743621EF919900E6694E /* TodayWidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetTableViewCell.swift; sourceTree = "<group>"; };
 		8CAD826021BEE99B008AE224 /* ToDoFinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAD826321BEE99B008AE224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CAD826821BEE99B008AE224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 			children = (
 				8C87742F21EF6CA000E6694E /* TodayWidget.entitlements */,
 				8C87741A21EF682400E6694E /* TodayViewController.swift */,
+				8C87743621EF919900E6694E /* TodayWidgetTableViewCell.swift */,
 				8C87741C21EF682400E6694E /* MainInterface.storyboard */,
 				8C87741F21EF682400E6694E /* Info.plist */,
 			);
@@ -582,6 +586,7 @@
 				8C87742C21EF6BFD00E6694E /* Goal+CoreDataClass.swift in Sources */,
 				8C87742A21EF6BF600E6694E /* Task+CoreDataClass.swift in Sources */,
 				8C87742B21EF6BF900E6694E /* Task+CoreDataProperties.swift in Sources */,
+				8C87743821EF941E00E6694E /* TodayWidgetTableViewCell.swift in Sources */,
 				8C87742D21EF6C0000E6694E /* Goal+CoreDataProperties.swift in Sources */,
 				8C87741B21EF682400E6694E /* TodayViewController.swift in Sources */,
 			);
@@ -592,6 +597,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C31031A21E658C90013733C /* TaskTableViewCell.swift in Sources */,
+				8C87743921EF945900E6694E /* TodayWidgetTableViewCell.swift in Sources */,
 				8C8773ED21ECD94900E6694E /* NewTaskViewController.swift in Sources */,
 				8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */,
 				8CAD829E21BF0845008AE224 /* Goal+CoreDataClass.swift in Sources */,

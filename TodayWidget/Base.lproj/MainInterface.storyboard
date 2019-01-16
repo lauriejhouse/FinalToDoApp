@@ -1,39 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B49-yk-JQx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
-        <scene sceneID="cwh-vc-ff4">
+        <scene sceneID="DBE-G7-n0K">
             <objects>
-                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                <viewController id="B49-yk-JQx" customClass="TodayViewController" customModule="TodayWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4FK-Rm-7al"/>
+                        <viewControllerLayoutGuide type="bottom" id="cZ1-Ur-7xw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="fnD-mi-Bcc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="59" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xo4-sV-iqu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WidgetTableViewCell" rowHeight="59" id="bXQ-P2-xgP" customClass="WidgetTableViewCell" customModule="TodayWidget" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="59"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXQ-P2-xgP" id="dgJ-hM-vQ1">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="58.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyi-v6-XIx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="58.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some text here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcl-fa-yVm">
+                                                            <rect key="frame" x="56" y="18.5" width="120.5" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPZ-Bw-Em5">
+                                                            <rect key="frame" x="8" y="8.5" width="40" height="42"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="42" id="64p-xQ-4SH"/>
+                                                                <constraint firstAttribute="width" constant="40" id="Ip3-vV-Qnn"/>
+                                                            </constraints>
+                                                            <state key="normal" image="checked-3"/>
+                                                            <connections>
+                                                                <action selector="taskCompleted:" destination="bXQ-P2-xgP" eventType="touchUpInside" id="MWG-uO-grB"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMK-W2-eTp">
+                                                            <rect key="frame" x="256" y="8" width="37" height="32"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="32" id="fGH-fT-wyw"/>
+                                                            </constraints>
+                                                            <state key="normal" title="Button" image="icons8-Edit-50"/>
+                                                            <connections>
+                                                                <action selector="openAppButtonTapped:" destination="B49-yk-JQx" eventType="touchUpInside" id="Mii-D2-z1q"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="VMK-W2-eTp" secondAttribute="trailing" constant="27" id="Ake-FC-wtx"/>
+                                                        <constraint firstItem="fcl-fa-yVm" firstAttribute="centerY" secondItem="lyi-v6-XIx" secondAttribute="centerY" id="Cvc-cy-Dci"/>
+                                                        <constraint firstItem="VMK-W2-eTp" firstAttribute="leading" secondItem="fcl-fa-yVm" secondAttribute="trailing" constant="79.5" id="DUM-wW-ynM"/>
+                                                        <constraint firstItem="VMK-W2-eTp" firstAttribute="centerY" secondItem="lyi-v6-XIx" secondAttribute="centerY" constant="-5.25" id="Wfe-Nb-r3i"/>
+                                                        <constraint firstItem="VPZ-Bw-Em5" firstAttribute="leading" secondItem="lyi-v6-XIx" secondAttribute="leading" constant="8" id="X8p-A0-opi"/>
+                                                        <constraint firstItem="VPZ-Bw-Em5" firstAttribute="centerY" secondItem="lyi-v6-XIx" secondAttribute="centerY" id="YFq-KB-rLq"/>
+                                                        <constraint firstItem="fcl-fa-yVm" firstAttribute="leading" secondItem="VPZ-Bw-Em5" secondAttribute="trailing" constant="8" id="ln0-rY-Vba"/>
+                                                        <constraint firstItem="VMK-W2-eTp" firstAttribute="bottom" secondItem="fcl-fa-yVm" secondAttribute="bottom" id="piw-9l-LK6"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lyi-v6-XIx" firstAttribute="leading" secondItem="dgJ-hM-vQ1" secondAttribute="leading" id="4d6-eS-swI"/>
+                                                <constraint firstAttribute="bottom" secondItem="lyi-v6-XIx" secondAttribute="bottom" id="Ohd-fV-9sh"/>
+                                                <constraint firstItem="lyi-v6-XIx" firstAttribute="top" secondItem="dgJ-hM-vQ1" secondAttribute="top" id="iQo-1h-Nye"/>
+                                                <constraint firstAttribute="trailing" secondItem="lyi-v6-XIx" secondAttribute="trailing" id="vGG-Zr-toS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="statusButton" destination="VPZ-Bw-Em5" id="LfX-2v-KaB"/>
+                                            <outlet property="title" destination="fcl-fa-yVm" id="3Lg-EX-G1j"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="bottom" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="20" symbolic="YES" id="0Q0-KW-PJ6"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" symbolic="YES" id="6Vq-gs-PHe"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="20" symbolic="YES" id="L8K-9R-egU"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="20" symbolic="YES" id="mYS-Cv-VNx"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                        <viewLayoutGuide key="safeArea" id="YOA-RG-toB"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="37"/>
+                    <size key="freeformSize" width="320" height="280"/>
+                    <connections>
+                        <outlet property="tableView" destination="Xo4-sV-iqu" id="43C-oW-yQ8"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VXR-BM-uF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-566.39999999999998" y="-13.493253373313344"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checked-3" width="48" height="48"/>
+        <image name="icons8-Edit-50" width="50" height="50"/>
+    </resources>
 </document>

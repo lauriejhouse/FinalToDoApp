@@ -13,13 +13,10 @@ import CoreData
 @objc(Task)
 public class Task: NSManagedObject {
     
-//    var task: [Task]?
-//    
-//    subscript(index: Int) -> Task? {
-//        guard let coordinate = task?[index] else {
-//            return nil
-//        }
-//        return coordinate
-//    }
+    // MARK: - Custom Methods
+    
+    func toggleChecked() {
+        isChecked = !isChecked
+    }
 
 }
