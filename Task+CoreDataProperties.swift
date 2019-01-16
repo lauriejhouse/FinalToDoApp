@@ -18,6 +18,8 @@ extension Task {
 
     @NSManaged public var taskName: String?
     @NSManaged public var isChecked: Bool
+    @NSManaged public var dueDate: NSDate?
+    @NSManaged public var completed: Bool
     @NSManaged public var goal: Goal?
 
 }

@@ -33,6 +33,8 @@
 		8C87743521EF6FCC00E6694E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C87743421EF6FCC00E6694E /* CoreData.framework */; };
 		8C87743821EF941E00E6694E /* TodayWidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87743621EF919900E6694E /* TodayWidgetTableViewCell.swift */; };
 		8C87743921EF945900E6694E /* TodayWidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87743621EF919900E6694E /* TodayWidgetTableViewCell.swift */; };
+		8C87743B21EFBCFF00E6694E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87743A21EFBCFF00E6694E /* CoreDataStack.swift */; };
+		8C87743C21EFC11A00E6694E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C87743A21EFBCFF00E6694E /* CoreDataStack.swift */; };
 		8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826321BEE99B008AE224 /* AppDelegate.swift */; };
 		8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD826721BEE99B008AE224 /* Main.storyboard */; };
 		8CAD826C21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826A21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld */; };
@@ -112,6 +114,7 @@
 		8C87743221EF6CE700E6694E /* Pods_ToDoFinalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_ToDoFinalApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C87743421EF6FCC00E6694E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8C87743621EF919900E6694E /* TodayWidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetTableViewCell.swift; sourceTree = "<group>"; };
+		8C87743A21EFBCFF00E6694E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8CAD826021BEE99B008AE224 /* ToDoFinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAD826321BEE99B008AE224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CAD826821BEE99B008AE224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 			children = (
 				8C3E646F21E02E2700CCFE07 /* CloudKitManager.swift */,
 				8C1C41C421C2C1660099AF6A /* CoreDataManager.swift */,
+				8C87743A21EFBCFF00E6694E /* CoreDataStack.swift */,
 			);
 			path = CoreDataManager;
 			sourceTree = "<group>";
@@ -585,6 +589,7 @@
 				8C87742E21EF6C0500E6694E /* CloudKitManager.swift in Sources */,
 				8C87742C21EF6BFD00E6694E /* Goal+CoreDataClass.swift in Sources */,
 				8C87742A21EF6BF600E6694E /* Task+CoreDataClass.swift in Sources */,
+				8C87743C21EFC11A00E6694E /* CoreDataStack.swift in Sources */,
 				8C87742B21EF6BF900E6694E /* Task+CoreDataProperties.swift in Sources */,
 				8C87743821EF941E00E6694E /* TodayWidgetTableViewCell.swift in Sources */,
 				8C87742D21EF6C0000E6694E /* Goal+CoreDataProperties.swift in Sources */,
@@ -608,6 +613,7 @@
 				8CAD826C21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld in Sources */,
 				8C3E646E21E0240100CCFE07 /* NewGoalViewController.swift in Sources */,
 				8CAD829D21BF0845008AE224 /* Task+CoreDataProperties.swift in Sources */,
+				8C87743B21EFBCFF00E6694E /* CoreDataStack.swift in Sources */,
 				8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */,
 				8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */,
 				8C3E647221E1168C00CCFE07 /* IconPickerViewController.swift in Sources */,
