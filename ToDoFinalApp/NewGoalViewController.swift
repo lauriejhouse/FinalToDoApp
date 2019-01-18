@@ -13,25 +13,9 @@ import CloudKit
 import Seam3
 
 
-//protocol NewGoalViewControllerDelegate: class {
-//    func newGoalViewControllerDidCancel(_ controller: NewGoalViewController)
-//    func newGoalViewController(_ controller: NewGoalViewController, didFinishAdding goal: Goal)
-//    func newGoalViewController(_ controller: NewGoalViewController, didFinishEditing goal: Goal)
-//}
 
 
 
-/*To make edit button work:
- 
- Do not need to insert the goal into the context, because it is already there from when you originally retrieved it through get all goals
- - You just need to assign the new values to the existing goal object
- - Then just save the context.  Coreatamanager already has a save function you can call.
- 5. Visit main goals VC which will calls get all goals in view will appear and repopulates the table
- 
- ***Do i need to make a new button, or can the add goals button/selector/function work for both. use if else statment?
- 
- 
- */
 
 class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPickerViewControllerDelegate {
     
