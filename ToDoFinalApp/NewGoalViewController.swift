@@ -20,11 +20,7 @@ import Seam3
 class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPickerViewControllerDelegate {
     
     // MARK: - Properties
-    
-    //https://github.com/paulw11/Seam3/blob/master/Sources/Classes/NSManagedObject%2BCKRecord.swift - NSManagedObject+CKRecord.swift
-    
-    
-    
+
 
 
     let container = CKContainer.default()

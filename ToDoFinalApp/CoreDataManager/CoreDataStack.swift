@@ -23,20 +23,20 @@ public class CoreDataStack {
         
         let container = NSPersistentContainer(name: "ToDoFinalApp")
         
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
         
         //Need both of these for app groups to work correctly with core data and have everything display on the simulator. It's all showing up in CloudKit, but not simulator..
         
-        //         let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.FinalAppToDo")
+                 let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.FinalAppToDo")
         
         
-        //         if let applicationDocumentsDirectory = directory {
+                 if let applicationDocumentsDirectory = directory {
         
         
         
-        if let applicationDocumentsDirectory = urls.last {
-            
+//        if let applicationDocumentsDirectory = urls.last {
+        
             
             
             let url = applicationDocumentsDirectory.appendingPathComponent("ToDoFinalApp.sqlite")

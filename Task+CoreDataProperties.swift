@@ -1,9 +1,8 @@
 //
 //  Task+CoreDataProperties.swift
-//  ToDoFinalApp
+//  
 //
-//  Created by Jackie on 12/11/18.
-//  Copyright © 2018 LAS. All rights reserved.
+//  Created by Jackie Norstrom on 1/18/19.
 //
 //
 
@@ -18,6 +17,7 @@ extension Task {
     }
 
     @NSManaged public var taskName: String?
+    @NSManaged public var completed: Bool
     @NSManaged public var goal: Goal?
 
 }

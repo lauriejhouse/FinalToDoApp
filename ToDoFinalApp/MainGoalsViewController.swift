@@ -11,11 +11,11 @@
 //Things left to do:
 /*
  
+ WAIT FOR FRANKIE FOR HELP WITH WIDGET.
 
  Today Widget - Most difficult
  Custom animations 2-4 of them
- Custom view controller transitions to animate - I think I Have that with present modually
- Localize in 1 or 2 langauges - easy
+ Localize in 1 or 2 langauges - easy - take care of next - 1/18/19
  Testing/Debugging -easy
  Analytics to track tasks
  Monetization - adds on app through google. - pretty easy
@@ -88,6 +88,8 @@ class MainGoalsViewController: UITableViewController {
         dragger.delegate = self
         dragger.alphaForCell = 0.7
         dragger.opacityForShadowOfCell = 1
+//Can add a date label here
+        
         
         
     }
@@ -101,6 +103,19 @@ class MainGoalsViewController: UITableViewController {
 
     }
     
+    
+    func formattedReleaseDate() -> String {
+        let calendar = Calendar.current
+        var components = DateComponents()
+        components.day = 25
+        components.month = 9
+        components.year = 2019
+        let date = calendar.date(from: components)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        return dateFormatter.string(from: date!)
+    }
     
     
     
@@ -158,9 +173,9 @@ class MainGoalsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete  {
-            let deleteAlertController = UIAlertController(title: "Delete?", message: "This will remove your goal and tasks.", preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (delete) in
+            let deleteAlertController = UIAlertController(title: NSLocalizedString("Delete Goal?", comment: ""), message:NSLocalizedString("This will remove your goal and tasks.", comment: "alert action"), preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment:""), style: .cancel, handler: nil)
+            let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (delete) in
                 
                 guard let goalToDelete = self.goalItems?[indexPath.row] else { return }
                 self.goalItems?.remove(at: indexPath.row)
@@ -235,7 +250,7 @@ class MainGoalsViewController: UITableViewController {
                         vc.title = item.goalName
                     } else {
                         // If the goalItems array has nothing in it, then we show this below
-                        vc.title = "Your Tasks Will Appear Here."
+                        vc.title = NSLocalizedString("Your Tasks Will Appear Here.", comment: "")
                         vc.navigationItem.rightBarButtonItem?.isEnabled = false
                     }
                 }
@@ -261,13 +276,14 @@ class MainGoalsViewController: UITableViewController {
         
         if let checkedItems = checkedItems {
             if tasksCount == 0 {
-                tasksDoneLabel?.text = "Select Goal To Add New Tasks"
+                tasksDoneLabel?.text = NSLocalizedString("Select Goal To Add New Tasks", comment: "")
             } else if checkedItems == 0 {
-                tasksDoneLabel?.text = " \(tasksCount) To Complete"
+                tasksDoneLabel?.text = "\(tasksCount) \(NSLocalizedString("to complete", comment:""))"
             } else if checkedItems == tasksCount {
-                tasksDoneLabel?.text = "All Tasks Completed"
+                tasksDoneLabel?.text = NSLocalizedString("All Tasks Completed", comment: "")
             } else {
-                tasksDoneLabel?.text = "\(checkedItems) of \(tasksCount) Completed"
+                tasksDoneLabel?.text = "\(checkedItems) \(NSLocalizedString("of", comment:"")) \(tasksCount) \(NSLocalizedString("completed", comment:""))"
+
             }
         }
         
@@ -280,6 +296,7 @@ class MainGoalsViewController: UITableViewController {
     func save() {
         do {
             try managedContext.save()
+            
         } catch let error as NSError {
             print(error)
         }

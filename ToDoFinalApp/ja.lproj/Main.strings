@@ -1,0 +1,45 @@
+
+/* Class = "UINavigationItem"; title = "Name of Task"; ObjectID = "17x-KR-Gv0"; */
+"17x-KR-Gv0.title" = "タスク名";
+
+/* Class = "UILabel"; text = "Tasks"; ObjectID = "C54-2B-33D"; */
+"C54-2B-33D.text" = "仕事";
+
+/* Class = "UILabel"; text = "Goal Title"; ObjectID = "DgH-cR-UAU"; */
+"DgH-cR-UAU.text" = "目標タイトル";
+
+/* Class = "UITableViewController"; title = "Name of Task"; ObjectID = "Irb-lf-ZfA"; */
+"Irb-lf-ZfA.title" = "タスク名";
+
+/* Class = "UITableViewController"; title = "Choose Icon"; ObjectID = "K10-2b-PkR"; */
+"K10-2b-PkR.title" = "アイコンを選択";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "KBN-Py-95n"; */
+"KBN-Py-95n.text" = "タイトル";
+
+/* Class = "UINavigationItem"; title = "Long Term Goal"; ObjectID = "M7h-cM-flW"; */
+"M7h-cM-flW.title" = "長期的な目標";
+
+/* Class = "UITextField"; placeholder = "Long term goal..."; ObjectID = "Rpv-22-O8v"; */
+"Rpv-22-O8v.placeholder" = "長期的な目標...";
+
+/* Class = "UITableViewSection"; headerTitle = "Long Term Goal"; ObjectID = "Rzt-3G-UQq"; */
+"Rzt-3G-UQq.headerTitle" = "長期的な目標";
+
+/* Class = "UITableViewSection"; headerTitle = "Icon"; ObjectID = "h0d-mw-mJZ"; */
+"h0d-mw-mJZ.headerTitle" = "アイコン
+";
+
+/* Class = "UITableViewController"; title = "Add Long Term Goal"; ObjectID = "huw-Cc-mJY"; */
+"huw-Cc-mJY.title" = "長期目標を追加
+";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "qLi-7I-ZBT"; */
+"qLi-7I-ZBT.normalTitle" = "編集する";
+
+/* Class = "UINavigationItem"; title = "Add Long Term Goal"; ObjectID = "ueI-a2-aHr"; */
+"ueI-a2-aHr.title" = "長期目標を追加
+";
+
+/* Class = "UILabel"; text = "Icon Name"; ObjectID = "vBt-MF-VjG"; */
+"vBt-MF-VjG.text" = "アイコン名";

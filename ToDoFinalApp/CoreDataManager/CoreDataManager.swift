@@ -12,9 +12,9 @@ import Seam3
 
 struct CoreDataManager {
     
-    public struct ModelName {
-        public static let ToDoFinalApp = "ToDoFinalApp"
-    }
+//    public struct ModelName {
+//        public static let ToDoFinalApp = "ToDoFinalApp"
+//    }
     
     static var shared = CoreDataManager()
     var managedContext: NSManagedObjectContext!
@@ -79,4 +79,38 @@ struct CoreDataManager {
             return nil
         }
     }
+    
+    func getAllTasks() -> [Task]? {
+        
+        let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+        
+        do {
+            let goals = try managedContext.fetch(tasksFetch) as! [Task]
+            return goals
+        } catch {
+            print("Failed to fetch goals: \(error)")
+            return nil
+        }
+    }
+    
+    func getAllTasksForToday() -> [Task]? {
+        //build two predicates. predicate 1 adn 2, supply argument you're looking for within the NSFetch format,
+        //Second predicate is greater then yesterday, less then tomorrow.
+        //Time interval NSDate, date by adding time interval. Add in seconds.
+        //Group predicate, add both and assign it to fetch predicate.
+        let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+        tasksFetch.predicate = NSPredicate (format: "dueDate < %@", NSDate())
+//        tasksFetch.predicate = NSPredicate
+        do {
+            let goals = try managedContext.fetch(tasksFetch) as! [Task]
+            return goals
+        } catch {
+            print("Failed to fetch goals: \(error)")
+            return nil
+        }
+    }
+
+    
+    
+    
 }

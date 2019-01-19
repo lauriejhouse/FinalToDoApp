@@ -27,7 +27,11 @@ class GoalTableViewCell: UITableViewCell {
         
 //        self.imageView?.image = UIImage(named: incomingGoal.iconName ?? "No Icon") //using the iboutlet instead of this.
         self.iconImage.image = UIImage(named: incomingGoal.iconName ?? "No Icon" )
+        
+//            goalLabel.text =  "\(formattedUnitsSold()) \(NSLocalizedString("units", comment: ""))"
+        
     }
+    
     
     
     override func awakeFromNib() {
