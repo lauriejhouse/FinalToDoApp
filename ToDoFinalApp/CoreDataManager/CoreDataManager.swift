@@ -12,9 +12,7 @@ import Seam3
 
 struct CoreDataManager {
     
-//    public struct ModelName {
-//        public static let ToDoFinalApp = "ToDoFinalApp"
-//    }
+
     
     static var shared = CoreDataManager()
     var managedContext: NSManagedObjectContext!

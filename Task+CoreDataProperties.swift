@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  
 //
-//  Created by Jackie Norstrom on 1/18/19.
+//  Created by Jackie Norstrom on 1/21/19.
 //
 //
 
@@ -16,8 +16,11 @@ extension Task {
         return NSFetchRequest<Task>(entityName: "Task")
     }
 
-    @NSManaged public var taskName: String?
     @NSManaged public var completed: Bool
+    @NSManaged public var taskName: String?
+    @NSManaged public var dueDate: NSDate?
+    @NSManaged public var isChecked: Bool
+    @NSManaged public var enabled: Bool
     @NSManaged public var goal: Goal?
 
 }

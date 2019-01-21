@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -117,7 +117,7 @@
 		044F1B1E5F40AFC08128AB7F9FE58F77 /* SMStoreSyncOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMStoreSyncOperation.swift; path = Sources/Classes/SMStoreSyncOperation.swift; sourceTree = "<group>"; };
 		06022D31BF0CDA17C3A048DDEA6CA16B /* NSManagedObjectContext+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Helpers.swift"; path = "Sources/Classes/NSManagedObjectContext+Helpers.swift"; sourceTree = "<group>"; };
 		07C8A4560E0C8652394CDB69ED520558 /* Pods-ToDoFinalAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ToDoFinalAppUITests-dummy.m"; sourceTree = "<group>"; };
-		07E91BD85FAF1313354D513DB9CB379B /* Pods_ToDoFinalAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ToDoFinalAppTests.framework; path = "Pods-ToDoFinalAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07E91BD85FAF1313354D513DB9CB379B /* Pods_ToDoFinalAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C6F845B28DD5C2AC131C9608DD05B4D /* Pods-ToDoFinalApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ToDoFinalApp.debug.xcconfig"; sourceTree = "<group>"; };
 		123FC201A83AC7F3CBAB1012D050D182 /* Pods-ToDoFinalApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ToDoFinalApp.release.xcconfig"; sourceTree = "<group>"; };
 		12AE8A4077647F7BFE13BD3FABE5148F /* Pods-ToDoFinalApp-TodayWidget-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ToDoFinalApp-TodayWidget-umbrella.h"; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		26EA986AC177E6BA0A6EC93F7A206707 /* TableViewDragger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TableViewDragger-prefix.pch"; sourceTree = "<group>"; };
 		273DDA23BF7E4FEA6F611F68C15AC137 /* Pods-ToDoFinalApp-TodayWidget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ToDoFinalApp-TodayWidget-acknowledgements.plist"; sourceTree = "<group>"; };
 		29933A6E575F3FA44855D4204676D802 /* Pods-ToDoFinalAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ToDoFinalAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		29F993DB3DD96BADA198850BF4FA5966 /* TableViewDragger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TableViewDragger.framework; path = TableViewDragger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29F993DB3DD96BADA198850BF4FA5966 /* TableViewDragger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TableViewDragger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A14B47782C0B9318B5EA136AE327020 /* Pods-ToDoFinalApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ToDoFinalApp.modulemap"; sourceTree = "<group>"; };
 		2E5045EF59BD8D0A99545BB90047CFFC /* Pods-ToDoFinalAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ToDoFinalAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		319E682EAED1183908ED879950FBBDEB /* Pods-ToDoFinalApp-SeconWidget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ToDoFinalApp-SeconWidget-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		5112F172F032686C8AA30931BC7C5857 /* Pods-ToDoFinalAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ToDoFinalAppTests-dummy.m"; sourceTree = "<group>"; };
 		5473206D91BC844D36098EB58A156D4F /* Pods-ToDoFinalAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ToDoFinalAppUITests.modulemap"; sourceTree = "<group>"; };
 		559FFB471151EBECB3B3CF1D8B9698EF /* SMServerZoneLookupOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMServerZoneLookupOperation.swift; path = Sources/Classes/SMServerZoneLookupOperation.swift; sourceTree = "<group>"; };
-		5768DABD37BFD38CF1A3A34D9CC951F3 /* Pods_ToDoFinalAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ToDoFinalAppUITests.framework; path = "Pods-ToDoFinalAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5768DABD37BFD38CF1A3A34D9CC951F3 /* Pods_ToDoFinalAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		585F955F14FF310B7D7EE659E24AFFF7 /* Pods-ToDoFinalApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ToDoFinalApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		58CAC08A64DF87B7C153F70E6A3B7616 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C503BA7969C71A51C337885B0A66688 /* Pods-ToDoFinalAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ToDoFinalAppTests-umbrella.h"; sourceTree = "<group>"; };
@@ -166,13 +166,13 @@
 		838BA01BFA079549DC2577FD265405BB /* NSManagedObject+CKRecord.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSManagedObject+CKRecord.swift"; path = "Sources/Classes/NSManagedObject+CKRecord.swift"; sourceTree = "<group>"; };
 		8874C5D27E8A55C7AE30C2AB634E45B7 /* Seam3-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Seam3-dummy.m"; sourceTree = "<group>"; };
 		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EDD6C09EA68B8B911923713A534899D /* Seam3-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Seam3-umbrella.h"; sourceTree = "<group>"; };
 		A1D964DD417FA9F042EAF5E8A08E4F4E /* Pods-ToDoFinalAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ToDoFinalAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A373FFEFC8AD4C15FBF43B79F7F7D541 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A39E863C6411B2731B49D330620776C6 /* Pods-ToDoFinalApp-TodayWidget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ToDoFinalApp-TodayWidget-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A45CC6B9116C199BAFEAC66431982B86 /* TableViewDragger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TableViewDragger-umbrella.h"; sourceTree = "<group>"; };
-		A548D2CDCDB363734CAB9BB38815D801 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Seam3.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A548D2CDCDB363734CAB9BB38815D801 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FAF1DC80673A290AC42E236FA4DBF0 /* Pods-ToDoFinalApp-SeconWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ToDoFinalApp-SeconWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		AB5EDEF2673AC8E6A39CC5203FAAFF37 /* Pods-ToDoFinalApp-TodayWidget.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ToDoFinalApp-TodayWidget.modulemap"; sourceTree = "<group>"; };
 		AD13E238AAFE72C84F7D1BE9BA189871 /* Pods-ToDoFinalAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ToDoFinalAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,10 +180,10 @@
 		AF7B55D41D55278DF3A34A8C23E56B1C /* Pods-ToDoFinalApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ToDoFinalApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B04F89BB9960ECDDAA0A437A9532A036 /* Pods-ToDoFinalAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ToDoFinalAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B88144760EE03A926FF4B8075D75365A /* CKRecord+NSManagedObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CKRecord+NSManagedObject.swift"; path = "Sources/Classes/CKRecord+NSManagedObject.swift"; sourceTree = "<group>"; };
-		B91A82A299EDA72A85AA29FAB9AD775B /* Pods_ToDoFinalApp_SeconWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ToDoFinalApp_SeconWidget.framework; path = "Pods-ToDoFinalApp-SeconWidget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B91A82A299EDA72A85AA29FAB9AD775B /* Pods_ToDoFinalApp_SeconWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalApp_SeconWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BD953325452212EE25FE4872B0DEFB06 /* Pods-ToDoFinalAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ToDoFinalAppTests-frameworks.sh"; sourceTree = "<group>"; };
-		BF2F6B2A0C9AA05406AC325432BB84A7 /* Pods_ToDoFinalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ToDoFinalApp.framework; path = "Pods-ToDoFinalApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2F6B2A0C9AA05406AC325432BB84A7 /* Pods_ToDoFinalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4D26AE968B1BCB57BA53FC02873BA2 /* TableViewDragger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TableViewDragger-dummy.m"; sourceTree = "<group>"; };
 		BFF7F45A2C5AEA28CC84723E01D519A3 /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScrollViewExtension.swift; path = TableViewDragger/UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		C4FB168DD2C0A7AC96DC4F6092EF393D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 		FB06023CA2E3E70173BB3B507D962D6E /* TableViewDragger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TableViewDragger.swift; path = TableViewDragger/TableViewDragger.swift; sourceTree = "<group>"; };
 		FCAF40303B49A5689EFD09908A0C9111 /* Pods-ToDoFinalApp-SeconWidget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ToDoFinalApp-SeconWidget-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FCB5DB6CA8965D274A7101797AC176B2 /* SMServerStoreSetupOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMServerStoreSetupOperation.swift; path = Sources/Classes/SMServerStoreSetupOperation.swift; sourceTree = "<group>"; };
-		FE61F4FAC94C2933A9242D320D57C1DC /* Pods_ToDoFinalApp_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ToDoFinalApp_TodayWidget.framework; path = "Pods-ToDoFinalApp-TodayWidget.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE61F4FAC94C2933A9242D320D57C1DC /* Pods_ToDoFinalApp_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalApp_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,7 +274,6 @@
 				BFF7F45A2C5AEA28CC84723E01D519A3 /* UIScrollViewExtension.swift */,
 				A7BCCADFE990EA5D8F2F0A39D6386177 /* Support Files */,
 			);
-			name = TableViewDragger;
 			path = TableViewDragger;
 			sourceTree = "<group>";
 		};
@@ -477,7 +476,6 @@
 				044F1B1E5F40AFC08128AB7F9FE58F77 /* SMStoreSyncOperation.swift */,
 				6DB3C151A0546025194B3619CA535DFB /* Support Files */,
 			);
-			name = Seam3;
 			path = Seam3;
 			sourceTree = "<group>";
 		};
@@ -678,7 +676,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -852,11 +850,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalApp-TodayWidget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalApp-TodayWidget/Pods-ToDoFinalApp-TodayWidget.modulemap";
 				OTHER_LDFLAGS = "";
@@ -892,11 +886,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalAppTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalAppTests/Pods-ToDoFinalAppTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -966,6 +956,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
@@ -988,11 +979,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalApp/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalApp/Pods-ToDoFinalApp.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1029,11 +1016,7 @@
 				INFOPLIST_FILE = "Target Support Files/Seam3/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Seam3/Seam3.modulemap";
 				PRODUCT_MODULE_NAME = Seam3;
 				PRODUCT_NAME = Seam3;
@@ -1066,11 +1049,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalAppUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalAppUITests/Pods-ToDoFinalAppUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1104,11 +1083,7 @@
 				INFOPLIST_FILE = "Target Support Files/TableViewDragger/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TableViewDragger/TableViewDragger.modulemap";
 				PRODUCT_MODULE_NAME = TableViewDragger;
 				PRODUCT_NAME = TableViewDragger;
@@ -1141,11 +1116,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalAppTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalAppTests/Pods-ToDoFinalAppTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1243,11 +1214,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalApp/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalApp/Pods-ToDoFinalApp.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1283,11 +1250,7 @@
 				INFOPLIST_FILE = "Target Support Files/TableViewDragger/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TableViewDragger/TableViewDragger.modulemap";
 				PRODUCT_MODULE_NAME = TableViewDragger;
 				PRODUCT_NAME = TableViewDragger;
@@ -1322,11 +1285,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalApp-TodayWidget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalApp-TodayWidget/Pods-ToDoFinalApp-TodayWidget.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1362,11 +1321,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalAppUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalAppUITests/Pods-ToDoFinalAppUITests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1402,11 +1357,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalApp-SeconWidget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalApp-SeconWidget/Pods-ToDoFinalApp-SeconWidget.modulemap";
 				OTHER_LDFLAGS = "";
@@ -1443,11 +1394,7 @@
 				INFOPLIST_FILE = "Target Support Files/Seam3/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Seam3/Seam3.modulemap";
 				PRODUCT_MODULE_NAME = Seam3;
 				PRODUCT_NAME = Seam3;
@@ -1482,11 +1429,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-ToDoFinalApp-SeconWidget/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-ToDoFinalApp-SeconWidget/Pods-ToDoFinalApp-SeconWidget.modulemap";
 				OTHER_LDFLAGS = "";

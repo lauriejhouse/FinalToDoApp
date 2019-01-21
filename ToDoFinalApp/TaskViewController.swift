@@ -26,6 +26,18 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
             return []
         }
     }()
+    
+    struct Option {
+//        let name : String
+        var enabled : Bool
+        
+        init( _ enabled : Bool) {
+//            self.name = name
+            self.enabled = enabled
+        }
+    }
+    
+//  @IBOutlet weak var imageView: UIImageView!
 
     
     override func viewDidLoad() {
@@ -70,6 +82,8 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
         return tasks.count
     }
     
+    
+    
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TaskTableViewCell
 //        //commenting that out didn't do much, still need to fix the edit button.
@@ -93,17 +107,79 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
 //        cell.taskLabel.text = task.taskName
 //    }
 
-    
-    
+
     
     //adding from example app
     
+//
+//
+//    func configureCheckmark(for cell: UITableViewCell, with task: Task) {
+//
+//        let imageView = cell.viewWithTag(3000) as! UIImageView
+//
+//
+//        if task.isChecked != true {
+//            imageView.image = #imageLiteral(resourceName: "No Icon")
+//        } else {
+//            imageView.image = #imageLiteral(resourceName: "checked-3")
+//        }
+//    }
+    
+    
+    //Original
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
+//        guard let task = selectedGoal?.tasks?[indexPath.row] as? Task else {return cell}
         cell.textLabel?.text = tasks[indexPath.row].taskName
+        let laguage = tasks[(indexPath as NSIndexPath).row]
+
+//        configureCheckmark(for: cell, with: task)
+        
+//        cell.textLabel!.text = laguage.name
+        cell.accessoryType = laguage.enabled ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
+
         return cell
     }
-
+    
+   
+//From Get it done
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
+//        guard let task = selectedGoal?.tasks?[indexPath.row] as? Task  else { return cell }
+//
+//        cell.textLabel?.text = tasks[indexPath.row].taskName
+//        configureCheckmark(for: cell, with: task)
+//        return cell
+//    }
+    
+    
+    //works but doesn't save the checkbox or update the number to complete. Can only check one off at atime.
+//    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+//        if let oldIndex = tableView.indexPathForSelectedRow {
+//            tableView.cellForRow(at: oldIndex)?.accessoryType = .none
+//        }
+//        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+//        
+//        return indexPath
+//    }
+    
+    //from an example app trying to select multiple check marks.
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // mark the cell
+        if self.tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.none {
+            self.tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        } else {
+            self.tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+        }
+        
+        // save the value in the array
+        let index = (indexPath as NSIndexPath).row
+        tasks[index].enabled = !tasks[index].enabled
+    }
+    //end example checkmark.
     
     
     // MARK: - UITextFieldDelegate
