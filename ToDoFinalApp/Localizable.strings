@@ -6,11 +6,16 @@
   Copyright © 2019 LAS. All rights reserved.
 */
 
-//English ones go here
-//"Delete Goal?" = "目標を削除しますか"
-//"This will remove your goal and tasks."
-//"Cancel"
-//"Your Tasks Will Appear Here"
-//"Select Goal To Add New Tasks"
-//"to complete"
-//"All Tasks Completed"
+
+"Delete Goal?" = "目標を削除しますか";
+//"Cancel" = "キャンセル";
+//"Your Tasks Will Appear Here" = "あなたの仕事はここに現れるでしょう";
+//"Select Goal To Add New Tasks" = "新しいタスクを追加するための目標の選択";
+//"to complete" = "完了する";
+//"All Tasks Completed" = "完了したすべてのタスク";
+//"Delete Goal?" = "Delete Goal";
+//"Cancel" = "キャンセル";
+//"Your Tasks Will Appear Here" = "あなたの仕事はここに現れるでしょう";
+//"Select Goal To Add New Tasks" = "新しいタスクを追加するための目標の選択";
+//"to complete" = "完了する";
+//"All Tasks Completed" = "完了したすべてのタスク";

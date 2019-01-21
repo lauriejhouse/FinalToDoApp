@@ -180,7 +180,8 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
         // save the value in the array
         let index = (indexPath as NSIndexPath).row
         tasks[index].enabled = !tasks[index].enabled
-        
+        let _ = CoreDataManager.shared.save()
+
     }
     //end example checkmark.
     

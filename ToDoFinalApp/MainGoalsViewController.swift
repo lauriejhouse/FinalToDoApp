@@ -15,7 +15,6 @@
 
  Today Widget - Most difficult
  Custom animations 2-4 of them
- Localize in 1 or 2 langauges - easy - take care of next - 1/18/19
  Testing/Debugging -easy
  Analytics to track tasks
  Monetization - adds on app through google. - pretty easy
@@ -42,12 +41,12 @@ class MainGoalsViewController: UITableViewController {
 
 
     //For CloudKit
-    let container = CKContainer.default()
-    let record = CKRecord(recordType: "Goal")
-    lazy var publicDB: CKDatabase! = {
-        let DB = self.container.publicCloudDatabase
-        return DB
-    }()
+//    let container = CKContainer.default()
+//    let record = CKRecord(recordType: "Goal")
+//    lazy var publicDB: CKDatabase! = {
+//        let DB = self.container.publicCloudDatabase
+//        return DB
+//    }()
 
     
     // MARK: - Properties
@@ -103,7 +102,7 @@ class MainGoalsViewController: UITableViewController {
 
     }
     
-    
+    //For Date Picker. Or just set that all tasks are due today or the next day.
     func formattedReleaseDate() -> String {
         let calendar = Calendar.current
         var components = DateComponents()
@@ -211,15 +210,7 @@ class MainGoalsViewController: UITableViewController {
     
     
     
-    
-    
-    
-  
-    
-    
-    
-    
-    
+
     
     
     
@@ -269,8 +260,10 @@ class MainGoalsViewController: UITableViewController {
     //Way to do this without using tags. Tags were before storyboads.
     func configure(_ cell: GoalTableViewCell, with goal: Goal) {
 //        let icon = cell.viewWithTag(10) as? UIImageView
-        let tasksDoneLabel = cell.viewWithTag(5000) as? UILabel
+        let tasksDoneLabel = cell.taskCountLabel
         guard let tasksCount = goal.tasks?.count else { return }
+        //call tasksdonelabel from the goal view cell
+        
         
         fetchCheckedItems(with: goal)
         
@@ -287,7 +280,7 @@ class MainGoalsViewController: UITableViewController {
             }
         }
         
-        cell.configure(incomingGoal: goal)
+//        cell.configure(incomingGoal: goal)
         
     }
     
@@ -319,7 +312,7 @@ class MainGoalsViewController: UITableViewController {
     
     func fetchCheckedItems(with goal: Goal) {
         let request = NSFetchRequest<Task>(entityName: "Task")
-        request.predicate = NSPredicate(format: "goal == %@ AND isChecked == %@ ", goal, NSNumber(booleanLiteral: true))
+        request.predicate = NSPredicate(format: "goal == %@ AND enabled == %@ ", goal, NSNumber(booleanLiteral: true))
         
         do {
             let results = try managedContext.fetch(request)
