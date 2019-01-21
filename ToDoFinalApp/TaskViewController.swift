@@ -12,7 +12,9 @@ import CoreData
 
 
 //Can have an alert style pop up to save the tasks. Because there is an add button that takes users to a new view controller to add a new task already.
-//May not even need the new task VC. Beacuse of using the alert style from the example app.
+//May not even need the new task VC. Beacuse of using the alert style from the example app. Blah blah
+
+//1/21/2019 - The check boxex work, I just have to get it to update the text when a task is done.
 
 class TaskViewController: UITableViewController, UITextViewDelegate {
     
@@ -109,10 +111,28 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
 
 
     
-    //adding from example app
     
-//
-//
+    
+    
+    //Original
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
+//        guard let task = selectedGoal?.tasks?[indexPath.row] as? Task else {return cell}
+        cell.textLabel?.text = tasks[indexPath.row].taskName
+        let laguage = tasks[(indexPath as NSIndexPath).row]
+
+//configureCheckmark(for: cell, with: tasks)
+//        cell.textLabel!.text = laguage.name
+        cell.accessoryType = laguage.enabled ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
+
+        return cell
+    }
+    
+    
+    //adding from get it done example app
+    
+    //
+    //
 //    func configureCheckmark(for cell: UITableViewCell, with task: Task) {
 //
 //        let imageView = cell.viewWithTag(3000) as! UIImageView
@@ -124,23 +144,6 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
 //            imageView.image = #imageLiteral(resourceName: "checked-3")
 //        }
 //    }
-    
-    
-    //Original
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
-//        guard let task = selectedGoal?.tasks?[indexPath.row] as? Task else {return cell}
-        cell.textLabel?.text = tasks[indexPath.row].taskName
-        let laguage = tasks[(indexPath as NSIndexPath).row]
-
-//        configureCheckmark(for: cell, with: task)
-        
-//        cell.textLabel!.text = laguage.name
-        cell.accessoryType = laguage.enabled ? UITableViewCell.AccessoryType.checkmark : UITableViewCell.AccessoryType.none
-
-        return cell
-    }
-    
    
 //From Get it done
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -159,7 +162,7 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
 //            tableView.cellForRow(at: oldIndex)?.accessoryType = .none
 //        }
 //        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-//        
+//
 //        return indexPath
 //    }
     
@@ -174,10 +177,10 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
         } else {
             self.tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
         }
-        
         // save the value in the array
         let index = (indexPath as NSIndexPath).row
         tasks[index].enabled = !tasks[index].enabled
+        
     }
     //end example checkmark.
     

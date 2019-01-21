@@ -13,9 +13,12 @@ import CoreData
 @objc(Task)
 public class Task: NSManagedObject {
     
-    func toggleChecked() {
-        isChecked = !isChecked
-    }
+//    func toggleChecked() {
+//        isChecked = !isChecked
+//    }
 
+    func toggleChecked() {
+        enabled = !enabled
+    }
 
 }
