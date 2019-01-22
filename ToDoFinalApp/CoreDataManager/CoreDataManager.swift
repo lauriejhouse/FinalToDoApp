@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import Seam3
 
 struct CoreDataManager {
     
@@ -18,7 +17,6 @@ struct CoreDataManager {
     
     static var shared = CoreDataManager()
     var managedContext: NSManagedObjectContext!
-    var smStore: SMStore!
     
     func save() -> Bool {
         do {
