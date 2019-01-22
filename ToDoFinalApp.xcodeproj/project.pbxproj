@@ -30,6 +30,7 @@
 		8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */; };
 		8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */; };
 		8CB8160D21DD3986005AB480 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8160C21DD3986005AB480 /* CloudKit.framework */; };
+		8CDAA47621F79ECE008F9557 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAA47421F79E57008F9557 /* Localizable.strings */; };
 		8CFDF75821F21C610001EA14 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDF75721F21C610001EA14 /* CoreDataStack.swift */; };
 		B6270F9B3E4215E46BC88BEE /* Pods_ToDoFinalAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +105,8 @@
 		8CDAA46521F77E07008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		8CDAA46621F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		8CDAA46721F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8CDAA47321F79E57008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CDAA47521F79E5C008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CFDF75721F21C610001EA14 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8CFDF78A21F2350E0001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFDF7B921F398B00001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +164,7 @@
 		8CAD825721BEE99B008AE224 = {
 			isa = PBXGroup;
 			children = (
+				8CDAA47421F79E57008F9557 /* Localizable.strings */,
 				8CAD829821BF0845008AE224 /* Task+CoreDataClass.swift */,
 				8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */,
 				8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */,
@@ -380,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAD827121BEE99C008AE224 /* LaunchScreen.storyboard in Resources */,
+				8CDAA47621F79ECE008F9557 /* Localizable.strings in Resources */,
 				8CAD826E21BEE99C008AE224 /* Assets.xcassets in Resources */,
 				8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */,
 			);
@@ -552,6 +557,16 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+		};
+		8CDAA47421F79E57008F9557 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CDAA47321F79E57008F9557 /* ja */,
+				8CDAA47521F79E5C008F9557 /* en */,
+			);
+			name = Localizable.strings;
+			path = "/Users/jackie/Downloads/Backups/FinalToDoApp-WORKING-EFOREWIDGET-TestingSeam3";
+			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
