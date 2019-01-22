@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ToDoFinalApp/Localizable.strings">
+   </FileRef>
+   <FileRef
       location = "group:Task+CoreDataProperties.swift">
    </FileRef>
    <FileRef
