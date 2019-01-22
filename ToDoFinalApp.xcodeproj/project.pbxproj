@@ -31,7 +31,6 @@
 		8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */; };
 		8CB8160D21DD3986005AB480 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8160C21DD3986005AB480 /* CloudKit.framework */; };
 		8CFDF75821F21C610001EA14 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDF75721F21C610001EA14 /* CoreDataStack.swift */; };
-		8CFDF79821F255490001EA14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CFDF79721F255490001EA14 /* Localizable.strings */; };
 		B6270F9B3E4215E46BC88BEE /* Pods_ToDoFinalAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,11 +101,9 @@
 		8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
 		8CB8160B21DD3964005AB480 /* ToDoFinalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoFinalApp.entitlements; sourceTree = "<group>"; };
 		8CB8160C21DD3986005AB480 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		8CDAA46521F77E07008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		8CFDF75721F21C610001EA14 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8CFDF78A21F2350E0001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CFDF79421F24A700001EA14 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		8CFDF79521F24A700001EA14 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		8CFDF79721F255490001EA14 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		8CFDF7B921F398B00001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFDF7BB21F399B10001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFDF7BD21F39A280001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,7 +192,6 @@
 				8CAD829621BF0487008AE224 /* TaskViewController.swift */,
 				8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */,
 				8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */,
-				8CFDF79721F255490001EA14 /* Localizable.strings */,
 				8C31031921E658C90013733C /* TaskTableViewCell.swift */,
 				8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */,
 				8C3E646D21E0240100CCFE07 /* NewGoalViewController.swift */,
@@ -382,7 +378,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAD827121BEE99C008AE224 /* LaunchScreen.storyboard in Resources */,
-				8CFDF79821F255490001EA14 /* Localizable.strings in Resources */,
 				8CAD826E21BEE99C008AE224 /* Assets.xcassets in Resources */,
 				8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */,
 			);
@@ -541,7 +536,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8CAD826821BEE99B008AE224 /* Base */,
-				8CFDF79421F24A700001EA14 /* ja */,
+				8CDAA46521F77E07008F9557 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -550,7 +545,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				8CAD827021BEE99C008AE224 /* Base */,
-				8CFDF79521F24A700001EA14 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

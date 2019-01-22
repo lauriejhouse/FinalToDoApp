@@ -48,7 +48,7 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
         self.navigationItem.rightBarButtonItem = rightBarButton
         //Add the name of the goal that has a task?
-        //        self.nameField.text = self.selectedGoal?.goalName
+//                self.selectedGoal.text = self.selectedGoal?.goalName
         
         //Trying to save to cloudkit.
         CloudKitManager.shared.triggerSyncWithCloudKit()

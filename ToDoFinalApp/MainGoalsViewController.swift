@@ -280,7 +280,7 @@ class MainGoalsViewController: UITableViewController {
             }
         }
         
-//        cell.configure(incomingGoal: goal)
+        cell.configure(incomingGoal: goal)
         
     }
     
