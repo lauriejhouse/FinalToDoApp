@@ -11,9 +11,9 @@
 //Things left to do:
 /*
  
- WAIT FOR FRANKIE FOR HELP WITH WIDGET.
 
  Today Widget - Most difficult
+    -Can use EventKit for reminders.
  Custom animations 2-4 of them
  Testing/Debugging -easy
  Analytics to track tasks
