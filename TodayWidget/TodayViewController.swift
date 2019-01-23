@@ -48,7 +48,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         
         let container = NSPersistentContainer(name: "ToDoFinalApp")
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.las.ToDoFinalApp.TodayWidget")
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.ToDoFinalApp.TodayWidget")
         
         if let applicationDocumentsDirectory = directory {
             
