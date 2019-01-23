@@ -10,15 +10,7 @@ target 'ToDoFinalApp' do
 pod 'Seam3'
 pod 'TableViewDragger'
 
-    target 'TodayWidget' do
-        pod 'Seam3'
-    # Pods for testing
-    end
-    
-    target 'SeconWidget' do
-        pod 'Seam3'
-        # Pods for testing
-    end
+
 
 
   target 'ToDoFinalAppTests' do

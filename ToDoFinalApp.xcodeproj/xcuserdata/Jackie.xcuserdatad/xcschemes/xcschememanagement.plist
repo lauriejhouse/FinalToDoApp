@@ -7,7 +7,7 @@
 		<key>MyWidget.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>SeconWidget.xcscheme_^#shared#^_</key>
 		<dict>
@@ -17,7 +17,7 @@
 		<key>ToDoFinalApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>5</integer>
 		</dict>
 		<key>TodayWidget.xcscheme_^#shared#^_</key>
 		<dict>
@@ -27,11 +27,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4FDE9B1521F6DA010020B243</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>8C87744021F208EF00E6694E</key>
 		<dict>
 			<key>primary</key>
