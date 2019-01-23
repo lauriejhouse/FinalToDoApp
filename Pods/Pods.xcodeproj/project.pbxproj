@@ -22,7 +22,6 @@
 		37E9A080E4740C3670294E892DF0E2D8 /* TableViewDraggerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10526CB68EAA844A58BC457B34B9C729 /* TableViewDraggerCell.swift */; };
 		3EF551ED61465A1313DAF40C499295F8 /* SMServerStoreSetupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449A99A71C57581092F1AF58830ECBC2 /* SMServerStoreSetupOperation.swift */; };
 		438217FA2F9080A3DAA359DB5B554D46 /* CKRecord+NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9407B17E3E91537B1406BE7E07598FF9 /* CKRecord+NSManagedObject.swift */; };
-		4FDE9AE521F6B2D10020B243 /* SMLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE9AE221F6B2B60020B243 /* SMLogger.swift */; };
 		5ADA50BEDD29B2A1CBC8CED93E67EDF1 /* NSManagedObjectContext+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61BA52FC5487A79E3F73607BB3D77BC /* NSManagedObjectContext+Helpers.swift */; };
 		5D2A2265DF17760CFBFDF1FFF3F5863A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		5FC2F5BF0DE44A70D807FDAF83BDB09E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
@@ -37,6 +36,7 @@
 		7C43B3D32B0C923483E15499D5F4CC6D /* Pods-ToDoFinalAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5112F172F032686C8AA30931BC7C5857 /* Pods-ToDoFinalAppTests-dummy.m */; };
 		816072FBA97122F04376CA210BB26A81 /* TableViewDragger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212EC5A367197C434F9D9A91084C1AA8 /* TableViewDragger.swift */; };
 		8620B440E6354FAABD20D0430A6B6EBB /* SMObjectDependencyGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7C21ADB3C05F581C345AD1C62C0BC8 /* SMObjectDependencyGraph.swift */; };
+		8CDAA47E21F8971A008F9557 /* SMLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAA47D21F8971A008F9557 /* SMLogger.swift */; };
 		9634C7392821F1856D08BE686CEF3A44 /* SMStoreSyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9EDCC4ED8336F1D952FFE1B3F8A647 /* SMStoreSyncOperation.swift */; };
 		A4B0EE1338F2C5A9FAB3FE9E132B064A /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1679C58C6B4A7D9F5427944739D6C609 /* UIScrollViewExtension.swift */; };
 		A7B670DA4FD4A14A70549990F3E6B9CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
@@ -146,7 +146,6 @@
 		449A99A71C57581092F1AF58830ECBC2 /* SMServerStoreSetupOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMServerStoreSetupOperation.swift; path = Sources/Classes/SMServerStoreSetupOperation.swift; sourceTree = "<group>"; };
 		4B5D72268D8E7048FAB34043F151C065 /* SMServerZoneLookupOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMServerZoneLookupOperation.swift; path = Sources/Classes/SMServerZoneLookupOperation.swift; sourceTree = "<group>"; };
 		4EBD4D66BD624DF1286395110715A791 /* Pods-ToDoFinalApp-SeconWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ToDoFinalApp-SeconWidget.release.xcconfig"; sourceTree = "<group>"; };
-		4FDE9AE221F6B2B60020B243 /* SMLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SMLogger.swift; path = Sources/Classes/SMLogger.swift; sourceTree = "<group>"; };
 		5112F172F032686C8AA30931BC7C5857 /* Pods-ToDoFinalAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ToDoFinalAppTests-dummy.m"; sourceTree = "<group>"; };
 		531A125D26A9E22CB565206C8BE8D8B6 /* CKRecordZone+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CKRecordZone+Helpers.swift"; path = "Sources/Classes/CKRecordZone+Helpers.swift"; sourceTree = "<group>"; };
 		5473206D91BC844D36098EB58A156D4F /* Pods-ToDoFinalAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ToDoFinalAppUITests.modulemap"; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		715B73EA0AD12BA07CC348CE1701388F /* Pods-ToDoFinalApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ToDoFinalApp-resources.sh"; sourceTree = "<group>"; };
 		759E47EB5457EDA245B33C473FEA59B7 /* Pods-ToDoFinalApp-TodayWidget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ToDoFinalApp-TodayWidget-dummy.m"; sourceTree = "<group>"; };
 		8B75A145FAD2521A3CC1622125D36F0C /* TableViewDragger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TableViewDragger-umbrella.h"; sourceTree = "<group>"; };
+		8CDAA47D21F8971A008F9557 /* SMLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMLogger.swift; sourceTree = "<group>"; };
 		8F59060E9DD499668A512CCA01BC4A2F /* NSEntityDescription+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSEntityDescription+Helpers.swift"; path = "Sources/Classes/NSEntityDescription+Helpers.swift"; sourceTree = "<group>"; };
 		90499DF25E36E604BAE41A00D0AA8EA7 /* TableViewDragger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TableViewDragger-dummy.m"; sourceTree = "<group>"; };
 		908E902E026C5C22904CF9014A5604AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -341,7 +341,7 @@
 				FC38FCE42158915F4E1870C600FE3667 /* NSManagedObject+CKRecord.swift */,
 				E61BA52FC5487A79E3F73607BB3D77BC /* NSManagedObjectContext+Helpers.swift */,
 				29EBFD6245EC82C7FB47DC2C9809A055 /* SMBatchDeleteResult.swift */,
-				4FDE9AE221F6B2B60020B243 /* SMLogger.swift */,
+				8CDAA47D21F8971A008F9557 /* SMLogger.swift */,
 				3A7C21ADB3C05F581C345AD1C62C0BC8 /* SMObjectDependencyGraph.swift */,
 				449A99A71C57581092F1AF58830ECBC2 /* SMServerStoreSetupOperation.swift */,
 				F92990FE86508F4127D625D4E9EADC89 /* SMServerTokenHandler.swift */,
@@ -772,10 +772,10 @@
 				1CE18342B765015554325265AFD92A73 /* Seam3-dummy.m in Sources */,
 				B0FA00AB1616321FA6CCF356E9BA1ECA /* SMBatchDeleteResult.swift in Sources */,
 				8620B440E6354FAABD20D0430A6B6EBB /* SMObjectDependencyGraph.swift in Sources */,
-				4FDE9AE521F6B2D10020B243 /* SMLogger.swift in Sources */,
 				3EF551ED61465A1313DAF40C499295F8 /* SMServerStoreSetupOperation.swift in Sources */,
 				BA89C1BF54CA1726978593C16901BDB3 /* SMServerTokenHandler.swift in Sources */,
 				33EB89BB8AC1B0F929ECC73BAA48FB66 /* SMServerZoneLookupOperation.swift in Sources */,
+				8CDAA47E21F8971A008F9557 /* SMLogger.swift in Sources */,
 				055CB27C230A6797562F44805F8B6AF3 /* SMStore.swift in Sources */,
 				05642A32030750CAC517C979F85A716C /* SMStoreChangeSetHandler.swift in Sources */,
 				9634C7392821F1856D08BE686CEF3A44 /* SMStoreSyncOperation.swift in Sources */,

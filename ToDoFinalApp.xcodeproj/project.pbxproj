@@ -669,14 +669,14 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MyWidget/MyWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4MTL74D34;
+				DEVELOPMENT_TEAM = LLP3H85GZ9;
 				INFOPLIST_FILE = MyWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp2.MyWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp.MyWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -689,14 +689,14 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MyWidget/MyWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4MTL74D34;
+				DEVELOPMENT_TEAM = LLP3H85GZ9;
 				INFOPLIST_FILE = MyWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp2.MyWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp.MyWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -832,13 +832,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ToDoFinalApp/ToDoFinalApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4MTL74D34;
+				DEVELOPMENT_TEAM = LLP3H85GZ9;
 				INFOPLIST_FILE = ToDoFinalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENABLE_BATCH_MODE = "";
 				SWIFT_VERSION = 4.2;
@@ -854,13 +854,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ToDoFinalApp/ToDoFinalApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C4MTL74D34;
+				DEVELOPMENT_TEAM = LLP3H85GZ9;
 				INFOPLIST_FILE = ToDoFinalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ENABLE_BATCH_MODE = "";
 				SWIFT_VERSION = 4.2;
