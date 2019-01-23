@@ -12,7 +12,7 @@ import CoreData
 
 class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate, UITableViewDataSource {
    
-    
+    @IBOutlet weak var tableView: UITableView!
     
     
     var todayTasks = [Task]()
@@ -48,7 +48,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         
         let container = NSPersistentContainer(name: "ToDoFinalApp")
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.las.ToDoFinalApp2.SeconWidget2")
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.las.ToDoFinalApp.TodayWidget")
         
         if let applicationDocumentsDirectory = directory {
             

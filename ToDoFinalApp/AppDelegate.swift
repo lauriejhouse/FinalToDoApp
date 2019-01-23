@@ -26,7 +26,7 @@ var smStore: SMStore!
         self.smStore = persistentContainer.persistentStoreCoordinator.persistentStores.first as? SMStore
         
         CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
-        CoreDataManager.shared.smStore = self.smStore
+//        CoreDataManager.shared.smStore = self.smStore
         CloudKitManager.shared.smStore = self.smStore
         
         application.registerForRemoteNotifications()
