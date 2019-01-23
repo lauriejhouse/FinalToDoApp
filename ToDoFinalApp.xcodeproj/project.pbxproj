@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		07376DF365CCD41C17C1B612 /* Pods_ToDoFinalApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A51FE5E47DC13C956AFF2EC /* Pods_ToDoFinalApp.framework */; };
 		5394CA2037A565D8139F6400 /* Pods_ToDoFinalAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F5070C9A36A133FD041367 /* Pods_ToDoFinalAppTests.framework */; };
+		758B4706A24B9E5C0ED7BEFB /* Pods_ToDoFinalApp_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F113D1683908D599E466CB4 /* Pods_ToDoFinalApp_TodayWidget.framework */; };
 		8C1C41C521C2C1660099AF6A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1C41C421C2C1660099AF6A /* CoreDataManager.swift */; };
 		8C31031A21E658C90013733C /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31031921E658C90013733C /* TaskTableViewCell.swift */; };
 		8C3E646E21E0240100CCFE07 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E646D21E0240100CCFE07 /* NewGoalViewController.swift */; };
@@ -31,6 +32,16 @@
 		8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */; };
 		8CB8160D21DD3986005AB480 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8160C21DD3986005AB480 /* CloudKit.framework */; };
 		8CDAA47621F79ECE008F9557 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAA47421F79E57008F9557 /* Localizable.strings */; };
+		8CDAA4A721F8C352008F9557 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C39E7C421F0FE4100A11247 /* NotificationCenter.framework */; };
+		8CDAA4AA21F8C352008F9557 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAA4A921F8C352008F9557 /* TodayViewController.swift */; };
+		8CDAA4AD21F8C352008F9557 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAA4AB21F8C352008F9557 /* MainInterface.storyboard */; };
+		8CDAA4B121F8C352008F9557 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8CDAA4A621F8C352008F9557 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8CDAA4B621F8CBDC008F9557 /* ToDoFinalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826A21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld */; };
+		8CDAA4B721F8CBE5008F9557 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829821BF0845008AE224 /* Task+CoreDataClass.swift */; };
+		8CDAA4B821F8CBE5008F9557 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */; };
+		8CDAA4B921F8CBE5008F9557 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */; };
+		8CDAA4BA21F8CBE5008F9557 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */; };
+		8CDAA4BB21F8CBF9008F9557 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1C41C421C2C1660099AF6A /* CoreDataManager.swift */; };
 		8CFDF75821F21C610001EA14 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDF75721F21C610001EA14 /* CoreDataStack.swift */; };
 		B6270F9B3E4215E46BC88BEE /* Pods_ToDoFinalAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +61,13 @@
 			remoteGlobalIDString = 8CAD825F21BEE99B008AE224;
 			remoteInfo = ToDoFinalApp;
 		};
+		8CDAA4AF21F8C352008F9557 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CAD825821BEE99B008AE224 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CDAA4A521F8C352008F9557;
+			remoteInfo = TodayWidget;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				8CDAA4B121F8C352008F9557 /* TodayWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +126,11 @@
 		8CDAA46721F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8CDAA47321F79E57008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDAA47521F79E5C008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CDAA4A621F8C352008F9557 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDAA4A921F8C352008F9557 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		8CDAA4AC21F8C352008F9557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8CDAA4AE21F8C352008F9557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CDAA4B521F8CB54008F9557 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
 		8CFDF75721F21C610001EA14 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8CFDF78A21F2350E0001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFDF7B921F398B00001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +172,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8CDAA4A321F8C352008F9557 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDAA4A721F8C352008F9557 /* NotificationCenter.framework in Frameworks */,
+				758B4706A24B9E5C0ED7BEFB /* Pods_ToDoFinalApp_TodayWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -172,6 +205,7 @@
 				8CAD826221BEE99B008AE224 /* ToDoFinalApp */,
 				8CAD827A21BEE99C008AE224 /* ToDoFinalAppTests */,
 				8CAD828521BEE99C008AE224 /* ToDoFinalAppUITests */,
+				8CDAA4A821F8C352008F9557 /* TodayWidget */,
 				8CAD826121BEE99B008AE224 /* Products */,
 				F33DB94BC4EDA2AF87DD21B7 /* Pods */,
 				94C2F1E39C2C821C26AD6827 /* Frameworks */,
@@ -184,6 +218,7 @@
 				8CAD826021BEE99B008AE224 /* ToDoFinalApp.app */,
 				8CAD827721BEE99C008AE224 /* ToDoFinalAppTests.xctest */,
 				8CAD828221BEE99C008AE224 /* ToDoFinalAppUITests.xctest */,
+				8CDAA4A621F8C352008F9557 /* TodayWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +261,17 @@
 				8CAD828821BEE99C008AE224 /* Info.plist */,
 			);
 			path = ToDoFinalAppUITests;
+			sourceTree = "<group>";
+		};
+		8CDAA4A821F8C352008F9557 /* TodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				8CDAA4B521F8CB54008F9557 /* TodayWidget.entitlements */,
+				8CDAA4A921F8C352008F9557 /* TodayViewController.swift */,
+				8CDAA4AB21F8C352008F9557 /* MainInterface.storyboard */,
+				8CDAA4AE21F8C352008F9557 /* Info.plist */,
+			);
+			path = TodayWidget;
 			sourceTree = "<group>";
 		};
 		94C2F1E39C2C821C26AD6827 /* Frameworks */ = {
@@ -280,6 +326,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8CDAA4B021F8C352008F9557 /* PBXTargetDependency */,
 			);
 			name = ToDoFinalApp;
 			productName = ToDoFinalApp;
@@ -324,6 +371,24 @@
 			productReference = 8CAD828221BEE99C008AE224 /* ToDoFinalAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8CDAA4A521F8C352008F9557 /* TodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CDAA4B421F8C352008F9557 /* Build configuration list for PBXNativeTarget "TodayWidget" */;
+			buildPhases = (
+				7C115B233B45D768BD1091FE /* [CP] Check Pods Manifest.lock */,
+				8CDAA4A221F8C352008F9557 /* Sources */,
+				8CDAA4A321F8C352008F9557 /* Frameworks */,
+				8CDAA4A421F8C352008F9557 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayWidget;
+			productName = TodayWidget;
+			productReference = 8CDAA4A621F8C352008F9557 /* TodayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -356,6 +421,14 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 8CAD825F21BEE99B008AE224;
 					};
+					8CDAA4A521F8C352008F9557 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 8CAD825B21BEE99B008AE224 /* Build configuration list for PBXProject "ToDoFinalApp" */;
@@ -374,6 +447,7 @@
 				8CAD825F21BEE99B008AE224 /* ToDoFinalApp */,
 				8CAD827621BEE99C008AE224 /* ToDoFinalAppTests */,
 				8CAD828121BEE99C008AE224 /* ToDoFinalAppUITests */,
+				8CDAA4A521F8C352008F9557 /* TodayWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -401,6 +475,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CDAA4A421F8C352008F9557 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDAA4AD21F8C352008F9557 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +519,24 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ToDoFinalAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C115B233B45D768BD1091FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ToDoFinalApp-TodayWidget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -523,6 +623,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8CDAA4A221F8C352008F9557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDAA4B921F8CBE5008F9557 /* Goal+CoreDataClass.swift in Sources */,
+				8CDAA4B621F8CBDC008F9557 /* ToDoFinalApp.xcdatamodeld in Sources */,
+				8CDAA4BA21F8CBE5008F9557 /* Goal+CoreDataProperties.swift in Sources */,
+				8CDAA4B721F8CBE5008F9557 /* Task+CoreDataClass.swift in Sources */,
+				8CDAA4B821F8CBE5008F9557 /* Task+CoreDataProperties.swift in Sources */,
+				8CDAA4BB21F8CBF9008F9557 /* CoreDataManager.swift in Sources */,
+				8CDAA4AA21F8C352008F9557 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -535,6 +649,11 @@
 			isa = PBXTargetDependency;
 			target = 8CAD825F21BEE99B008AE224 /* ToDoFinalApp */;
 			targetProxy = 8CAD828321BEE99C008AE224 /* PBXContainerItemProxy */;
+		};
+		8CDAA4B021F8C352008F9557 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CDAA4A521F8C352008F9557 /* TodayWidget */;
+			targetProxy = 8CDAA4AF21F8C352008F9557 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -567,6 +686,14 @@
 			name = Localizable.strings;
 			path = "/Users/jackie/Downloads/Backups/FinalToDoApp-WORKING-EFOREWIDGET-TestingSeam3";
 			sourceTree = "<absolute>";
+		};
+		8CDAA4AB21F8C352008F9557 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CDAA4AC21F8C352008F9557 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
@@ -821,6 +948,48 @@
 			};
 			name = Release;
 		};
+		8CDAA4B221F8C352008F9557 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C42ECCF5960F6E836D0A8695 /* Pods-ToDoFinalApp-TodayWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LLP3H85GZ9;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CDAA4B321F8C352008F9557 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 949E4F172205D1E3986705B9 /* Pods-ToDoFinalApp-TodayWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LLP3H85GZ9;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.las.ToDoFinalApp.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -856,6 +1025,15 @@
 			buildConfigurations = (
 				8CAD829221BEE99C008AE224 /* Debug */,
 				8CAD829321BEE99C008AE224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CDAA4B421F8C352008F9557 /* Build configuration list for PBXNativeTarget "TodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CDAA4B221F8C352008F9557 /* Debug */,
+				8CDAA4B321F8C352008F9557 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B6B2C1F445CF72DD4676F0F506198C4"
-               BuildableName = "Pods_ToDoFinalAppUITests.framework"
-               BlueprintName = "Pods-ToDoFinalAppUITests"
+               BlueprintIdentifier = "372A3F3A40FFAB8AEC1C81569F7F7EDA"
+               BuildableName = "Pods_ToDoFinalApp_TodayWidget.framework"
+               BlueprintName = "Pods-ToDoFinalApp-TodayWidget"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B6B2C1F445CF72DD4676F0F506198C4"
-            BuildableName = "Pods_ToDoFinalAppUITests.framework"
-            BlueprintName = "Pods-ToDoFinalAppUITests"
+            BlueprintIdentifier = "372A3F3A40FFAB8AEC1C81569F7F7EDA"
+            BuildableName = "Pods_ToDoFinalApp_TodayWidget.framework"
+            BlueprintName = "Pods-ToDoFinalApp-TodayWidget"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -100,7 +100,7 @@ var smStore: SMStore!
         
     //Need both of these for app groups to work correctly with core data and have everything display on the simulator. It's all showing up in CloudKit, but not simulator..
         
-         let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.las.ToDoFinalApp.SecondWidget")
+         let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.las.ToDoFinalApp.TodayWidget")
         
         
          if let applicationDocumentsDirectory = directory {

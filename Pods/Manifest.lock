@@ -1,5 +1,5 @@
 PODS:
-  - Seam3 (1.5.2)
+  - Seam3 (1.5.4)
   - TableViewDragger (1.3.0)
 
 DEPENDENCIES:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - TableViewDragger
 
 SPEC CHECKSUMS:
-  Seam3: fbe5e50b0a649cef870559bea1b6ad3e482380e7
+  Seam3: 430bc9ed2ac61232d4095c40fa28682a3168be9c
   TableViewDragger: 5933729a18d1606e16388d72f6d4fe5f3a0bcaf4
 
-PODFILE CHECKSUM: 6bb663ee824f5997024cf22a5811e54a44a67669
+PODFILE CHECKSUM: fdefc27bcda4ce6040e5e07183c3fbf68c388e6e
 
 COCOAPODS: 1.5.3
