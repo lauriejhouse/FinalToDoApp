@@ -31,7 +31,6 @@
 		8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */; };
 		8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */; };
 		8CB8160D21DD3986005AB480 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8160C21DD3986005AB480 /* CloudKit.framework */; };
-		8CDAA47621F79ECE008F9557 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAA47421F79E57008F9557 /* Localizable.strings */; };
 		8CDAA4A721F8C352008F9557 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C39E7C421F0FE4100A11247 /* NotificationCenter.framework */; };
 		8CDAA4AA21F8C352008F9557 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDAA4A921F8C352008F9557 /* TodayViewController.swift */; };
 		8CDAA4AD21F8C352008F9557 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAA4AB21F8C352008F9557 /* MainInterface.storyboard */; };
@@ -93,6 +92,8 @@
 		8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A51FE5E47DC13C956AFF2EC /* Pods_ToDoFinalApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFinalApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1C41C421C2C1660099AF6A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8C28184B21FA192F00DED4F8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C28184D21FA194D00DED4F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8C31031921E658C90013733C /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		8C39E7C421F0FE4100A11247 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		8C3E646D21E0240100CCFE07 /* NewGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
@@ -125,8 +126,6 @@
 		8CDAA46521F77E07008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		8CDAA46621F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		8CDAA46721F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		8CDAA47321F79E57008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8CDAA47521F79E5C008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CDAA4A621F8C352008F9557 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CDAA4A921F8C352008F9557 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		8CDAA4AC21F8C352008F9557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -198,7 +197,7 @@
 		8CAD825721BEE99B008AE224 = {
 			isa = PBXGroup;
 			children = (
-				8CDAA47421F79E57008F9557 /* Localizable.strings */,
+				8C28184C21FA192F00DED4F8 /* Localizable.strings */,
 				8CAD829821BF0845008AE224 /* Task+CoreDataClass.swift */,
 				8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */,
 				8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */,
@@ -460,7 +459,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAD827121BEE99C008AE224 /* LaunchScreen.storyboard in Resources */,
-				8CDAA47621F79ECE008F9557 /* Localizable.strings in Resources */,
 				8CAD826E21BEE99C008AE224 /* Assets.xcassets in Resources */,
 				8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */,
 			);
@@ -660,6 +658,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8C28184C21FA192F00DED4F8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C28184B21FA192F00DED4F8 /* ja */,
+				8C28184D21FA194D00DED4F8 /* en */,
+			);
+			name = Localizable.strings;
+			path = /Users/jackie/Downloads/FinalToDoApp;
+			sourceTree = "<absolute>";
+		};
 		8CAD826721BEE99B008AE224 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -678,16 +686,6 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
-		};
-		8CDAA47421F79E57008F9557 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CDAA47321F79E57008F9557 /* ja */,
-				8CDAA47521F79E5C008F9557 /* en */,
-			);
-			name = Localizable.strings;
-			path = "/Users/jackie/Downloads/Backups/FinalToDoApp-WORKING-EFOREWIDGET-TestingSeam3";
-			sourceTree = "<absolute>";
 		};
 		8CDAA4AB21F8C352008F9557 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;

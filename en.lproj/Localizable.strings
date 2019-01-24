@@ -2,11 +2,9 @@
   Localizable.strings
   
 
-  Created by Jackie Norstrom on 1/22/19.
+  Created by Jackie Norstrom on 1/24/19.
   
 */
-//This is base. English goes here.
-
 
 "Delete Goal?" = "Delete Goal?";
 "This will remove your goal and tasks." = "This will remove your goal and tasks.";
@@ -15,3 +13,4 @@
 "Select Goal To Add New Tasks" = "Select Goal To Add New Tasks";
 "to complete" = "to complete";
 "All Tasks Completed" = "All Tasks Completed";
+
