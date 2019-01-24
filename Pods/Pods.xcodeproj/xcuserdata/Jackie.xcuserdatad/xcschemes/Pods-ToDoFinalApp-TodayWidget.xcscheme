@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "372A3F3A40FFAB8AEC1C81569F7F7EDA"
-               BuildableName = "Pods_ToDoFinalApp_TodayWidget.framework"
+               BuildableName = "Pods-ToDoFinalApp-TodayWidget"
                BlueprintName = "Pods-ToDoFinalApp-TodayWidget"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "372A3F3A40FFAB8AEC1C81569F7F7EDA"
-            BuildableName = "Pods_ToDoFinalApp_TodayWidget.framework"
+            BuildableName = "Pods-ToDoFinalApp-TodayWidget"
             BlueprintName = "Pods-ToDoFinalApp-TodayWidget"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F116591DDC91B50C051D3F0B384D8886"
-               BuildableName = "Pods_ToDoFinalApp.framework"
+               BuildableName = "Pods-ToDoFinalApp"
                BlueprintName = "Pods-ToDoFinalApp"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F116591DDC91B50C051D3F0B384D8886"
-            BuildableName = "Pods_ToDoFinalApp.framework"
+            BuildableName = "Pods-ToDoFinalApp"
             BlueprintName = "Pods-ToDoFinalApp"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

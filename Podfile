@@ -11,7 +11,7 @@ pod 'Seam3'
 pod 'TableViewDragger'
 
 
-target 'TodayWidget' do
+target 'MyWidget' do
     pod 'Seam3'
     
   end
