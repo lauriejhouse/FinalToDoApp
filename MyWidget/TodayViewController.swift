@@ -28,8 +28,10 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WidgetTableViewCell", for: indexPath) //as! TodayWidgetTableViewCell
-        cell.textLabel?.text = todayTasks[indexPath.row].taskName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WidgetTableViewCell", for: indexPath) as! TodayTableViewCell
+//        cell.textLabel?.text = todayTasks[indexPath.row].taskName
+        let task = todayTasks[indexPath.row]
+        cell.task = task
         return cell
     }
         
@@ -42,6 +44,26 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         
         completionHandler(NCUpdateResult.newData)
     }
+    
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .expanded {
+            preferredContentSize = CGSize(width: 0, height: 280)
+        } else {
+            preferredContentSize = maxSize
+        }
+    }
+    
+    
+
+    @IBAction func openAppButton(_ sender: UIButton) {
+        let url: URL? = URL(string: "ToDoFinalApp:")!
+        if let appurl = url {
+            self.extensionContext!.open(appurl, completionHandler: nil)
+        }
+
+    }
+    
+  
     
     lazy var persistentContainer: NSPersistentContainer = {
         
@@ -67,5 +89,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         
         fatalError("Unable to access documents directory")
     }()
+    
+    
 }
+
+
+
+
 

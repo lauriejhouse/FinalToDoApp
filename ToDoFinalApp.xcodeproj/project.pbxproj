@@ -40,6 +40,7 @@
 		8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */; };
 		8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */; };
 		8CB8160D21DD3986005AB480 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8160C21DD3986005AB480 /* CloudKit.framework */; };
+		8CBAE4E321FA3C9700A6169C /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAE4E221FA3C9700A6169C /* TodayTableViewCell.swift */; };
 		8CFDF75821F21C610001EA14 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDF75721F21C610001EA14 /* CoreDataStack.swift */; };
 		ABF0FCE713550E833DE7763F /* Pods_ToDoFinalApp_MyWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E3FD4D042718CA189B2414 /* Pods_ToDoFinalApp_MyWidget.framework */; };
 		B6270F9B3E4215E46BC88BEE /* Pods_ToDoFinalAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */; };
@@ -130,6 +131,7 @@
 		8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
 		8CB8160B21DD3964005AB480 /* ToDoFinalApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoFinalApp.entitlements; sourceTree = "<group>"; };
 		8CB8160C21DD3986005AB480 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		8CBAE4E221FA3C9700A6169C /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		8CDAA46521F77E07008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		8CDAA46621F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		8CDAA46721F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				4FDE9B2521F6DA070020B243 /* MyWidget.entitlements */,
 				4FDE9B1921F6DA010020B243 /* TodayViewController.swift */,
 				4FDE9B1B21F6DA010020B243 /* MainInterface.storyboard */,
+				8CBAE4E221FA3C9700A6169C /* TodayTableViewCell.swift */,
 				4FDE9B1E21F6DA010020B243 /* Info.plist */,
 			);
 			path = MyWidget;
@@ -600,6 +603,7 @@
 				4FDE9B2721F6DBCD0020B243 /* Task+CoreDataClass.swift in Sources */,
 				4FDE9B2821F6DBCD0020B243 /* Task+CoreDataProperties.swift in Sources */,
 				4FDE9B1A21F6DA010020B243 /* TodayViewController.swift in Sources */,
+				8CBAE4E321FA3C9700A6169C /* TodayTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
