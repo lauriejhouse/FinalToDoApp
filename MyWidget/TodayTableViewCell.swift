@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+//Put a segue to go to the taskVC?
 class TodayTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
@@ -38,6 +39,19 @@ class TodayTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func taskCompleted(_ sender: UIButton) {
+        completed = true
+        taskButton.setImage(#imageLiteral(resourceName: "checked-custom"), for: .normal)
+//        task.setDefaultsForCompletion()
+        guard let managedContext = task.managedObjectContext else { return }
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            fatalError("Error during core data save in Widget: \(error.localizedDescription)")
+        }
+    }
+    
     
     
 

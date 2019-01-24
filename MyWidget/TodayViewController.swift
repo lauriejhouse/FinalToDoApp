@@ -63,6 +63,17 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
 
     }
     
+    //From example app for today due dates
+//    private func predicateForToday() -> NSPredicate {
+//        let now = Date()
+//        let startOfDay = now.startOfDay as NSDate
+//        let endOfDay = now.endOfDay as NSDate
+//        return NSPredicate(format: "dueDate >= %@ AND dueDate <= %@ ", startOfDay, endOfDay)
+//    }
+//
+//    private func predicateNotCompleted() -> NSPredicate {
+//        return NSPredicate(format: "%K == NO", #keyPath(Task.completed))
+//    }
   
     
     lazy var persistentContainer: NSPersistentContainer = {
