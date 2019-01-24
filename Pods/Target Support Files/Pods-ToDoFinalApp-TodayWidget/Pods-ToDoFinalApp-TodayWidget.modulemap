@@ -1,6 +1,0 @@
-framework module Pods_ToDoFinalApp_TodayWidget {
-  umbrella header "Pods-ToDoFinalApp-TodayWidget-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ToDoFinalApp_TodayWidgetVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ToDoFinalApp_TodayWidgetVersionString[];
+FOUNDATION_EXPORT double Pods_ToDoFinalApp_MyWidgetVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_ToDoFinalApp_MyWidgetVersionString[];
 
