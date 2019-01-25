@@ -11,6 +11,8 @@ pod 'Seam3'
 pod 'TableViewDragger'
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
+pod 'Google-Mobile-Ads-SDK'
+
 
 
 

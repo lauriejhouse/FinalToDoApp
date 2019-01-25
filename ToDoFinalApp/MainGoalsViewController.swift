@@ -48,7 +48,7 @@ import Foundation
 import CoreData
 import TableViewDragger
 import CloudKit
-
+import GoogleMobileAds
 
 
 
@@ -56,15 +56,17 @@ class MainGoalsViewController: UITableViewController {
     
 //For TableViewDragger CocoaPod
     var dragger: TableViewDragger!
+    
+    @IBOutlet weak var bannerView: GADBannerView!
 
 
     //For CloudKit
-//    let container = CKContainer.default()
-//    let record = CKRecord(recordType: "Goal")
-//    lazy var publicDB: CKDatabase! = {
-//        let DB = self.container.publicCloudDatabase
-//        return DB
-//    }()
+    let container = CKContainer.default()
+    let record = CKRecord(recordType: "Goal")
+    lazy var publicDB: CKDatabase! = {
+        let DB = self.container.publicCloudDatabase
+        return DB
+    }()
 
     
     // MARK: - Properties
@@ -106,8 +108,14 @@ class MainGoalsViewController: UITableViewController {
         dragger.alphaForCell = 0.7
         dragger.opacityForShadowOfCell = 1
 //Can add a date label here
+        //example ad
+//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         
-        
+        //my ad
+        bannerView.adUnitID = "ca-app-pub-5462116334906512/1055770455"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
         
     }
     

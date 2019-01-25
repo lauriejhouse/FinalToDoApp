@@ -58,6 +58,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Core
+  - Google-Mobile-Ads-SDK
   - Seam3
   - TableViewDragger
 
@@ -86,6 +87,6 @@ SPEC CHECKSUMS:
   Seam3: 430bc9ed2ac61232d4095c40fa28682a3168be9c
   TableViewDragger: 5933729a18d1606e16388d72f6d4fe5f3a0bcaf4
 
-PODFILE CHECKSUM: aed88a3cb71614bd42bc208bb02060549120a191
+PODFILE CHECKSUM: 3ed2f403e103fffa0dee1fa619227aef9f1df017
 
 COCOAPODS: 1.5.3

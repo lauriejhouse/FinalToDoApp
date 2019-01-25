@@ -284,6 +284,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bannerView" destination="Du6-0g-Sn6" id="s9A-VQ-9hp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxs-Va-a8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
