@@ -16,6 +16,10 @@
 		8C3E647221E1168C00CCFE07 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */; };
 		8C3E647421E1190400CCFE07 /* MainGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */; };
 		8C4C3F7721FB4D5A00BF1E6B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C3F7921FB4D5A00BF1E6B /* Localization.strings */; };
+		8C4C3F8721FB8A2900BF1E6B /* CustomPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3F8621FB8A2900BF1E6B /* CustomPresentAnimator.swift */; };
+		8C4C3F8921FB8C2D00BF1E6B /* CustomDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3F8821FB8C2D00BF1E6B /* CustomDismissAnimator.swift */; };
+		8C4C3F8B21FB904E00BF1E6B /* SplitViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3F8A21FB904E00BF1E6B /* SplitViewAnimator.swift */; };
+		8C4C3F8F21FB92DD00BF1E6B /* CustomNavigationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3F8E21FB92DD00BF1E6B /* CustomNavigationAnimator.swift */; };
 		8C8773ED21ECD94900E6694E /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */; };
 		8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826321BEE99B008AE224 /* AppDelegate.swift */; };
 		8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD826721BEE99B008AE224 /* Main.storyboard */; };
@@ -82,6 +86,10 @@
 		8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGoalsViewController.swift; sourceTree = "<group>"; };
 		8C4C3F7821FB4D5A00BF1E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		8C4C3F7A21FB4D5C00BF1E6B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localization.strings; sourceTree = "<group>"; };
+		8C4C3F8621FB8A2900BF1E6B /* CustomPresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimator.swift; sourceTree = "<group>"; };
+		8C4C3F8821FB8C2D00BF1E6B /* CustomDismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissAnimator.swift; sourceTree = "<group>"; };
+		8C4C3F8A21FB904E00BF1E6B /* SplitViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewAnimator.swift; sourceTree = "<group>"; };
+		8C4C3F8E21FB92DD00BF1E6B /* CustomNavigationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomNavigationAnimator.swift; path = /Users/jackie/Desktop/SwiftExercises/CareerFoundry/FinalToDoApp/ToDoFinalApp/CustomNavigationAnimator.swift; sourceTree = "<absolute>"; };
 		8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		8CAD826021BEE99B008AE224 /* ToDoFinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAD826321BEE99B008AE224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +204,10 @@
 				8CAD826721BEE99B008AE224 /* Main.storyboard */,
 				8CAD829621BF0487008AE224 /* TaskViewController.swift */,
 				8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */,
+				8C4C3F8821FB8C2D00BF1E6B /* CustomDismissAnimator.swift */,
+				8C4C3F8E21FB92DD00BF1E6B /* CustomNavigationAnimator.swift */,
+				8C4C3F8621FB8A2900BF1E6B /* CustomPresentAnimator.swift */,
+				8C4C3F8A21FB904E00BF1E6B /* SplitViewAnimator.swift */,
 				8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */,
 				8C31031921E658C90013733C /* TaskTableViewCell.swift */,
 				8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */,
@@ -496,21 +508,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C31031A21E658C90013733C /* TaskTableViewCell.swift in Sources */,
+				8C4C3F8721FB8A2900BF1E6B /* CustomPresentAnimator.swift in Sources */,
 				8C8773ED21ECD94900E6694E /* NewTaskViewController.swift in Sources */,
 				8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */,
 				8CAD829E21BF0845008AE224 /* Goal+CoreDataClass.swift in Sources */,
 				8C3E647021E02E2700CCFE07 /* CloudKitManager.swift in Sources */,
 				8CAD829C21BF0845008AE224 /* Task+CoreDataClass.swift in Sources */,
 				8C3E647421E1190400CCFE07 /* MainGoalsViewController.swift in Sources */,
+				8C4C3F8921FB8C2D00BF1E6B /* CustomDismissAnimator.swift in Sources */,
 				8CFDF75821F21C610001EA14 /* CoreDataStack.swift in Sources */,
 				8CAD829721BF0487008AE224 /* TaskViewController.swift in Sources */,
 				8CAD826C21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld in Sources */,
 				8C3E646E21E0240100CCFE07 /* NewGoalViewController.swift in Sources */,
+				8C4C3F8B21FB904E00BF1E6B /* SplitViewAnimator.swift in Sources */,
 				8CAD829D21BF0845008AE224 /* Task+CoreDataProperties.swift in Sources */,
 				8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */,
 				8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */,
 				8C3E647221E1168C00CCFE07 /* IconPickerViewController.swift in Sources */,
 				8C1C41C521C2C1660099AF6A /* CoreDataManager.swift in Sources */,
+				8C4C3F8F21FB92DD00BF1E6B /* CustomNavigationAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,12 +30,18 @@
  
  
  
- Widget - still working on it
- Custom animations 2-4 of them
+
+ 
+ Custom animations 2-4 of them -  For example, animations could be added when completing a task or for validating input when entering a new task.
+ 
  Testing/Debugging -easy
- Analytics to track tasks - - possibly completed 1/25/19
- Monetization - adds on app through google. - pretty easy - possibly completed 1/25/19
- Document and press kit. - easy
+ 
+
+ Document and press kit. - easy - half done, press kit is done.
+  testing and debugging techniques - test that edit and add buttons work, and that app doesn't take up too much performance power
+ 
+
+ 
  
 
  
@@ -54,7 +60,7 @@ import Flurry_iOS_SDK
 
 
 
-class MainGoalsViewController: UITableViewController {
+class MainGoalsViewController: UITableViewController, UINavigationControllerDelegate {
     
 //For TableViewDragger CocoaPod
     var dragger: TableViewDragger!
@@ -117,6 +123,9 @@ class MainGoalsViewController: UITableViewController {
         bannerView.adUnitID = "ca-app-pub-5462116334906512/1055770455"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
+        
+        navigationController?.delegate = self
+
 
         
     }
@@ -232,6 +241,13 @@ class MainGoalsViewController: UITableViewController {
     }
     
    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animate(withDuration: 0.25, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1,1,1)
+        })
+    }
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight
@@ -262,6 +278,7 @@ class MainGoalsViewController: UITableViewController {
             let _ = nav.topViewController as! NewGoalViewController
 //            goalVC.managedContext = managedContext
             
+            
         } else if segue.identifier == "EditGoal" {
             let nav = segue.destination as! UINavigationController
             let goalVC = nav.topViewController as! NewGoalViewController
@@ -291,8 +308,9 @@ class MainGoalsViewController: UITableViewController {
     
     
     
-    
-    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomNavigationAnimator()
+    }
     
     
     // MARK: - Custom Methods
@@ -396,3 +414,20 @@ extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerD
         return true
     }
 }
+
+
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension MainGoalsViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomPresentAnimator()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomDismissAnimator()
+    }
+}
+
+
+
