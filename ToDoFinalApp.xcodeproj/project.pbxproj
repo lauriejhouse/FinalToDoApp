@@ -15,6 +15,7 @@
 		8C3E647021E02E2700CCFE07 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E646F21E02E2700CCFE07 /* CloudKitManager.swift */; };
 		8C3E647221E1168C00CCFE07 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */; };
 		8C3E647421E1190400CCFE07 /* MainGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */; };
+		8C4C3F7721FB4D5A00BF1E6B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C3F7921FB4D5A00BF1E6B /* Localization.strings */; };
 		8C8773ED21ECD94900E6694E /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */; };
 		8CAD826421BEE99B008AE224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD826321BEE99B008AE224 /* AppDelegate.swift */; };
 		8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CAD826721BEE99B008AE224 /* Main.storyboard */; };
@@ -30,7 +31,6 @@
 		8CAD829F21BF0845008AE224 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD829B21BF0845008AE224 /* Goal+CoreDataProperties.swift */; };
 		8CAD82A521BFFC2E008AE224 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */; };
 		8CB8160D21DD3986005AB480 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CB8160C21DD3986005AB480 /* CloudKit.framework */; };
-		8CDAA47621F79ECE008F9557 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CDAA47421F79E57008F9557 /* Localizable.strings */; };
 		8CFDF75821F21C610001EA14 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDF75721F21C610001EA14 /* CoreDataStack.swift */; };
 		B6270F9B3E4215E46BC88BEE /* Pods_ToDoFinalAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8531E5802B3D0A49486740D3 /* Pods_ToDoFinalAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +80,8 @@
 		8C3E646F21E02E2700CCFE07 /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGoalsViewController.swift; sourceTree = "<group>"; };
+		8C4C3F7821FB4D5A00BF1E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		8C4C3F7A21FB4D5C00BF1E6B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localization.strings; sourceTree = "<group>"; };
 		8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		8CAD826021BEE99B008AE224 /* ToDoFinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAD826321BEE99B008AE224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,8 +107,6 @@
 		8CDAA46521F77E07008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		8CDAA46621F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		8CDAA46721F7874E008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		8CDAA47321F79E57008F9557 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		8CDAA47521F79E5C008F9557 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CFDF75721F21C610001EA14 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8CFDF78A21F2350E0001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CFDF7B921F398B00001EA14 /* Seam3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Seam3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,7 +164,6 @@
 		8CAD825721BEE99B008AE224 = {
 			isa = PBXGroup;
 			children = (
-				8CDAA47421F79E57008F9557 /* Localizable.strings */,
 				8CAD829821BF0845008AE224 /* Task+CoreDataClass.swift */,
 				8CAD829921BF0845008AE224 /* Task+CoreDataProperties.swift */,
 				8CAD829A21BF0845008AE224 /* Goal+CoreDataClass.swift */,
@@ -206,6 +205,7 @@
 				8CAD826F21BEE99C008AE224 /* LaunchScreen.storyboard */,
 				8CAD827221BEE99C008AE224 /* Info.plist */,
 				8CAD826A21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld */,
+				8C4C3F7921FB4D5A00BF1E6B /* Localization.strings */,
 			);
 			path = ToDoFinalApp;
 			sourceTree = "<group>";
@@ -365,6 +365,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 8CAD825721BEE99B008AE224;
 			productRefGroup = 8CAD826121BEE99B008AE224 /* Products */;
@@ -384,7 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAD827121BEE99C008AE224 /* LaunchScreen.storyboard in Resources */,
-				8CDAA47621F79ECE008F9557 /* Localizable.strings in Resources */,
+				8C4C3F7721FB4D5A00BF1E6B /* Localization.strings in Resources */,
 				8CAD826E21BEE99C008AE224 /* Assets.xcassets in Resources */,
 				8CAD826921BEE99B008AE224 /* Main.storyboard in Resources */,
 			);
@@ -539,6 +540,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8C4C3F7921FB4D5A00BF1E6B /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C4C3F7821FB4D5A00BF1E6B /* en */,
+				8C4C3F7A21FB4D5C00BF1E6B /* ja */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		8CAD826721BEE99B008AE224 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -557,16 +567,6 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
-		};
-		8CDAA47421F79E57008F9557 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8CDAA47321F79E57008F9557 /* ja */,
-				8CDAA47521F79E5C008F9557 /* en */,
-			);
-			name = Localizable.strings;
-			path = "/Users/jackie/Downloads/Backups/FinalToDoApp-WORKING-EFOREWIDGET-TestingSeam3";
-			sourceTree = "<absolute>";
 		};
 /* End PBXVariantGroup section */
 
