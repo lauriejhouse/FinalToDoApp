@@ -12,6 +12,9 @@ pod 'TableViewDragger'
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
 pod 'Google-Mobile-Ads-SDK'
+pod 'GoogleAnalytics'
+pod 'Flurry-iOS-SDK/FlurrySDK'
+pod 'Flurry-iOS-SDK/FlurryAds'
 
 
 

@@ -9,6 +9,7 @@
 import UIKit
 import Seam3
 import CoreData
+import Flurry_iOS_SDK
 
 
 //Can have an alert style pop up to save the tasks. Because there is an add button that takes users to a new view controller to add a new task already.
@@ -207,6 +208,8 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
         
         let alertController = UIAlertController(title: "Add Task", message: nil , preferredStyle: .alert)
         
+        let parameters = ["Task" : link]
+        Flurry.logEvent("Add-Task", withParameters: parameters)
         alertController.addTextField { textField in
             textField.placeholder = "Enter Name"
         }
@@ -215,10 +218,15 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
             let field = alertController.textFields![0] as UITextField
             guard let name = field.text else { return }
             
+            let parameters = ["Task" : self.tasks]
+            Flurry.logEvent("Save-Task", withParameters: parameters)
+            
             guard let _ = CoreDataManager.shared.addTask(to: goal, with: name) else { return }
             guard let taskSet = goal.tasks, let tasks = Array(taskSet) as? [Task] else { return }
             self.tasks = tasks
             self.tableView.reloadData()
+            
+            
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action in })

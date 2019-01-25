@@ -30,11 +30,11 @@
  
  
  
- 
+ Widget - still working on it
  Custom animations 2-4 of them
  Testing/Debugging -easy
- Analytics to track tasks
- Monetization - adds on app through google. - pretty easy
+ Analytics to track tasks - - possibly completed 1/25/19
+ Monetization - adds on app through google. - pretty easy - possibly completed 1/25/19
  Document and press kit. - easy
  
 
@@ -49,6 +49,8 @@ import CoreData
 import TableViewDragger
 import CloudKit
 import GoogleMobileAds
+import Flurry_iOS_SDK
+
 
 
 
@@ -111,7 +113,7 @@ class MainGoalsViewController: UITableViewController {
         //example ad
 //        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         
-        //my ad
+        //my ad using toDoFinalApp
         bannerView.adUnitID = "ca-app-pub-5462116334906512/1055770455"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
@@ -125,6 +127,14 @@ class MainGoalsViewController: UITableViewController {
         //what comes out of the right side is put into the left.
         //shared instance. any class changes properties those propties will be reflected eveyrwhere if you have one instance.
         tableView.reloadData()
+        
+        
+        //trying ot add analytics
+//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
+//        tracker.set(kGAIScreenName, value: name)
+//        
+//        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
+//        tracker.send(builder.build() as [NSObject : AnyObject])
 
     }
     
@@ -150,7 +160,10 @@ class MainGoalsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let goalItems = goalItems {
+            let parameters = ["Goal" : goalItems]
+            Flurry.logEvent("Goal-Count", withParameters: parameters)
             return goalItems.count
+            
         }
         return 1
     }

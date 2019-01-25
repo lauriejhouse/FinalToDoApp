@@ -22,7 +22,11 @@ PODS:
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
+  - Flurry-iOS-SDK/FlurryAds (9.3.0):
+    - Flurry-iOS-SDK/FlurrySDK
+  - Flurry-iOS-SDK/FlurrySDK (9.3.0)
   - Google-Mobile-Ads-SDK (7.38.0)
+  - GoogleAnalytics (3.17.0)
   - GoogleAppMeasurement (5.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -58,7 +62,10 @@ PODS:
 DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Core
+  - Flurry-iOS-SDK/FlurryAds
+  - Flurry-iOS-SDK/FlurrySDK
   - Google-Mobile-Ads-SDK
+  - GoogleAnalytics
   - Seam3
   - TableViewDragger
 
@@ -68,7 +75,9 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseInstanceID
+    - Flurry-iOS-SDK
     - Google-Mobile-Ads-SDK
+    - GoogleAnalytics
     - GoogleAppMeasurement
     - GoogleUtilities
     - nanopb
@@ -80,13 +89,15 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: d35d47c03c50c73c14a7fd31463c5775843e78a9
   FirebaseCore: ea2d1816723ef21492b8e9113303e1350db5e08c
   FirebaseInstanceID: 97ea7a5dca9afd72c79bfcdddb7a44aa1cbb42a1
+  Flurry-iOS-SDK: 43afe11656872692de232f580ef0a8a68b0b47c9
   Google-Mobile-Ads-SDK: fec4a72b71a81302d3fd75454df3417c03c50ed5
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Seam3: 430bc9ed2ac61232d4095c40fa28682a3168be9c
   TableViewDragger: 5933729a18d1606e16388d72f6d4fe5f3a0bcaf4
 
-PODFILE CHECKSUM: 3ed2f403e103fffa0dee1fa619227aef9f1df017
+PODFILE CHECKSUM: 1ec6112529cbf8e2adf86b678bdd3145e6ce098a
 
 COCOAPODS: 1.5.3
