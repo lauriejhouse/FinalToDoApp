@@ -35,6 +35,7 @@
  Custom animations 2-4 of them -  For example, animations could be added when completing a task or for validating input when entering a new task.
  
  Testing/Debugging -easy
+ -test that animations work?
  
 
  Document and press kit. - easy - half done, press kit is done.
@@ -192,7 +193,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     }
     
     
-    
+  
     
     
     // MARK: - Table View Delegate

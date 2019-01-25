@@ -18,6 +18,35 @@ class GoalTableViewCell: UITableViewCell {
     //Instead of using default on line 28, use this one. to populate the image.
     //use self.iconImage. insted of self.imageView. Will remove using default and will use custom property on line 18.
     
+//    @IBAction func buttonTouched(_ sender: UIButton) {
+//        UIButton.animate(withDuration: 0.2,
+//                         animations: {
+//                            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
+//        },
+//                         completion: { finish in
+//                            UIButton.animate(withDuration: 0.2, animations: {
+//                                sender.transform = CGAffineTransform.identity
+//                            })
+//        })
+//    }
+    
+    
+    
+    @IBAction func animateButton(sender: UIButton) {
+        
+        sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: CGFloat(0.20),
+                       initialSpringVelocity: CGFloat(6.0),
+                       options: UIView.AnimationOptions.allowUserInteraction,
+                       animations: {
+                        sender.transform = CGAffineTransform.identity
+        },
+                       completion: { Void in()  }
+        )
+    }
     
     func configure (incomingGoal: Goal) {
         goalLabel.text = incomingGoal.goalName

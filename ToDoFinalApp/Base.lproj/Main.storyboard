@@ -241,6 +241,7 @@
                                             <rect key="frame" x="13" y="22.5" width="30" height="28.5"/>
                                             <state key="normal" title="Edit"/>
                                             <connections>
+                                                <action selector="animateButtonWithSender:" destination="g4f-ME-MCM" eventType="touchUpInside" id="9iR-Yo-2Vm"/>
                                                 <segue destination="6BH-Dz-abL" kind="presentation" identifier="EditGoal" id="eJT-vf-Zxj"/>
                                             </connections>
                                         </button>
