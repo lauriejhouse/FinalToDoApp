@@ -14,6 +14,23 @@
 
  Today Widget - Most difficult
     -Can use EventKit for reminders.
+ let myAppUrl = NSURL(string: "myapp://some-context")!
+ extensionContext?.openURL(myAppUrl, completionHandler: { (success) in
+ if (!success) {
+ // let the user know it failed
+ }
+ })
+ This is from example app, it's supposed to open the main app. The code above does the same thing, but is an older way of doing it.
+ @IBAction func openAppButtonTapped(_ sender: UIButton) {
+ let url: URL? = URL(string: "Todododo:")!
+ if let appurl = url {
+ self.extensionContext!.open(appurl, completionHandler: nil)
+ }
+ }
+ 
+ 
+ 
+ 
  Custom animations 2-4 of them
  Testing/Debugging -easy
  Analytics to track tasks
@@ -31,6 +48,7 @@ import Foundation
 import CoreData
 import TableViewDragger
 import CloudKit
+
 
 
 

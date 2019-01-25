@@ -9,16 +9,10 @@ target 'ToDoFinalApp' do
 #pod TableViewDragger
 pod 'Seam3'
 pod 'TableViewDragger'
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
 
-    target 'TodayWidget' do
-        pod 'Seam3'
-    # Pods for testing
-    end
-    
-    target 'SeconWidget' do
-        pod 'Seam3'
-        # Pods for testing
-    end
+
 
 
   target 'ToDoFinalAppTests' do
