@@ -169,6 +169,17 @@
 			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
+		8C2FDFF121FCBA3900CCDF23 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				8C4C3F8821FB8C2D00BF1E6B /* CustomDismissAnimator.swift */,
+				8C4C3F8E21FB92DD00BF1E6B /* CustomNavigationAnimator.swift */,
+				8C4C3F8621FB8A2900BF1E6B /* CustomPresentAnimator.swift */,
+				8C4C3F8A21FB904E00BF1E6B /* SplitViewAnimator.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		8CAD825721BEE99B008AE224 = {
 			isa = PBXGroup;
 			children = (
@@ -204,10 +215,7 @@
 				8CAD826721BEE99B008AE224 /* Main.storyboard */,
 				8CAD829621BF0487008AE224 /* TaskViewController.swift */,
 				8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */,
-				8C4C3F8821FB8C2D00BF1E6B /* CustomDismissAnimator.swift */,
-				8C4C3F8E21FB92DD00BF1E6B /* CustomNavigationAnimator.swift */,
-				8C4C3F8621FB8A2900BF1E6B /* CustomPresentAnimator.swift */,
-				8C4C3F8A21FB904E00BF1E6B /* SplitViewAnimator.swift */,
+				8C2FDFF121FCBA3900CCDF23 /* Animations */,
 				8CAD82A421BFFC2E008AE224 /* GoalTableViewCell.swift */,
 				8C31031921E658C90013733C /* TaskTableViewCell.swift */,
 				8C8773EC21ECD94800E6694E /* NewTaskViewController.swift */,
