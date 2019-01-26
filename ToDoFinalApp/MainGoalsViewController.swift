@@ -290,7 +290,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         } else if segue.identifier == "ShowGoal" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let nav = segue.destination as! UINavigationController
-                let vc = nav.topViewController as! TaskViewController
+                let vc = nav.topViewController as! TaskListViewController
                 if let goalItems = goalItems {
                     if !goalItems.isEmpty {
                         let item = goalItems[indexPath.row]

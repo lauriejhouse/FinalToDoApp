@@ -1,20 +1,27 @@
 //
-//  GoalDetailViewController.swift
-//  CoreDataSyncExample
+//  TaskDetailViewController.swift
+//  FinalProjectDone
 //
-//  Created by Frankie Cleary on 12/4/18.
-//  Copyright © 2018 FbombMedia. All rights reserved.
+//  Created by Jackie Norstrom on 9/21/18.
+//  Copyright © 2018 Jackie Norstrom. All rights reserved.
 //
 
 import UIKit
+import CoreData
+
+protocol TaskDetailViewControllerDelegate: class {
+    func taskDetailViewControllerDidCancel(_ controller: TaskDetailViewController)
+    func taskDetailViewController(_ controller: TaskDetailViewController, didFinishAdding task: Task)
+}
 
 class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var nameField: UILabel!
+    // MARK: - Properties
     
-
+    var managedContext: NSManagedObjectContext!
+    
     var selectedGoal: Goal?
-    
+    var selectedTask: Task?
     lazy var tasks: [Task] = {
         if let tasks = selectedGoal?.tasks as? Set<Task> {
             return Array(tasks)
@@ -22,48 +29,90 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
             return []
         }
     }()
-
+    
+    weak var delegate: TaskDetailViewControllerDelegate?
+    @IBOutlet weak var taskNameField: UITextField!
+    @IBOutlet weak var completionSwitch: UISwitch!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+                let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveTask))
+                self.navigationItem.rightBarButtonItem = rightBarButton
+ */
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        completionSwitch.isOn = selectedTask?.completed ?? false
+        taskNameField.text = selectedTask?.taskName
         
-        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
-        self.navigationItem.rightBarButtonItem = rightBarButton
-        //Add the name of the goal that has a task?
-//        self.nameField.text = self.selectedGoal?.goalName
+        if let date = selectedTask?.dueDate as Date? {
+            datePicker.date = date
+        }
+       
+//        textField.becomeFirstResponder()
     }
     
-    // MARK: - Table view data source
+
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+    
+    // MARK: - Action Methods
+    
+    @IBAction func didCompleteTask(_ sender: UISwitch) {
+        selectedTask?.completed = sender.isOn
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+    @IBAction func cancel(_ sender: Any) {
+        delegate?.taskDetailViewControllerDidCancel(self)
+//        print("Registered")
+        //self.dismiss(animated: true, completion: nil)
+
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath)
-        cell.textLabel?.text = tasks[indexPath.row].taskName
-        return cell
-    }
-    
-    // MARK: - UITextFieldDelegate
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        if let name = textField.text {
-            self.selectedGoal?.goalName = name
-            let _ = CoreDataManager.shared.save()
+    //Need to use coredata manager here. possibly coredata.shared.save
+    //Going to try and use CoreData Exaple.
+    @IBAction func done(_ sender: Any) {
+        /*
+        let task = NSEntityDescription.insertNewObject(forEntityName: "Task", into: managedContext) as! Task
+        task.taskName = textField.text!
+        task.isChecked = false
+ */
+        if let goal = selectedGoal,
+            let name = taskNameField.text {
+            
+            let dueDate = datePicker.date as NSDate
+            
+            if let task = selectedTask {
+                task.completed = completionSwitch.isOn
+                task.taskName = name
+                task.dueDate = dueDate
+                let _ = CoreDataManager.shared.save()
+                delegate?.taskDetailViewController(self, didFinishAdding: task)
+            } else if let task = CoreDataManager.shared.addTask(to: goal, with: name, dueDate: dueDate) {
+                delegate?.taskDetailViewController(self, didFinishAdding: task)
+            }
         }
         
-        return true
+        
+        print("done")
+
     }
     
-    // MARK: - Alerts
     
-    @objc func addTask() {
+    
+    
+    
+    
+    // MARK: - Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    /*
+    @objc func saveTask() {
         
         guard let goal = self.selectedGoal else { return }
         
@@ -82,7 +131,6 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
             self.tasks = tasks
             self.tableView.reloadData()
         })
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action in })
         
         alertController.addAction(saveAction)
@@ -90,34 +138,10 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
         
         self.present(alertController, animated: true, completion: nil)
     }
+ */
     
-    @objc func editTask(task: Task) {
-        
-        guard let goal = self.selectedGoal else { return }
-
-        let alertController = UIAlertController(title: "Edit Task", message: nil , preferredStyle: .alert)
-        
-        alertController.addTextField { textField in
-            textField.text = task.taskName
-        }
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert in
-            let field = alertController.textFields![0] as UITextField
-            guard let name = field.text else { return }
-            task.taskName = name
-            
-            let _ = CoreDataManager.shared.save()
-            
-            guard let taskSet = goal.tasks, let tasks = Array(taskSet) as? [Task] else { return }
-            self.tasks = tasks
-            self.tableView.reloadData()
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action in })
-        
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
+    
+    
+    
+    
 }

@@ -50,6 +50,17 @@ class GoalTableViewCell: UITableViewCell {
     
     func configure (incomingGoal: Goal) {
         goalLabel.text = incomingGoal.goalName
+        
+        if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
+            
+            let allTasksCount = tasks.count
+            let completedTasksCount = tasks.filter({ $0.completed }).count
+            //use these two counts to do your label logic
+        }
+        
+      
+        
+        
 //        taskCountLabel.text = "\(goal.tasks?.count ?? 0)"
         //or
 //        taskCountLabel.text = String(describing: goal.tasks?.count ?? 0)

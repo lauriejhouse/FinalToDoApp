@@ -52,11 +52,14 @@ struct CoreDataManager {
         }
     }
     
-    func addTask(to goal: Goal, with name: String) -> Task? {
+    func addTask(to goal: Goal, with name: String, dueDate: NSDate) -> Task? {
         
         let entity = NSEntityDescription.entity(forEntityName: "Task", in: managedContext)!
         let task = NSManagedObject(entity: entity, insertInto: managedContext) as! Task
-        task.setValue(name, forKeyPath: "taskName")
+       
+        task.taskName = name
+        task.isChecked = false
+        task.dueDate = dueDate
         
         goal.addToTasks(task)
         
@@ -95,7 +98,10 @@ struct CoreDataManager {
         //Time interval NSDate, date by adding time interval. Add in seconds.
         //Group predicate, add both and assign it to fetch predicate.
         let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-        tasksFetch.predicate = NSPredicate (format: "dueDate < %@", NSDate())
+        let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
+        let afterYesterday = NSPredicate (format: "dueDate > %@", NSDate(timeInterval: -60 * 60 * 24, since: Date()))
+        let combinedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [beforeTomorrow, afterYesterday])
+        tasksFetch.predicate = combinedPredicate
 //        tasksFetch.predicate = NSPredicate
         do {
             let goals = try managedContext.fetch(tasksFetch) as! [Task]
