@@ -7,6 +7,32 @@
 //
 
 import XCTest
+import os.log
+
+
+//struct TabBarTitle {
+//    static let Location = "Location"
+//    static let Time = "Time"
+//    static let Archived = "Archived"
+//}
+//
+//struct Alert {
+//    struct Title {
+//        static let iTunesSignIn = "Sign In to iTunes Store"
+//        static let chooseLocation = "Choose Location"
+//        static let tenLocationsFound = "10 locations found"
+//        static let pleaseUpgrade = "Please Upgrade"
+//    }
+//    struct Button {
+//        static let OK = "OK"
+//        static let Later = "Later"
+//        static let Upgrade = "Upgrade"
+//        static let Dismiss = "Dismiss"
+//        static let Cancel = "Cancel"
+//
+//    }
+//}
+
 
 class ToDoFinalAppUITests: XCTestCase {
 
