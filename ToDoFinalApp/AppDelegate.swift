@@ -55,7 +55,7 @@ var smStore: SMStore!
         self.smStore = persistentContainer.persistentStoreCoordinator.persistentStores.first as? SMStore
         
         CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
-        CoreDataManager.shared.smStore = self.smStore
+        //CoreDataManager.shared.smStore = self.smStore
         CloudKitManager.shared.smStore = self.smStore
         
         application.registerForRemoteNotifications()
@@ -129,7 +129,7 @@ var smStore: SMStore!
         
     //Need both of these for app groups to work correctly with core data and have everything display on the simulator. It's all showing up in CloudKit, but not simulator..
         
-         let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.las.ToDoFinalApp.SecondWidget")
+         let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.ToDoFinalApp.TodayWidget")
         
         
          if let applicationDocumentsDirectory = directory {

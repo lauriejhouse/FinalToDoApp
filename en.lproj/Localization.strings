@@ -1,0 +1,17 @@
+/* 
+  Localization.strings
+  
+
+  Created by Jackie Norstrom on 1/24/19.
+  
+*/
+
+
+
+"Delete Goal?" = "Delete Goal?";
+"This will remove your goal and tasks." = "This will remove your goal and tasks.";
+"Cancel" = "Cancel";
+"Your Tasks Will Appear Here" = "Your Tasks Will Appear Here";
+"Select Goal To Add New Tasks" = "Select Goal To Add New Tasks";
+"to complete" = "to complete";
+"All Tasks Completed" = "All Tasks Completed";

@@ -46,8 +46,9 @@ class TaskViewController: UITableViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
-        self.navigationItem.rightBarButtonItem = rightBarButton
+//        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
+//        self.navigationItem.rightBarButtonItem = rightBarButton
+        
         //Add the name of the goal that has a task?
 //                self.selectedGoal.text = self.selectedGoal?.goalName
         

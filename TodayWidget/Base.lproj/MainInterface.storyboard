@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="TodayWidget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yyb-EX-I05">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WidgetTableViewCell" id="wXv-wB-MeS">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wXv-wB-MeS" id="AGv-Lm-5tN">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Yyb-EX-I05" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="GDy-y8-AX8"/>
+                            <constraint firstItem="Yyb-EX-I05" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="Hxn-hR-Z9n"/>
+                            <constraint firstItem="Yyb-EX-I05" firstAttribute="bottom" secondItem="ssy-KU-ocm" secondAttribute="bottom" id="K1x-gv-nIp"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Yyb-EX-I05" secondAttribute="bottom" id="Rdk-3I-vqc"/>
+                            <constraint firstItem="Yyb-EX-I05" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" id="WpP-XG-OAn"/>
+                            <constraint firstItem="Yyb-EX-I05" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="Zam-cg-egd"/>
+                            <constraint firstItem="Yyb-EX-I05" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" id="rXO-sN-wcY"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="Yyb-EX-I05" secondAttribute="trailing" id="uk7-Wp-tQZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="250"/>
+                    <connections>
+                        <outlet property="tableView" destination="Yyb-EX-I05" id="iDd-Mt-7Qa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="94.452773613193415"/>
+        </scene>
+    </scenes>
+</document>

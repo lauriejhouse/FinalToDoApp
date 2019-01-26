@@ -17,6 +17,7 @@ pod 'Flurry-iOS-SDK/FlurrySDK'
 pod 'Flurry-iOS-SDK/FlurryAds'
 
 
+       
 
 
 
@@ -24,6 +25,9 @@ pod 'Flurry-iOS-SDK/FlurryAds'
     inherit! :search_paths
     # Pods for testing
   end
+
+  
+  
 
   target 'ToDoFinalAppUITests' do
     inherit! :search_paths
@@ -33,3 +37,8 @@ pod 'Flurry-iOS-SDK/FlurryAds'
  
 
 end
+
+
+
+
+

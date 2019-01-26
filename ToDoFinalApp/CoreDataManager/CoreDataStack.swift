@@ -11,11 +11,8 @@ import CoreData
 import Seam3
 
 public class CoreDataStack {
-    
-    
-    private static var sharedInstance: CoreDataStack!
 
-    
+    private static var sharedInstance: CoreDataStack!
     
     lazy var persistentContainer: NSPersistentContainer = {
         
@@ -28,7 +25,7 @@ public class CoreDataStack {
         
         //Need both of these for app groups to work correctly with core data and have everything display on the simulator. It's all showing up in CloudKit, but not simulator..
         
-                 let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.FinalAppToDo")
+                 let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.FinalAppToDo2")
         
         
                  if let applicationDocumentsDirectory = directory {
