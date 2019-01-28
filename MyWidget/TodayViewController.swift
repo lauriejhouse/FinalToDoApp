@@ -23,6 +23,15 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         tableView.reloadData()
     }
     
+    @IBAction func openAppButtonTapped(_ sender: UIButton) {
+        let url: URL? = URL(string: "ToDoFinalApp:")!
+        if let appurl = url {
+            self.extensionContext!.open(appurl, completionHandler: nil)
+        }
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todayTasks.count
     }
@@ -47,7 +56,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .expanded {
-            preferredContentSize = CGSize(width: 0, height: 280)
+            preferredContentSize = CGSize(width: 0, height: 400)
         } else {
             preferredContentSize = maxSize
         }

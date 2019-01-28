@@ -12,14 +12,14 @@ import CoreData
 //Put a segue to go to the taskVC?
 class TodayTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var taskDetailLabel: UILabel!
     
     @IBOutlet weak var taskButton: UIButton!//set up button to go to taskVC of correct task.
     var completed: Bool!
     
     var task: Task! {
         didSet {
-            title.text = task.taskName
+            taskDetailLabel.text = task.taskName
             completed = task.completed
             taskButton.isEnabled = true
         }
