@@ -18,7 +18,7 @@ public class Task: NSManagedObject {
 //    }
 
     func toggleChecked() {
-        enabled = !enabled
+        completed = !completed
     }
 
 }

@@ -12,10 +12,8 @@ import CoreData
 import Flurry_iOS_SDK
 
 
-//Can have an alert style pop up to save the tasks. Because there is an add button that takes users to a new view controller to add a new task already.
-//May not even need the new task VC. Beacuse of using the alert style from the example app. Blah blah
 
-//1/21/2019 - The check boxex work, I just have to get it to update the text when a task is done.
+
 
 class TaskListViewController: UITableViewController, UITextViewDelegate {
     
@@ -208,73 +206,8 @@ class TaskListViewController: UITableViewController, UITextViewDelegate {
     }
     
     // MARK: - Alerts
-    /*
-    @objc func addTask() {
-        
-        guard let goal = self.selectedGoal else { return }
-        
-        let alertController = UIAlertController(title: "Add Task", message: nil , preferredStyle: .alert)
-        
-        let parameters = ["Task" : link]
-        Flurry.logEvent("Add-Task", withParameters: parameters)
-        alertController.addTextField { textField in
-            textField.placeholder = "Enter Name"
-        }
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert in
-            let field = alertController.textFields![0] as UITextField
-            guard let name = field.text else { return }
-            
-            let parameters = ["Task" : self.tasks]
-            Flurry.logEvent("Save-Task", withParameters: parameters)
-            
-            guard let _ = CoreDataManager.shared.addTask(to: goal, with: name) else { return }
-            guard let taskSet = goal.tasks, let tasks = Array(taskSet) as? [Task] else { return }
-            self.tasks = tasks
-            self.tableView.reloadData()
-            
-            
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action in })
-        
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
- */
-    /*
-    @objc func editTask(task: Task) {
-        
-        guard let goal = self.selectedGoal else { return }
-        
-        let alertController = UIAlertController(title: "Edit Task", message: nil , preferredStyle: .alert)
-        
-        alertController.addTextField { textField in
-            textField.text = task.taskName
-        }
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert in
-            let field = alertController.textFields![0] as UITextField
-            guard let name = field.text else { return }
-            task.taskName = name
-            
-            let _ = CoreDataManager.shared.save()
-            
-            guard let taskSet = goal.tasks, let tasks = Array(taskSet) as? [Task] else { return }
-            self.tasks = tasks
-            self.tableView.reloadData()
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action in })
-        
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    */
+    
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

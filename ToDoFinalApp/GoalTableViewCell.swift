@@ -15,6 +15,8 @@ class GoalTableViewCell: UITableViewCell {
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var taskCountLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
+    var checkedItems: Int?
+
     //Instead of using default on line 28, use this one. to populate the image.
     //use self.iconImage. insted of self.imageView. Will remove using default and will use custom property on line 18.
     
@@ -51,24 +53,39 @@ class GoalTableViewCell: UITableViewCell {
     func configure (incomingGoal: Goal) {
         goalLabel.text = incomingGoal.goalName
         
-        if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
-            
-            let allTasksCount = tasks.count
-            let completedTasksCount = tasks.filter({ $0.completed }).count
-            //use these two counts to do your label logic
-        }
+        //gotta finish this to get task count upated.
+//        if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
+//
+//            let allTasksCount = tasks.count
+//            let completedTasksCount = tasks.filter({ $0.completed }).count
+//            //use these two counts to do your label logic
+//        }
         
       
         
+        //old way to do it.
+//        taskCountLabel.text = "\(incomingGoal.tasks?.count ?? 0)"
+        guard let tasksCount = incomingGoal.tasks?.count else { return }
+//Need to change checked items to the switch.
+        if let checkedItems = checkedItems {
+            if tasksCount == 0 {
+                taskCountLabel.text = "Select Goal To Add New Tasks!"
+            } else if checkedItems == 0 {
+                taskCountLabel.text = "Get Started! \(tasksCount) To Go!"
+            } else if checkedItems == tasksCount {
+                taskCountLabel.text = "All Tasks Completed!"
+            } else {
+                taskCountLabel.text = "\(checkedItems) of \(tasksCount) Completed"
+            }
+        }
         
-//        taskCountLabel.text = "\(goal.tasks?.count ?? 0)"
-        //or
+        
+        
 //        taskCountLabel.text = String(describing: goal.tasks?.count ?? 0)
         
 //        self.imageView?.image = UIImage(named: incomingGoal.iconName ?? "No Icon") //using the iboutlet instead of this.
         self.iconImage.image = UIImage(named: incomingGoal.iconName ?? "No Icon" )
         
-//            goalLabel.text =  "\(formattedUnitsSold()) \(NSLocalizedString("units", comment: ""))"
         
     }
     

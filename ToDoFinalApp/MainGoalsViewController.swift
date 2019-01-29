@@ -341,7 +341,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         cell.configure(incomingGoal: goal)
         
     }
-    //COmment.
+    
     
     //Do I need these here if everything is being managed in CoreDataManager?
     func save() {
