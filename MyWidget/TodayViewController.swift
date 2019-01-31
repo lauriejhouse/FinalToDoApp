@@ -23,12 +23,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         tableView.reloadData()
     }
     
-    @IBAction func openAppButtonTapped(_ sender: UIButton) {
-        let url: URL? = URL(string: "ToDoFinalApp:")!
-        if let appurl = url {
-            self.extensionContext!.open(appurl, completionHandler: nil)
-        }
-    }
+//    @IBAction func openAppButtonTapped(_ sender: UIButton) {
+//        let url: URL? = URL(string: "ToDoFinalApp:")!
+//        if let appurl = url {
+//            self.extensionContext!.open(appurl, completionHandler: nil)
+//        }
+//    }
     
     
     

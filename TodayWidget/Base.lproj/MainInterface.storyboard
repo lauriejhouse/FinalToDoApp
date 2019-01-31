@@ -28,31 +28,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wXv-wB-MeS" id="AGv-Lm-5tN">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-kg-NEf">
-                                                    <rect key="frame" x="259" y="6" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="openAppButton:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="6Ow-At-mbD"/>
-                                                        <action selector="openAppButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="82w-t7-nk6"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FES-GE-0U0">
-                                                    <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="taskButton" destination="FUw-kg-NEf" id="dNC-Bc-b21"/>
-                                            <outlet property="taskDetailLabel" destination="FES-GE-0U0" id="All-bk-Adq"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="XE3-pH-h4a"/>
+                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="cY1-ou-81Y"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <constraints>
