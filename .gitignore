@@ -2,3 +2,5 @@
 ToDoFinalApp/\.DS_Store
 
 ToDoFinalApp\.xcworkspace/xcuserdata/Jackie\.xcuserdatad/UserInterfaceState\.xcuserstate
+
+*.xcbkptlist
