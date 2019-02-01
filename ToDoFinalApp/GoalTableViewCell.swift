@@ -48,15 +48,16 @@ class GoalTableViewCell: UITableViewCell {
         )
     }
     
-    func configure (incomingGoal: Goal) {
+    // This one is also linked ot MainGoalsVC. Do I need both?
+    func configureIncomingGoal (incomingGoal: Goal) {
         goalLabel.text = incomingGoal.goalName
         
-        if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
-            
-            let allTasksCount = tasks.count
-            let completedTasksCount = tasks.filter({ $0.completed }).count
-            //use these two counts to do your label logic
-        }
+//        if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
+//
+//            let allTasksCount = tasks.count
+//            let completedTasksCount = tasks.filter({ $0.completed }).count
+//            //use these two counts to do your label logic
+//        }
         
       
         

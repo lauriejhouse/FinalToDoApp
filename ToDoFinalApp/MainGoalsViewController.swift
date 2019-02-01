@@ -315,10 +315,13 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     
     
     // MARK: - Custom Methods
-    //Way to do this without using tags. Tags were before storyboads.
+
+    //This changes the MainGoal Cell.
     func configure(_ cell: GoalTableViewCell, with goal: Goal) {
 //        let icon = cell.viewWithTag(10) as? UIImageView
+        //maybe this is why its not updating correctly  
         let tasksDoneLabel = cell.taskCountLabel
+        
         guard let tasksCount = goal.tasks?.count else { return }
         //call tasksdonelabel from the goal view cell
         
@@ -327,18 +330,18 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         
         if let checkedItems = checkedItems {
             if tasksCount == 0 {
-                tasksDoneLabel?.text = NSLocalizedString("Select Goal To Add New Tasks", comment: "")
+                tasksDoneLabel?.text = NSLocalizedString("Select Goal To Add New Tasks, Lazy Bum.", comment: "")
             } else if checkedItems == 0 {
                 tasksDoneLabel?.text = "\(tasksCount) \(NSLocalizedString("to complete", comment:""))"
             } else if checkedItems == tasksCount {
-                tasksDoneLabel?.text = NSLocalizedString("All Tasks Completed", comment: "")
+                tasksDoneLabel?.text = NSLocalizedString("All Tasks Completed! You Did It", comment: "")
             } else {
                 tasksDoneLabel?.text = "\(checkedItems) \(NSLocalizedString("of", comment:"")) \(tasksCount) \(NSLocalizedString("completed", comment:""))"
 
             }
         }
         
-        cell.configure(incomingGoal: goal)
+        cell.configureIncomingGoal(incomingGoal: goal)
         
     }
     //COmment.

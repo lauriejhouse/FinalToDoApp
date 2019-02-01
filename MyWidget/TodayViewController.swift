@@ -47,7 +47,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .expanded {
-            preferredContentSize = CGSize(width: 0, height: 280)
+            preferredContentSize = CGSize(width: 0, height: 300)
         } else {
             preferredContentSize = maxSize
         }
@@ -55,13 +55,13 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     
 
-    @IBAction func openAppButton(_ sender: UIButton) {
-        let url: URL? = URL(string: "ToDoFinalApp:")!
-        if let appurl = url {
-            self.extensionContext!.open(appurl, completionHandler: nil)
-        }
-
-    }
+//    @IBAction func openAppButton(_ sender: UIButton) {
+//        let url: URL? = URL(string: "ToDoFinalApp:")!
+//        if let appurl = url {
+//            self.extensionContext!.open(appurl, completionHandler: nil)
+//        }
+//
+//    }
     
     //From example app for today due dates
 //    private func predicateForToday() -> NSPredicate {
