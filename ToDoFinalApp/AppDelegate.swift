@@ -15,7 +15,6 @@ import Flurry_iOS_SDK
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
-//    lazy var coreDataStack = CoreDataStack.shared(modelName: ModelName.ToDoFinalApp)
 
 
     var window: UIWindow?

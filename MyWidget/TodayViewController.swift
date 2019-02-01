@@ -28,10 +28,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WidgetTableViewCell", for: indexPath) as! TodayTableViewCell
-//        cell.textLabel?.text = todayTasks[indexPath.row].taskName
-        let task = todayTasks[indexPath.row]
-        cell.task = task
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WidgetTableViewCell", for: indexPath) //as! TodayWidgetTableViewCell
+        cell.textLabel?.text = todayTasks[indexPath.row].taskName
         return cell
     }
         
@@ -44,37 +42,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         
         completionHandler(NCUpdateResult.newData)
     }
-    
-    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        if activeDisplayMode == .expanded {
-            preferredContentSize = CGSize(width: 0, height: 300)
-        } else {
-            preferredContentSize = maxSize
-        }
-    }
-    
-    
-
-//    @IBAction func openAppButton(_ sender: UIButton) {
-//        let url: URL? = URL(string: "ToDoFinalApp:")!
-//        if let appurl = url {
-//            self.extensionContext!.open(appurl, completionHandler: nil)
-//        }
-//
-//    }
-    
-    //From example app for today due dates
-//    private func predicateForToday() -> NSPredicate {
-//        let now = Date()
-//        let startOfDay = now.startOfDay as NSDate
-//        let endOfDay = now.endOfDay as NSDate
-//        return NSPredicate(format: "dueDate >= %@ AND dueDate <= %@ ", startOfDay, endOfDay)
-//    }
-//
-//    private func predicateNotCompleted() -> NSPredicate {
-//        return NSPredicate(format: "%K == NO", #keyPath(Task.completed))
-//    }
-  
     
     lazy var persistentContainer: NSPersistentContainer = {
         
@@ -100,11 +67,5 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         
         fatalError("Unable to access documents directory")
     }()
-    
-    
 }
-
-
-
-
 
