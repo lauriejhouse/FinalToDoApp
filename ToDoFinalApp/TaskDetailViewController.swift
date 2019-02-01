@@ -72,19 +72,25 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
         
         fetchCheckedItems(with: selectedGoal!)
 
-        if let checkedItems = checkedItems {
-            if tasksCount == 0 {
-                taskNameField.text = "Select Goal To Add New Tasks!"
-            } else if checkedItems == 0 {
-                taskNameField.text = "Get Started! \(tasksCount) To Go!"
-            } else if checkedItems == tasksCount {
-                taskNameField.text = "All Tasks Completed!"
-            } else {
-                taskNameField.text = "\(checkedItems) of \(tasksCount) Completed"
-            }
-        }
+        
+        //this doesn't change the goal cell text.
+        
+        
+//        if let checkedItems = checkedItems {
+//            if tasksCount == 0 {
+//                taskNameField.text = "Select Goal!"
+//            } else if checkedItems == 0 {
+//                taskNameField.text = "Get Started! \(tasksCount) To Go!"
+//            } else if checkedItems == tasksCount {
+//                taskNameField.text = "All Tasks Completed!"
+//            } else {
+//                taskNameField.text = "\(checkedItems) of \(tasksCount) Completed"
+//            }
+//        }
+        
     }
     
+    //Says managed context is nil when its not.
     func fetchCheckedItems(with goal: Goal) {
         let request = NSFetchRequest<Task>(entityName: "Task")
         request.predicate = NSPredicate(format: "goal == %@ AND enabled == %@ ", goal, NSNumber(booleanLiteral: true))
@@ -107,8 +113,7 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
 
     }
     
-    //Need to use coredata manager here. possibly coredata.shared.save
-    //Going to try and use CoreData Exaple.
+   
     @IBAction func done(_ sender: Any) {
         /*
         let task = NSEntityDescription.insertNewObject(forEntityName: "Task", into: managedContext) as! Task

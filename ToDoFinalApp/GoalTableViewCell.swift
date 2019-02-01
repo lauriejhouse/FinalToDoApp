@@ -6,6 +6,7 @@
 //  Copyright © 2018 LAS. All rights reserved.
 //
 
+//Due date stuff is in coreData Manager
 
 
 import UIKit
@@ -17,20 +18,7 @@ class GoalTableViewCell: UITableViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     var checkedItems: Int?
 
-    //Instead of using default on line 28, use this one. to populate the image.
-    //use self.iconImage. insted of self.imageView. Will remove using default and will use custom property on line 18.
-    
-//    @IBAction func buttonTouched(_ sender: UIButton) {
-//        UIButton.animate(withDuration: 0.2,
-//                         animations: {
-//                            sender.transform = CGAffineTransform(scaleX: 0.975, y: 0.96)
-//        },
-//                         completion: { finish in
-//                            UIButton.animate(withDuration: 0.2, animations: {
-//                                sender.transform = CGAffineTransform.identity
-//                            })
-//        })
-//    }
+
     
     
     
@@ -62,28 +50,7 @@ class GoalTableViewCell: UITableViewCell {
 //        }
         
       
-        
-        //old way to do it.
-//        taskCountLabel.text = "\(incomingGoal.tasks?.count ?? 0)"
-        guard let tasksCount = incomingGoal.tasks?.count else { return }
-//Need to change checked items to the switch.
-        if let checkedItems = checkedItems {
-            if tasksCount == 0 {
-                taskCountLabel.text = "Select Goal To Add New Tasks!"
-            } else if checkedItems == 0 {
-                taskCountLabel.text = "Get Started! \(tasksCount) To Go!"
-            } else if checkedItems == tasksCount {
-                taskCountLabel.text = "All Tasks Completed!"
-            } else {
-                taskCountLabel.text = "\(checkedItems) of \(tasksCount) Completed"
-            }
-        }
-        
-        
-        
-//        taskCountLabel.text = String(describing: goal.tasks?.count ?? 0)
-        
-//        self.imageView?.image = UIImage(named: incomingGoal.iconName ?? "No Icon") //using the iboutlet instead of this.
+
         self.iconImage.image = UIImage(named: incomingGoal.iconName ?? "No Icon" )
         
         

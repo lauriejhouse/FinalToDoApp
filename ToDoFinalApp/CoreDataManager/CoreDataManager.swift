@@ -11,8 +11,6 @@ import CoreData
 
 struct CoreDataManager {
     
-
-    
     static var shared = CoreDataManager()
     var managedContext: NSManagedObjectContext!
     
@@ -92,25 +90,61 @@ struct CoreDataManager {
         }
     }
     
+    //New today date from example
+    
     func getAllTasksForToday() -> [Task]? {
-        //build two predicates. predicate 1 adn 2, supply argument you're looking for within the NSFetch format,
-        //Second predicate is greater then yesterday, less then tomorrow.
-        //Time interval NSDate, date by adding time interval. Add in seconds.
-        //Group predicate, add both and assign it to fetch predicate.
+        
         let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-        let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
-        let afterYesterday = NSPredicate (format: "dueDate > %@", NSDate(timeInterval: -60 * 60 * 24, since: Date()))
-        let combinedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [beforeTomorrow, afterYesterday])
-        tasksFetch.predicate = combinedPredicate
-//        tasksFetch.predicate = NSPredicate
-        do {
-            let goals = try managedContext.fetch(tasksFetch) as! [Task]
-            return goals
-        } catch {
-            print("Failed to fetch goals: \(error)")
-            return nil
-        }
+        // Get the current calendar with local time zone
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+        
+        // Get today's beginning & end
+        let dateFrom = calendar.startOfDay(for: Date()) // eg. 2016-10-10 00:00:00
+        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
+        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
+        
+        // Set predicate as date being today's date
+         let fromPredicate = NSPredicate(format: "%@ >= %@", Date as NSDate, dateFrom as! NSDate)
+         let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
+      let toPredicate = NSPredicate(format: "%@ < %@", Date as NSDate, dateTo as! NSDate)
+        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+        NSFetchRequest.predicate = datePredicate
+        let combinedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+                tasksFetch.predicate = combinedPredicate
+//                tasksFetch.predicate = NSPredicate
+                do {
+                    let goals = try managedContext.fetch(tasksFetch) as! [Task]
+                    return goals
+                } catch {
+                    print("Failed to fetch goals: \(error)")
+                    return nil
+                }
+        
     }
+
+    
+    
+    //Trying new example to get today date. This is original
+//    func getAllTasksForToday() -> [Task]? {
+//        //build two predicates. predicate 1 adn 2, supply argument you're looking for within the NSFetch format,
+//        //Second predicate is greater then yesterday, less then tomorrow.
+//        //Time interval NSDate, date by adding time interval. Add in seconds.
+//        //Group predicate, add both and assign it to fetch predicate.
+//        let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+//        let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
+//        let afterYesterday = NSPredicate (format: "dueDate > %@", NSDate(timeInterval: -60 * 60 * 24, since: Date()))
+//        let combinedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [beforeTomorrow, afterYesterday])
+//        tasksFetch.predicate = combinedPredicate
+////        tasksFetch.predicate = NSPredicate
+//        do {
+//            let goals = try managedContext.fetch(tasksFetch) as! [Task]
+//            return goals
+//        } catch {
+//            print("Failed to fetch goals: \(error)")
+//            return nil
+//        }
+//    }
 
     
     

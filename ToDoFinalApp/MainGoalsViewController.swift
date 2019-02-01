@@ -11,9 +11,16 @@
 //Things left to do:
 /*
  
+ //Due date stuff is in coreData Manager
+
+ 
 
  Today Widget - Most difficult
     -Can use EventKit for reminders.
+  - Need to fix widget displaying all tasks from everywhere, to only display ones due today.
+ -Maybe get buttons to work correctly on widget.
+ -Use predicate to get correct tasks to display?
+ 
  let myAppUrl = NSURL(string: "myapp://some-context")!
  extensionContext?.openURL(myAppUrl, completionHandler: { (success) in
  if (!success) {
@@ -21,6 +28,7 @@
  }
  })
  This is from example app, it's supposed to open the main app. The code above does the same thing, but is an older way of doing it.
+ 
  @IBAction func openAppButtonTapped(_ sender: UIButton) {
  let url: URL? = URL(string: "Todododo:")!
  if let appurl = url {
