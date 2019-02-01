@@ -9,8 +9,14 @@
 import UIKit
 import NotificationCenter
 import CoreData
+import os.log
+
+
 
 class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate, UITableViewDataSource {
+    
+    //Put DateStuff here? For displaying ones due today?
+    //Due date stuff is in coreData Manager
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,6 +27,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
         todayTasks = CoreDataManager.shared.getAllTasks() ?? []
         tableView.reloadData()
+        extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+
     }
     
 //    @IBAction func openAppButtonTapped(_ sender: UIButton) {
@@ -36,6 +44,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         } else {
             preferredContentSize = maxSize
         }
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        try? readFromCoreData()
+       let _ = CoreDataManager.shared.getAllTasksForToday()
     }
     
     
