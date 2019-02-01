@@ -211,7 +211,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="Du6-0g-Sn6" customClass="GADBannerView">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Du6-0g-Sn6" customClass="GADBannerView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -429,7 +429,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="completionSwitch" destination="LwU-l8-2MQ" id="Cn2-sS-HFh"/>
+                        <outlet property="completionSwitch" destination="LwU-l8-2MQ" id="Ltk-EG-DiC"/>
                         <outlet property="datePicker" destination="JF5-Mm-LSA" id="aS1-C1-dx0"/>
                         <outlet property="taskNameField" destination="PB4-gj-TE7" id="5aV-3b-hRm"/>
                     </connections>
