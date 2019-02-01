@@ -30,6 +30,14 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
 //        }
 //    }
     
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .expanded {
+            preferredContentSize = CGSize(width: 0, height: 400)
+        } else {
+            preferredContentSize = maxSize
+        }
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
