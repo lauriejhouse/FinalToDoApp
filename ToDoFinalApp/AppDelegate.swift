@@ -26,7 +26,7 @@ var smStore: SMStore!
         // Sample AdMob app ID: ca-app-pub-3940256099942544~1458002511
 //        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
         
-        //my ad using to do final app
+        //my ad using to dofinalapp
          GADMobileAds.configure(withApplicationID: "ca-app-pub-5462116334906512~1231030276")
         
         
@@ -111,6 +111,7 @@ var smStore: SMStore!
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        let _ = CoreDataManager.shared.save()
     }
 
 //    // MARK: - Core Data stack

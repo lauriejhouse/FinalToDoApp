@@ -386,21 +386,26 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Is Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ba-6A-u9x">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ba-6A-u9x">
                                                     <rect key="frame" x="16" y="11" width="102" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LwU-l8-2MQ">
-                                                    <rect key="frame" x="318" y="6" width="49" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LwU-l8-2MQ">
+                                                    <rect key="frame" x="126" y="6" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="didCompleteTask:" destination="kXu-me-KMC" eventType="valueChanged" id="WFM-pN-HVq"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4ba-6A-u9x" firstAttribute="top" secondItem="anW-xZ-oNs" secondAttribute="topMargin" id="5nI-Au-115"/>
+                                                <constraint firstItem="4ba-6A-u9x" firstAttribute="leading" secondItem="anW-xZ-oNs" secondAttribute="leadingMargin" id="IhG-rl-iLm"/>
+                                                <constraint firstItem="4ba-6A-u9x" firstAttribute="centerY" secondItem="LwU-l8-2MQ" secondAttribute="centerY" id="Z9N-T3-E1t"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4ba-6A-u9x" secondAttribute="bottom" constant="1" id="uIG-DW-VgN"/>
+                                                <constraint firstItem="LwU-l8-2MQ" firstAttribute="leading" secondItem="4ba-6A-u9x" secondAttribute="trailing" constant="8" symbolic="YES" id="wNf-Ac-MJq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

@@ -28,12 +28,17 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
         } else {
             return []
         }
+    
     }()
+    var tasksCount: Int?
+    var checkedItems: Int?
+
     
     weak var delegate: TaskDetailViewControllerDelegate?
     @IBOutlet weak var taskNameField: UITextField!
     @IBOutlet weak var completionSwitch: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +68,37 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func didCompleteTask(_ sender: UISwitch) {
         selectedTask?.completed = sender.isOn
+        guard let tasksCount = selectedGoal?.tasks?.count else { return }
+        
+        fetchCheckedItems(with: selectedGoal!)
+
+        if let checkedItems = checkedItems {
+            if tasksCount == 0 {
+                taskNameField.text = "Select Goal To Add New Tasks!"
+            } else if checkedItems == 0 {
+                taskNameField.text = "Get Started! \(tasksCount) To Go!"
+            } else if checkedItems == tasksCount {
+                taskNameField.text = "All Tasks Completed!"
+            } else {
+                taskNameField.text = "\(checkedItems) of \(tasksCount) Completed"
+            }
+        }
     }
+    
+    func fetchCheckedItems(with goal: Goal) {
+        let request = NSFetchRequest<Task>(entityName: "Task")
+        request.predicate = NSPredicate(format: "goal == %@ AND enabled == %@ ", goal, NSNumber(booleanLiteral: true))
+        
+        do {
+            let results = try managedContext.fetch(request)
+            checkedItems = results.count
+        } catch let error as NSError {
+            print(error)
+        }
+        
+    }
+
+    
     
     @IBAction func cancel(_ sender: Any) {
         delegate?.taskDetailViewControllerDidCancel(self)
@@ -111,34 +146,7 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    /*
-    @objc func saveTask() {
-        
-        guard let goal = self.selectedGoal else { return }
-        
-        let alertController = UIAlertController(title: "Add Task", message: nil , preferredStyle: .alert)
-        
-        alertController.addTextField { textField in
-            textField.placeholder = "Enter Name"
-        }
-        
-        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert in
-            let field = alertController.textFields![0] as UITextField
-            guard let name = field.text else { return }
-            
-            guard let _ = CoreDataManager.shared.addTask(to: goal, with: name) else { return }
-            guard let taskSet = goal.tasks, let tasks = Array(taskSet) as? [Task] else { return }
-            self.tasks = tasks
-            self.tableView.reloadData()
-        })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action in })
-        
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
- */
+   
     
     
     
