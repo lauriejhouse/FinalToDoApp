@@ -30,9 +30,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oJ8-DR-MTq">
-                                                    <rect key="frame" x="259" y="3" width="46" height="30"/>
+                                                    <rect key="frame" x="252" y="6" width="60" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="To Goals"/>
+                                                    <connections>
+                                                        <action selector="openButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="TKi-sO-7sb"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>

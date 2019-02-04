@@ -326,6 +326,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     //This changes the MainGoal Cell.
     func configure(_ cell: GoalTableViewCell, with goal: Goal) {
 //        let icon = cell.viewWithTag(10) as? UIImageView
+        
         //maybe this is why its not updating correctly  
         let tasksDoneLabel = cell.taskCountLabel
         
