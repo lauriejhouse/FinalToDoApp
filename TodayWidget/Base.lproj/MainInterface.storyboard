@@ -33,6 +33,9 @@
                                                     <rect key="frame" x="259" y="3" width="46" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="openButtonTapped:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="TKi-sO-7sb"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
