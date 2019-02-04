@@ -48,8 +48,11 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
 
     
     override func viewWillAppear(_ animated: Bool) {
-//        try? readFromCoreData()
-       let _ = CoreDataManager.shared.getAllTasksForToday()
+        //Does the gettodaytasks go here?
+        let _ = CoreDataManager.shared.getAllTasksForToday()
+        tableView.reloadData()
+
+
     }
     
     

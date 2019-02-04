@@ -39,8 +39,7 @@
  
  
 
- 
- Custom animations 2-4 of them -  For example, animations could be added when completing a task or for validating input when entering a new task.
+
  
  Testing/Debugging -easy
  -test that animations work?
@@ -330,15 +329,17 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         //maybe this is why its not updating correctly  
         let tasksDoneLabel = cell.taskCountLabel
         
+        
         guard let tasksCount = goal.tasks?.count else { return }
         //call tasksdonelabel from the goal view cell
         
-        
+        //This func is delcared in MainGoalsVC.
         fetchCheckedItems(with: goal)
         
+//        It 'controls' the text for tasks.
         if let checkedItems = checkedItems {
             if tasksCount == 0 {
-                tasksDoneLabel?.text = NSLocalizedString("Select Goal To Add New Tasks, Lazy Bum.", comment: "")
+                tasksDoneLabel?.text = NSLocalizedString("Select Goal To Add New Tasks.", comment: "")
             } else if checkedItems == 0 {
                 tasksDoneLabel?.text = "\(tasksCount) \(NSLocalizedString("to complete", comment:""))"
             } else if checkedItems == tasksCount {

@@ -94,7 +94,6 @@ struct CoreDataManager {
     
     func getAllTasksForToday() -> [Task]? {
         
-        let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
         // Get the current calendar with local time zone
         var calendar = Calendar.current
         calendar.timeZone = NSTimeZone.local
@@ -105,11 +104,14 @@ struct CoreDataManager {
         // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
         
         // Set predicate as date being today's date
-         let fromPredicate = NSPredicate(format: "%@ >= %@", Date as NSDate, dateFrom as! NSDate)
-         let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
-      let toPredicate = NSPredicate(format: "%@ < %@", Date as NSDate, dateTo as! NSDate)
+        let fromPredicate = NSPredicate(format: "dueDate >= %@", dateFrom as NSDate)
+
+//         let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
+        let toPredicate = NSPredicate(format: "dueDate < %@", dateTo! as NSDate)
+
         let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-        NSFetchRequest.predicate = datePredicate
+          let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+        tasksFetch.predicate = datePredicate
         let combinedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
                 tasksFetch.predicate = combinedPredicate
 //                tasksFetch.predicate = NSPredicate

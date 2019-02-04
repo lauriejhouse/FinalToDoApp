@@ -57,7 +57,7 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
             datePicker.date = date
         }
        
-//        textField.becomeFirstResponder()
+        taskNameField.becomeFirstResponder()
     }
     
 
@@ -70,39 +70,41 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
         selectedTask?.completed = sender.isOn
         guard let tasksCount = selectedGoal?.tasks?.count else { return }
         
-        fetchCheckedItems(with: selectedGoal!)
+//        fetchCheckedItems(with: selectedGoal!)
 
         
         //this doesn't change the goal cell text.
         
+        if let checkedItems = checkedItems {
+            if tasksCount == 0 {
+                taskNameField.text = "Select Goal!"
+            } else if checkedItems == 0 {
+                taskNameField.text = "Get Started! \(tasksCount) To Go!"
+            } else if checkedItems == tasksCount {
+                taskNameField.text = "All Tasks Completed!"
+            } else {
+                taskNameField.text = "\(checkedItems) of \(tasksCount) Completed"
+            }
+        }
         
-//        if let checkedItems = checkedItems {
-//            if tasksCount == 0 {
-//                taskNameField.text = "Select Goal!"
-//            } else if checkedItems == 0 {
-//                taskNameField.text = "Get Started! \(tasksCount) To Go!"
-//            } else if checkedItems == tasksCount {
-//                taskNameField.text = "All Tasks Completed!"
-//            } else {
-//                taskNameField.text = "\(checkedItems) of \(tasksCount) Completed"
-//            }
-//        }
+        
         
     }
     
-    //Says managed context is nil when its not.
-    func fetchCheckedItems(with goal: Goal) {
-        let request = NSFetchRequest<Task>(entityName: "Task")
-        request.predicate = NSPredicate(format: "goal == %@ AND enabled == %@ ", goal, NSNumber(booleanLiteral: true))
-        
-        do {
-            let results = try managedContext.fetch(request)
-            checkedItems = results.count
-        } catch let error as NSError {
-            print(error)
-        }
-        
-    }
+    //Says managed context is nil when its not?
+    //Commenting out to try and fix things.
+//    func fetchCheckedItems(with goal: Goal) {
+//        let request = NSFetchRequest<Task>(entityName: "Task")
+//        request.predicate = NSPredicate(format: "goal == %@ AND enabled == %@ ", goal, NSNumber(booleanLiteral: true))
+//
+//        do {
+//            let results = try managedContext.fetch(request)
+//            checkedItems = results.count
+//        } catch let error as NSError {
+//            print(error)
+//        }
+//
+//    }
 
     
     

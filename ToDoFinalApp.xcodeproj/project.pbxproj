@@ -113,7 +113,7 @@
 		8C4C3F8621FB8A2900BF1E6B /* CustomPresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimator.swift; sourceTree = "<group>"; };
 		8C4C3F8821FB8C2D00BF1E6B /* CustomDismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissAnimator.swift; sourceTree = "<group>"; };
 		8C4C3F8A21FB904E00BF1E6B /* SplitViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewAnimator.swift; sourceTree = "<group>"; };
-		8C4C3F8E21FB92DD00BF1E6B /* CustomNavigationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomNavigationAnimator.swift; path = /Users/jackie/Desktop/SwiftExercises/CareerFoundry/FinalToDoApp/ToDoFinalApp/CustomNavigationAnimator.swift; sourceTree = "<absolute>"; };
+		8C4C3F8E21FB92DD00BF1E6B /* CustomNavigationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomNavigationAnimator.swift; path = ../CustomNavigationAnimator.swift; sourceTree = "<group>"; };
 		8C68F55F2204981900C68C9C /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		8C8773EC21ECD94800E6694E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		8CAD826021BEE99B008AE224 /* ToDoFinalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFinalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
