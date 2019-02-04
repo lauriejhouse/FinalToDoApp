@@ -15,7 +15,6 @@ import os.log
 
 class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate, UITableViewDataSource {
     
-    //Put DateStuff here? For displaying ones due today?
     //Due date stuff is in coreData Manager
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,7 +25,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         super.viewDidLoad()
         CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
         todayTasks = CoreDataManager.shared.getAllTasks() ?? []
-        tableView.reloadData()
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
 
     }
@@ -50,8 +48,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     override func viewWillAppear(_ animated: Bool) {
         //Does the gettodaytasks go here?
         let _ = CoreDataManager.shared.getAllTasksForToday()
-        tableView.reloadData()
-
+//        tableView.reloadData()
+        
 
     }
     
@@ -74,7 +72,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
+        let _ = CoreDataManager.shared.getAllTasksForToday()
+        tableView.reloadData()
+        
+
         completionHandler(NCUpdateResult.newData)
+
     }
     
     lazy var persistentContainer: NSPersistentContainer = {

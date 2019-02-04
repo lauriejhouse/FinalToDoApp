@@ -13,7 +13,7 @@ import GoogleMobileAds
 import Flurry_iOS_SDK
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     
 
 
