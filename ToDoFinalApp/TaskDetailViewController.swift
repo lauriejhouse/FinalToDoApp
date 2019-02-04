@@ -70,6 +70,23 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
         selectedTask?.completed = sender.isOn
         guard let tasksCount = selectedGoal?.tasks?.count else { return }
         
+//        if let selectedTaskCompleted = selectedTask?.completed = sender.isOn {
+//            
+//            if tasksCount = true {
+//                taskNameField.text = "Select Goal!"
+//            } else if selectedTaskCompleted == 0 {
+//                taskNameField.text = "Get Started! \(tasksCount) To Go!"
+//            } else if selectedTaskCompleted == tasksCount {
+//                taskNameField.text = "All Tasks Completed!"
+//            } else {
+//                taskNameField.text = "\(selectedTaskCompleted) of \(tasksCount) Completed"
+//            }
+//            
+//        }
+            
+        
+
+        
 //        fetchCheckedItems(with: selectedGoal!)
 
         
