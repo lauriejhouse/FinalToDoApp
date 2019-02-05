@@ -13,15 +13,9 @@ import CloudKit
 import Seam3
 
 
-
-
-
-
 class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPickerViewControllerDelegate {
     
     // MARK: - Properties
-
-
 
     let container = CKContainer.default()
     var currentRecord: CKRecord?
@@ -32,17 +26,13 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     
     var managedContext: NSManagedObjectContext!
     
-    
-
     var goalToEdit: Goal?
     var goals = [Goal]()
     var oldGoalName: String? = ""
     var inEditMode = false
     
-    
     let icons = ["No Icon", "Sports", "Self", "Business", "Computers", "Fun"]
     var placeholderGoals = ["Learn Programming", "Learn Guitar", "Build an Empire", "Become Enlightened", "Breathe Underwater", "Turn Back Time", "Run A Marathon", "Read 100 Books", "Quit Job", "Deactivate Facebook"]
-    
     
     @IBOutlet weak var iconLabel: UILabel!
     @IBOutlet weak var goalTextField: UITextField!
@@ -53,118 +43,38 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     
     
     //Modified to try and incoperate original and CoreData eXample.
-        override func viewDidLoad() {
-            super.viewDidLoad()
-    
-            let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addGoal))
-            self.navigationItem.rightBarButtonItem = rightBarButton
-    
-    
-            //Allows edit button to be clicked on and current cell be edited. But when save is clicked it adds a new cell. Need to add an if else statement to add goal?
-            if let goal = goalToEdit {
-                title = "Edit Goal"
-                inEditMode = true
-                goalTextField.text = goal.goalName
-                oldGoalName = goal.goalName
-    //            doneBtn.isEnabled = true
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addGoal))
+        self.navigationItem.rightBarButtonItem = rightBarButton
+        
+        
+        //Allows edit button to be clicked on and current cell be edited. But when save is clicked it adds a new cell. Need to add an if else statement to add goal?
+        if let goal = goalToEdit {
+            title = "Edit Goal"
+            inEditMode = true
+            goalTextField.text = goal.goalName
+            oldGoalName = goal.goalName
+            //            doneBtn.isEnabled = true
             
-                iconLabel.text = goal.iconName
-                imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
-            } else {
-                let randomGoals = placeholderGoals.randomItem()
-                goalTextField.placeholder = "\(randomGoals!)..."
-                let random = icons.randomItem()
-                imageViewIcon.image = UIImage(named: random!)
-                iconLabel.text = random
-            }
-    
-            
-            CloudKitManager.shared.triggerSyncWithCloudKit()
-            
-                    NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: SMStoreNotification.SyncDidFinish), object: nil, queue: nil) { notification in
-            
-                        if notification.userInfo != nil {
-                            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                            appDelegate.smStore?.triggerSync(complete: true)
-                        }
-            //commenting out to get rid of the error.
-//                        self.managedContext.refreshAllObjects()
-//
-                        DispatchQueue.main.async {
-                            self.goals = CoreDataManager.shared.getAllGoals() ?? []
-                            self.tableView.reloadData()
-                        }
-                    }
-    
-    
+            iconLabel.text = goal.iconName
+            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
+        } else {
+            let randomGoals = placeholderGoals.randomItem()
+            goalTextField.placeholder = "\(randomGoals!)..."
+            let random = icons.randomItem()
+            imageViewIcon.image = UIImage(named: random!)
+            iconLabel.text = random
         }
-    
-    
-    
-    
-    //Copied from CoreDataExample App.
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addGoal))
-//        self.navigationItem.rightBarButtonItem = rightBarButton
-//
-//        CloudKitManager.shared.triggerSyncWithCloudKit()
-//
-//        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: SMStoreNotification.SyncDidFinish), object: nil, queue: nil) { notification in
-//
-//            if notification.userInfo != nil {
-//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                appDelegate.smStore?.triggerSync(complete: true)
-//            }
-//
-////            self.managedContext.refreshAllObjects()
-////
-////            DispatchQueue.main.async {
-////                self.goals = CoreDataManager.shared.getAllGoals() ?? []
-////                self.tableView.reloadData()
-////            }
-//        }
-//    }
-
-    
-    
-    
-   //Original I was working with
-    
-    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addGoal))
-//        self.navigationItem.rightBarButtonItem = rightBarButton
-//
-//
-//        if let goal = goalToEdit {
-//            title = "Edit Goal"
-//            goalTextField.text = goal.goalName
-////            doneBtn.isEnabled = true
-//            iconLabel.text = goal.iconName
-//            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
-//        } else {
-//            let randomGoals = placeholderGoals.randomItem()
-//            goalTextField.placeholder = "\(randomGoals!)..."
-//            let random = icons.randomItem()
-//            imageViewIcon.image = UIImage(named: random!)
-//            iconLabel.text = random
-//        }
-//
-//
-//
-//    }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         goalTextField.becomeFirstResponder()
     }
     
-    func notifyUser(_ title: String, message: String) -> Void
-    {
+    func notifyUser(_ title: String, message: String) -> Void {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
@@ -184,34 +94,7 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-//    @IBAction func done(_ sender: Any) {
-//
-//        //used to try and get edit button in cell to work correctly.
-//        if let goal = goalToEdit {
-//            title = "Edit Goal"
-//            goalTextField.text = goal.goalName
-////            doneBtn.isEnabled = true
-//            iconLabel.text = goal.iconName
-//            imageViewIcon.image = UIImage(named: goal.iconName ?? "No Icon")
-//        } else {
-//            let randomGoals = placeholderGoals.randomItem()
-//            goalTextField.placeholder = "\(randomGoals!)..."
-//            let random = icons.randomItem()
-//            imageViewIcon.image = UIImage(named: random!)
-//            iconLabel.text = random
-//        }
-//
-//
-//
-//        self.dismiss(animated: true, completion: nil)
-//    }
-    
-
  
-    
     // MARK: - Table View Delegate
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
@@ -229,23 +112,6 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         return 44
     }
     
-    
-    
-    
-    
-    // MARK: - Text Field Delegate
-    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//
-//        let oldText = textField.text! as NSString
-//        let newText = oldText.replacingCharacters(in: range, with: string) as NSString
-//
-////        doneBtn.isEnabled = newText.length > 0
-//
-//        return true
-//
-//    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
@@ -257,8 +123,6 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         return true
     }
     
-   
-    
     // MARK: - Icon Picker Delegate
 //
     func iconPicker(_ picker: IconPickerViewController, didPick iconName: String) {
@@ -266,8 +130,6 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         iconLabel.text = iconName
         navigationController?.popViewController(animated: true)
     }
-    
-    
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)

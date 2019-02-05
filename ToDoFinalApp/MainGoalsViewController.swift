@@ -64,7 +64,7 @@ import TableViewDragger
 import CloudKit
 import GoogleMobileAds
 import Flurry_iOS_SDK
-
+import Seam3
 
 
 
@@ -145,6 +145,24 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         //shared instance. any class changes properties those propties will be reflected eveyrwhere if you have one instance.
         tableView.reloadData()
         
+        
+        CloudKitManager.shared.triggerSyncWithCloudKit()
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: SMStoreNotification.SyncDidFinish), object: nil, queue: nil) { notification in
+            
+            if notification.userInfo != nil {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.smStore?.triggerSync(complete: true)
+            }
+            //commenting out to get rid of the error.
+            //                        self.managedContext.refreshAllObjects()
+            //
+            DispatchQueue.main.async {
+                self.goalItems = CoreDataManager.shared.getAllGoals() ?? []
+                self.tableView.reloadData()
+            }
+        }
+
         
         //trying ot add analytics
 //        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
