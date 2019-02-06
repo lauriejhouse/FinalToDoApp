@@ -15,30 +15,22 @@ pod 'Google-Mobile-Ads-SDK'
 pod 'GoogleAnalytics'
 pod 'Flurry-iOS-SDK/FlurrySDK'
 pod 'Flurry-iOS-SDK/FlurryAds'
-
-
-       
-
-
-
-  target 'ToDoFinalAppTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  
-  
-
-  target 'ToDoFinalAppUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-  
  
 
 end
 
 
+target 'ToDoFinalAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+end
 
+
+
+
+target 'ToDoFinalAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+end
 
 
