@@ -30,5 +30,40 @@ class ToDoFinalAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testCreateGoal(goalName: String, iconName: String, moc: NSManagedObjectContext) {
+        let goal =  Goal(context: moc)
+        goal.goalName = goalName
+        goal.iconName = iconName
+        do {
+            try moc.save()
+        } catch let error as NSError {
+            os_log("Error try to create one sample task: %@", log: .default, type: .default, error.debugDescription)
+        }
+        
+        
+    }
+    
+    /*
+ struct CoreDataTestUtil {
+ 
+ static func createOneTask(identifier: String, title: String, moc: NSManagedObjectContext) {
+ let task = Task(context: moc)
+ task.setDefaultsForLocalCreate()
+ task.identifier = identifier
+ task.title = title
+ do {
+ try moc.save()
+ } catch let error as NSError {
+ os_log("Error try to create one sample task: %@", log: .default, type: .default, error.debugDescription)
+ }
+ }
+ 
+ */
+ 
+ 
+ 
+    
+    
 
 }
