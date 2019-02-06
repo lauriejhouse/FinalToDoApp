@@ -42,16 +42,29 @@ class GoalTableViewCell: UITableViewCell {
     func configureIncomingGoal (incomingGoal: Goal) {
         goalLabel.text = incomingGoal.goalName
         
-//        if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
-//
-//            let allTasksCount = tasks.count
-//            let completedTasksCount = tasks.filter({ $0.completed }).count
-//            //use these two counts to do your label logic
-//        }
+        if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
+
+            let allTasksCount = tasks.count
+            let completedTasksCount = tasks.filter({ $0.completed }).count
+            //use these two counts to do your label logic
+
+            if allTasksCount == 0 {
+                taskCountLabel?.text = NSLocalizedString("Select Goal To Add New Tasks.", comment: "")
+            } else if completedTasksCount == 0 {
+                taskCountLabel?.text = "\(allTasksCount) \(NSLocalizedString("to complete", comment:""))"
+            } else if completedTasksCount == allTasksCount {
+                taskCountLabel?.text = NSLocalizedString("All Tasks Completed! You Did It", comment: "")
+            } else {
+                taskCountLabel?.text = "\(completedTasksCount) \(NSLocalizedString("of", comment:"")) \(allTasksCount) \(NSLocalizedString("completed", comment:""))"
+                
+            }
+
+        }
         
       
 
         self.iconImage.image = UIImage(named: incomingGoal.iconName ?? "No Icon" )
+        
         
         
     }

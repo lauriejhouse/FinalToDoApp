@@ -123,7 +123,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         dragger.delegate = self
         dragger.alphaForCell = 0.7
         dragger.opacityForShadowOfCell = 1
-//Can add a date label here
+
         //example ad
 //        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         
@@ -164,28 +164,23 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         }
 
         
-        //trying ot add analytics
-//        guard let tracker = GAI.sharedInstance().defaultTracker else { return }
-//        tracker.set(kGAIScreenName, value: name)
-//        
-//        guard let builder = GAIDictionaryBuilder.createScreenView() else { return }
-//        tracker.send(builder.build() as [NSObject : AnyObject])
+     
 
     }
     
     //For Date Picker. Or just set that all tasks are due today or the next day.
-    func formattedReleaseDate() -> String {
-        let calendar = Calendar.current
-        var components = DateComponents()
-        components.day = 25
-        components.month = 9
-        components.year = 2019
-        let date = calendar.date(from: components)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        return dateFormatter.string(from: date!)
-    }
+//    func formattedReleaseDate() -> String {
+//        let calendar = Calendar.current
+//        var components = DateComponents()
+//        components.day = 25
+//        components.month = 9
+//        components.year = 2019
+//        let date = calendar.date(from: components)
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .medium
+//        return dateFormatter.string(from: date!)
+//    }
     
     
     
