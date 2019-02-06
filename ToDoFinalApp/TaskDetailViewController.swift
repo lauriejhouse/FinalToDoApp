@@ -71,20 +71,7 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
         guard let tasksCount = selectedGoal?.tasks?.count else { return }
         
         
-        //this doesn't change the goal cell text.
-        
-//        if let checkedItems = checkedItems {
-//            if tasksCount == 0 {
-//                taskNameField.text = "Select Goal!"
-//            } else if checkedItems == 0 {
-//                taskNameField.text = "Get Started! \(tasksCount) To Go!"
-//            } else if checkedItems == tasksCount {
-//                taskNameField.text = "All Tasks Completed!"
-//            } else {
-//                taskNameField.text = "\(checkedItems) of \(tasksCount) Completed"
-//            }
-//        }
-        
+     
         
         
     }
