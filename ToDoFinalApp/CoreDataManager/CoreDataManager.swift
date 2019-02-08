@@ -94,6 +94,23 @@ struct CoreDataManager {
     
     func getAllTasksForToday() -> [Task]? {
         
+        let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+        
+        let allPredicates = NSCompoundPredicate(andPredicateWithSubpredicates: [createDatePredicate(), createNonCompletionPredicate()])
+        
+                tasksFetch.predicate = allPredicates
+                do {
+                    let tasks = try managedContext.fetch(tasksFetch) as! [Task]
+                    return tasks
+                } catch {
+                    print("Failed to fetch tasks: \(error)")
+                    return nil
+                }
+        
+    }
+    
+    private func createDatePredicate() -> NSCompoundPredicate {
+        
         // Get the current calendar with local time zone
         var calendar = Calendar.current
         calendar.timeZone = NSTimeZone.local
@@ -105,27 +122,16 @@ struct CoreDataManager {
         
         // Set predicate as date being today's date
         let fromPredicate = NSPredicate(format: "dueDate >= %@", dateFrom as NSDate)
-
-//         let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
-        let toPredicate = NSPredicate(format: "dueDate < %@", dateTo! as NSDate)
-
-        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-          let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-        tasksFetch.predicate = datePredicate
-        let combinedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-                tasksFetch.predicate = combinedPredicate
-//                tasksFetch.predicate = NSPredicate
-                do {
-                    let goals = try managedContext.fetch(tasksFetch) as! [Task]
-                    return goals
-                } catch {
-                    print("Failed to fetch goals: \(error)")
-                    return nil
-                }
         
+        //         let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
+        let toPredicate = NSPredicate(format: "dueDate < %@", dateTo! as NSDate)
+        
+        return NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
     }
 
-    
+    func createNonCompletionPredicate() -> NSPredicate {
+        return NSPredicate(format: "completed == 0")
+    }
     
     //Trying new example to get today date. This is original
 //    func getAllTasksForToday() -> [Task]? {

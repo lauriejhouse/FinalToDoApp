@@ -34,6 +34,10 @@ class TaskListViewController: UITableViewController, UITextViewDelegate {
         }
     }
     
+    func addTwoNumbers(a: Int, b: Int) -> Int {
+        return a + b
+    }
+    
 //  @IBOutlet weak var imageView: UIImageView!
 
     

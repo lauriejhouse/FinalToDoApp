@@ -30,7 +30,7 @@ class ToDoFinalAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+    /*
     func testCreateGoal(goalName: String, iconName: String, moc: NSManagedObjectContext) {
         let goal =  Goal(context: moc)
         goal.goalName = goalName
@@ -43,6 +43,7 @@ class ToDoFinalAppTests: XCTestCase {
         
         
     }
+ */
     
     /*
  struct CoreDataTestUtil {
