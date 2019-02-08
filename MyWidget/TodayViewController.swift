@@ -24,9 +24,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
-        todayTasks = CoreDataManager.shared.getAllTasks() ?? []
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-
     }
     
 //    @IBAction func openAppButtonTapped(_ sender: UIButton) {
@@ -47,7 +45,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     override func viewWillAppear(_ animated: Bool) {
         //Does the gettodaytasks go here?
-        let _ = CoreDataManager.shared.getAllTasksForToday()
+        todayTasks = CoreDataManager.shared.getAllTasksForToday() ?? []
 //        tableView.reloadData()
         
 
@@ -72,7 +70,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        let _ = CoreDataManager.shared.getAllTasksForToday()
+        todayTasks = CoreDataManager.shared.getAllTasksForToday() ?? []
         tableView.reloadData()
         
 
