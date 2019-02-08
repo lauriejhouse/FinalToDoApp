@@ -26,6 +26,7 @@
 		8C3E647221E1168C00CCFE07 /* IconPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */; };
 		8C3E647421E1190400CCFE07 /* MainGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */; };
 		8C4764F1220DB62F00BAB86E /* TaskListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4764F0220DB62F00BAB86E /* TaskListViewControllerTests.swift */; };
+		8C4764F3220DD1BD00BAB86E /* CoreDataUnitTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4764F2220DD1BD00BAB86E /* CoreDataUnitTestingTests.swift */; };
 		8C4C3F7721FB4D5A00BF1E6B /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C3F7921FB4D5A00BF1E6B /* Localization.strings */; };
 		8C4C3F8721FB8A2900BF1E6B /* CustomPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3F8621FB8A2900BF1E6B /* CustomPresentAnimator.swift */; };
 		8C4C3F8921FB8C2D00BF1E6B /* CustomDismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3F8821FB8C2D00BF1E6B /* CustomDismissAnimator.swift */; };
@@ -111,6 +112,7 @@
 		8C3E647121E1168C00CCFE07 /* IconPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconPickerViewController.swift; sourceTree = "<group>"; };
 		8C3E647321E1190400CCFE07 /* MainGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGoalsViewController.swift; sourceTree = "<group>"; };
 		8C4764F0220DB62F00BAB86E /* TaskListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTests.swift; sourceTree = "<group>"; };
+		8C4764F2220DD1BD00BAB86E /* CoreDataUnitTestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUnitTestingTests.swift; sourceTree = "<group>"; };
 		8C4C3F7821FB4D5A00BF1E6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		8C4C3F7A21FB4D5C00BF1E6B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localization.strings; sourceTree = "<group>"; };
 		8C4C3F8621FB8A2900BF1E6B /* CustomPresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimator.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				8CAD827B21BEE99C008AE224 /* ToDoFinalAppTests.swift */,
+				8C4764F2220DD1BD00BAB86E /* CoreDataUnitTestingTests.swift */,
 				8C4764F0220DB62F00BAB86E /* TaskListViewControllerTests.swift */,
 				8CAD827D21BEE99C008AE224 /* Info.plist */,
 			);
@@ -648,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CAD827C21BEE99C008AE224 /* ToDoFinalAppTests.swift in Sources */,
+				8C4764F3220DD1BD00BAB86E /* CoreDataUnitTestingTests.swift in Sources */,
 				8C4764F1220DB62F00BAB86E /* TaskListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

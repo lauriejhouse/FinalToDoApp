@@ -52,9 +52,57 @@ class ToDoFinalAppUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+            func testExample() {
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
+    
+    func testGoToTask() {
+    
+    let app = XCUIApplication()
+    app.navigationBars["Long Term Goal"].buttons["Add"].tap()
+    app.navigationBars["Add Long Term Goal"].buttons["Save"].tap()
+    
+    
+    }
+    
+    func testAddingTask() {
+        
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        tablesQuery.cells.containing(.staticText, identifier:"Learn Guitar").buttons["More Info"].tap()
+        app.navigationBars["Learn Guitar"].buttons["Add"].tap()
+        app.navigationBars["Add Task"].buttons["Done"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Adding a task."]/*[[".cells.staticTexts[\"Adding a task.\"]",".staticTexts[\"Adding a task.\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        
+        
+    }
+    
+    
+    
+    
+    func testGoingToWidget() {
+
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .table).element.tap()
+        XCUIDevice.shared.orientation = .portrait
+        
+        let scrollViewsQuery = app/*@START_MENU_TOKEN@*/.scrollViews/*[[".otherElements[\"Home screen icons\"]",".otherElements[\"SBFolderScalingView\"].scrollViews",".scrollViews"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/
+        let contactsElement = scrollViewsQuery.otherElements.containing(.icon, identifier:"Contacts").element
+        contactsElement.tap()
+        XCUIDevice.shared.orientation = .portrait
+        contactsElement.swipeRight()
+        scrollViewsQuery.otherElements.containing(.icon, identifier:"Calendar").element.swipeRight()
+        
+        let elementsQuery = scrollViewsQuery.otherElements
+        let wgmajorlistviewcontrollerviewScrollView = elementsQuery.scrollViews["WGMajorListViewControllerView"]
+        wgmajorlistviewcontrollerviewScrollView.children(matching: .other).element.children(matching: .other).element.tap()
+        wgmajorlistviewcontrollerviewScrollView.otherElements.buttons["Edit"].tap()
+        app/*@START_MENU_TOKEN@*/.scrollViews.otherElements.tables.buttons["Insert MyWidget"]/*[[".otherElements[\"Home screen icons\"]",".otherElements[\"SBFolderScalingView\"].scrollViews.otherElements.tables",".cells[\"MyWidget\"].buttons[\"Insert MyWidget\"]",".buttons[\"Insert MyWidget\"]",".scrollViews.otherElements.tables"],[[[-1,4,2],[-1,1,2],[-1,0,1]],[[-1,4,2],[-1,1,2]],[[-1,3],[-1,2]]],[0,0]]@END_MENU_TOKEN@*/.tap()
+        elementsQuery.navigationBars["UITableView"].buttons["Done"].tap()
+     
+        
+    }
 }
