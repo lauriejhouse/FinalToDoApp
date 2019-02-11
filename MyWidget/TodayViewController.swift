@@ -80,13 +80,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     }
     
     
-//    @IBAction func openButtonTapped(_ sender: UIButton) {
-//        let url: URL? = URL(string: "ToDoFinalApp:")!
-//        if let appurl = url {
-//            self.extensionContext!.open(appurl, completionHandler: nil)
-//        }
-//    }
-    
     
     lazy var persistentContainer: NSPersistentContainer = {
         

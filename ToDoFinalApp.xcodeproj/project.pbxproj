@@ -119,6 +119,7 @@
 		8C4C3F8821FB8C2D00BF1E6B /* CustomDismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissAnimator.swift; sourceTree = "<group>"; };
 		8C4C3F8A21FB904E00BF1E6B /* SplitViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewAnimator.swift; sourceTree = "<group>"; };
 		8C4C3F8E21FB92DD00BF1E6B /* CustomNavigationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomNavigationAnimator.swift; path = ../CustomNavigationAnimator.swift; sourceTree = "<group>"; };
+		8C578FA02211FD86008D6151 /* ToDoFinalApp-ModelUpdate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ToDoFinalApp-ModelUpdate.xcdatamodel"; sourceTree = "<group>"; };
 		8C68F55F2204981900C68C9C /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		8C68F56322089DA400C68C9C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ../TodayWidget/ja.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		8C68F5642208BB5700C68C9C /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
@@ -1073,9 +1074,10 @@
 		8CAD826A21BEE99B008AE224 /* ToDoFinalApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				8C578FA02211FD86008D6151 /* ToDoFinalApp-ModelUpdate.xcdatamodel */,
 				8CAD826B21BEE99B008AE224 /* ToDoFinalApp.xcdatamodel */,
 			);
-			currentVersion = 8CAD826B21BEE99B008AE224 /* ToDoFinalApp.xcdatamodel */;
+			currentVersion = 8C578FA02211FD86008D6151 /* ToDoFinalApp-ModelUpdate.xcdatamodel */;
 			path = ToDoFinalApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

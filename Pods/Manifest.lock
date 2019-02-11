@@ -25,7 +25,7 @@ PODS:
   - Flurry-iOS-SDK/FlurryAds (9.3.0):
     - Flurry-iOS-SDK/FlurrySDK
   - Flurry-iOS-SDK/FlurrySDK (9.3.0)
-  - Google-Mobile-Ads-SDK (7.38.0)
+  - Google-Mobile-Ads-SDK (7.39.0)
   - GoogleAnalytics (3.17.0)
   - GoogleAppMeasurement (5.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
@@ -90,7 +90,7 @@ SPEC CHECKSUMS:
   FirebaseCore: ea2d1816723ef21492b8e9113303e1350db5e08c
   FirebaseInstanceID: 97ea7a5dca9afd72c79bfcdddb7a44aa1cbb42a1
   Flurry-iOS-SDK: 43afe11656872692de232f580ef0a8a68b0b47c9
-  Google-Mobile-Ads-SDK: fec4a72b71a81302d3fd75454df3417c03c50ed5
+  Google-Mobile-Ads-SDK: d0f10a7c4d7015db23075ff316602350d12049db
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0

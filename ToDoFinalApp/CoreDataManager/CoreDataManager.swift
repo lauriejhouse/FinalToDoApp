@@ -9,6 +9,9 @@
 import Foundation
 import CoreData
 
+
+//Something wrong with CoreData migration or model - How Seam3 interacts?
+
 struct CoreDataManager {
     
     static var shared = CoreDataManager()
@@ -133,27 +136,6 @@ struct CoreDataManager {
         return NSPredicate(format: "completed == 0")
     }
     
-    //Trying new example to get today date. This is original
-//    func getAllTasksForToday() -> [Task]? {
-//        //build two predicates. predicate 1 adn 2, supply argument you're looking for within the NSFetch format,
-//        //Second predicate is greater then yesterday, less then tomorrow.
-//        //Time interval NSDate, date by adding time interval. Add in seconds.
-//        //Group predicate, add both and assign it to fetch predicate.
-//        let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-//        let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
-//        let afterYesterday = NSPredicate (format: "dueDate > %@", NSDate(timeInterval: -60 * 60 * 24, since: Date()))
-//        let combinedPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [beforeTomorrow, afterYesterday])
-//        tasksFetch.predicate = combinedPredicate
-////        tasksFetch.predicate = NSPredicate
-//        do {
-//            let goals = try managedContext.fetch(tasksFetch) as! [Task]
-//            return goals
-//        } catch {
-//            print("Failed to fetch goals: \(error)")
-//            return nil
-//        }
-//    }
-
     
     
     
