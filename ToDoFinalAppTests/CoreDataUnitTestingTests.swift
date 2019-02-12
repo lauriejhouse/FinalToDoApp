@@ -23,16 +23,15 @@ class CoreDataUnitTestingTests: XCTestCase {
     
     // The customStorageManager specifies in-memory by providing a custom NSPersistentContainer
     lazy var mockPersistantContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "CoreDataUnitTesting", managedObjectModel: self.managedObjectModel)
+        let container = NSPersistentContainer(name: "CoreDataUnitTestingTests", managedObjectModel: self.managedObjectModel)
         let description = NSPersistentStoreDescription()
         description.type = NSInMemoryStoreType
         description.shouldAddStoreAsynchronously = false
         
         container.persistentStoreDescriptions = [description]
         container.loadPersistentStores { (description, error) in
-            .
-            .
-            .
+
+//do i need more code here?
         }
         return container
     }()
