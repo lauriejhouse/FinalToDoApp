@@ -21,7 +21,7 @@ public class CoreDataStack {
     lazy var persistentContainer: NSPersistentContainer = {
         
         SMStore.registerStoreClass()
-        
+        //is this not the right container?
         let container = NSPersistentContainer(name: "ToDoFinalApp")
         
 //        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
