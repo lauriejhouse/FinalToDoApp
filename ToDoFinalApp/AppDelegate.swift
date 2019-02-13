@@ -18,7 +18,7 @@ import Flurry_iOS_SDK
 
 
     var window: UIWindow?
-var smStore: SMStore!
+//var smStore: SMStore!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -51,11 +51,10 @@ var smStore: SMStore!
         
         setUpSplitViewController()
         
-        self.smStore = persistentContainer.persistentStoreCoordinator.persistentStores.first as? SMStore
-        
+
         CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
         //CoreDataManager.shared.smStore = self.smStore
-        CloudKitManager.shared.smStore = self.smStore
+//        CloudKitManager.shared.smStore = self.smStore
         
         application.registerForRemoteNotifications()
         
@@ -64,9 +63,9 @@ var smStore: SMStore!
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        self.smStore?.handlePush(userInfo: userInfo, fetchCompletionHandler: { result in
-            print("result \(result)")
-        })
+//        self.smStore?.handlePush(userInfo: userInfo, fetchCompletionHandler: { result in
+//            print("result \(result)")
+//        })
     }
     
     func setUpSplitViewController() {
@@ -120,7 +119,7 @@ var smStore: SMStore!
     
     lazy var persistentContainer: NSPersistentContainer = {
 
-        SMStore.registerStoreClass()
+//        SMStore.registerStoreClass()
 
         let container = NSPersistentContainer(name: "ToDoFinalApp")
 
@@ -151,7 +150,7 @@ var smStore: SMStore!
 
             let storeDescription = NSPersistentStoreDescription(url: url)
 
-            storeDescription.type = SMStore.type
+//            storeDescription.type = SMStore.type
 
             container.persistentStoreDescriptions=[storeDescription]
 

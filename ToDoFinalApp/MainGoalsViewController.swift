@@ -7,56 +7,6 @@
 //
 
 
-
-//Things left to do:
-/*
- 
- //Due date stuff is in coreData Manager
-
- 
-
- Today Widget - Most difficult
-    -Can use EventKit for reminders.
-  - Need to fix widget displaying all tasks from everywhere, to only display ones due today.
- -Maybe get buttons to work correctly on widget.
- -Use predicate to get correct tasks to display?
- 
- let myAppUrl = NSURL(string: "myapp://some-context")!
- extensionContext?.openURL(myAppUrl, completionHandler: { (success) in
- if (!success) {
- // let the user know it failed
- }
- })
- This is from example app, it's supposed to open the main app. The code above does the same thing, but is an older way of doing it.
- 
- @IBAction func openAppButtonTapped(_ sender: UIButton) {
- let url: URL? = URL(string: "Todododo:")!
- if let appurl = url {
- self.extensionContext!.open(appurl, completionHandler: nil)
- }
- }
- 
- 
- 
-
-
- 
- Testing/Debugging -easy
- -test that animations work?
- 
-
- Document and press kit. - easy - half done, press kit is done.
-  testing and debugging techniques - test that edit and add buttons work, and that app doesn't take up too much performance power
- 
-
- 
- 
-
- 
- 
- 
- */
-
 import UIKit
 import Foundation
 import CoreData
@@ -152,7 +102,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
             
             if notification.userInfo != nil {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.smStore?.triggerSync(complete: true)
+//                appDelegate.smStore?.triggerSync(complete: true)
             }
             //commenting out to get rid of the error.
             //                        self.managedContext.refreshAllObjects()

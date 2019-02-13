@@ -1077,7 +1077,7 @@
 				8C578FA02211FD86008D6151 /* ToDoFinalApp-ModelUpdate.xcdatamodel */,
 				8CAD826B21BEE99B008AE224 /* ToDoFinalApp.xcdatamodel */,
 			);
-			currentVersion = 8C578FA02211FD86008D6151 /* ToDoFinalApp-ModelUpdate.xcdatamodel */;
+			currentVersion = 8CAD826B21BEE99B008AE224 /* ToDoFinalApp.xcdatamodel */;
 			path = ToDoFinalApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

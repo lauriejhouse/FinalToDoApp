@@ -629,7 +629,7 @@ open class SMStore: NSIncrementalStore {
         do {
             
             let options = [NSMigratePersistentStoresAutomaticallyOption: self.automaticStoreMigration, NSInferMappingModelAutomaticallyOption: self.inferMappingModel]
-            
+            //Could this be causing the error?
             self.backingPersistentStore = try self.backingPersistentStoreCoordinator?.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options)
             self.operationQueue = OperationQueue()
             self.operationQueue!.maxConcurrentOperationCount = 1
