@@ -20,19 +20,21 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     @IBOutlet weak var tableView: UITableView!
     
     var todayTasks = [Task]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
+        todayTasks = CoreDataManager.shared.getAllTasks() ?? []
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        
     }
     
-//    @IBAction func openAppButtonTapped(_ sender: UIButton) {
-//        let url: URL? = URL(string: "ToDoFinalApp:")!
-//        if let appurl = url {
-//            self.extensionContext!.open(appurl, completionHandler: nil)
-//        }
-//    }
+    //    @IBAction func openAppButtonTapped(_ sender: UIButton) {
+    //        let url: URL? = URL(string: "ToDoFinalApp:")!
+    //        if let appurl = url {
+    //            self.extensionContext!.open(appurl, completionHandler: nil)
+    //        }
+    //    }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .expanded {
@@ -41,14 +43,14 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
             preferredContentSize = maxSize
         }
     }
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         //Does the gettodaytasks go here?
-        todayTasks = CoreDataManager.shared.getAllTasksForToday() ?? []
-//        tableView.reloadData()
+        let _ = CoreDataManager.shared.getAllTasksForToday()
+        //        tableView.reloadData()
         
-
+        
     }
     
     
@@ -62,7 +64,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         cell.textLabel?.text = todayTasks[indexPath.row].taskName
         return cell
     }
-        
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
@@ -70,15 +72,22 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        todayTasks = CoreDataManager.shared.getAllTasksForToday() ?? []
+        let _ = CoreDataManager.shared.getAllTasksForToday()
         tableView.reloadData()
         
-
+        
         completionHandler(NCUpdateResult.newData)
-
-    
+        
+        
     }
     
+    
+    //    @IBAction func openButtonTapped(_ sender: UIButton) {
+    //        let url: URL? = URL(string: "ToDoFinalApp:")!
+    //        if let appurl = url {
+    //            self.extensionContext!.open(appurl, completionHandler: nil)
+    //        }
+    //    }
     
     
     lazy var persistentContainer: NSPersistentContainer = {

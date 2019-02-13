@@ -99,10 +99,10 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         CloudKitManager.shared.triggerSyncWithCloudKit()
         
         NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: SMStoreNotification.SyncDidFinish), object: nil, queue: nil) { notification in
-            
+
             if notification.userInfo != nil {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                appDelegate.smStore?.triggerSync(complete: true)
+                appDelegate.smStore?.triggerSync(complete: true)
             }
             //commenting out to get rid of the error.
             //                        self.managedContext.refreshAllObjects()

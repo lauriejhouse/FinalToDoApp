@@ -18,7 +18,7 @@ import Flurry_iOS_SDK
 
 
     var window: UIWindow?
-//var smStore: SMStore!
+var smStore: SMStore!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
