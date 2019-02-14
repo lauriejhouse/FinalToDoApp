@@ -10,8 +10,6 @@ import UIKit
 import Foundation
 import CoreData
 import CloudKit
-import Seam3
-
 
 class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPickerViewControllerDelegate {
     
@@ -23,9 +21,7 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         let DB = self.container.publicCloudDatabase
         return DB
     }()
-    
-    var managedContext: NSManagedObjectContext!
-    
+        
     var goalToEdit: Goal?
     var goals = [Goal]()
     var oldGoalName: String? = ""
@@ -117,7 +113,6 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         
         if let name = textField.text {
             self.goalToEdit?.goalName = name
-            let _ = CoreDataManager.shared.save()
         }
         
         return true
@@ -157,11 +152,11 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         
         
         if inEditMode {
-            let _ = CoreDataManager.shared.editGoal(with: oldGoalName!, newName: name, iconName: iconLabel.text ?? "No Icon")
-            let _ = CoreDataManager.shared.save()
+            let _ = CloudKitManager.shared.editGoal(with: oldGoalName!, newName: name, iconName: iconLabel.text ?? "No Icon")
         } else {
-            let _ = CoreDataManager.shared.addGoal(with: name, iconName: iconLabel.text ?? "No Icon")
-            let _ = CoreDataManager.shared.save()
+            let _ = CloudKitManager.shared.addGoal(with: name, iconName: iconLabel.text ?? "No Icon", completion: { goal in
+                
+            })
         }
 
         dismiss(animated: true, completion: nil)

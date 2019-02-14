@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Seam3
 import CoreData
 import Flurry_iOS_SDK
 
@@ -17,11 +16,9 @@ class TaskListViewController: UITableViewController, UITextViewDelegate {
     var selectedGoal: Goal?
     
     var tasks: [Task] {
-        if let tasks = selectedGoal?.tasks as? Set<Task> {
-            return Array(tasks)
-        } else {
-            return []
-        }
+        //need to fetch actual tasks from references
+        //return selectedGoal?.tasks ?? []
+        return []
     }
     
     struct Option {
@@ -77,7 +74,6 @@ class TaskListViewController: UITableViewController, UITextViewDelegate {
         
         if let name = textField.text {
             self.selectedGoal?.goalName = name
-            let _ = CoreDataManager.shared.save()
         }
         
         return true

@@ -64,9 +64,7 @@ import TableViewDragger
 import CloudKit
 import GoogleMobileAds
 import Flurry_iOS_SDK
-import Seam3
-
-
+//import Seam3
 
 class MainGoalsViewController: UITableViewController, UINavigationControllerDelegate {
     
@@ -88,10 +86,6 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     // MARK: - Properties
     
     let rowHeight: CGFloat = 75
-    lazy var managedContext = {
-       return CoreDataManager.shared.managedContext!
-        
-    }()
     var goalItems: [Goal]? = []
     var checkedItems: Int?
     
@@ -116,7 +110,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
         tableView.rowHeight = rowHeight
-        fetch()
+
         selectNewGoal()
         dragger = TableViewDragger(tableView: tableView)
         dragger.dataSource = self
@@ -134,38 +128,27 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         
         navigationController?.delegate = self
 
-
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        goalItems = CoreDataManager.shared.getAllGoals()
+        
+        CloudKitManager.shared.getAllGoals(completion: { goals in
+            //add this to a list of goals
+            
+            CloudKitManager.shared.addTask(to: goals!.first!, with: "do task", dueDate: NSDate(), completion: { task in
+                
+            })
+            
+            CloudKitManager.shared.getAllTasks(for: goals!.first!, completion: { tasks in
+                
+            })
+        })
         //what comes out of the right side is put into the left.
         //shared instance. any class changes properties those propties will be reflected eveyrwhere if you have one instance.
         tableView.reloadData()
-        
-        
-        CloudKitManager.shared.triggerSyncWithCloudKit()
-        
-        NotificationCenter.default.addObserver(forName: Notification.Name(rawValue: SMStoreNotification.SyncDidFinish), object: nil, queue: nil) { notification in
-            
-            if notification.userInfo != nil {
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.smStore?.triggerSync(complete: true)
-            }
-            //commenting out to get rid of the error.
-            //                        self.managedContext.refreshAllObjects()
-            //
-            DispatchQueue.main.async {
-                self.goalItems = CoreDataManager.shared.getAllGoals() ?? []
-                self.tableView.reloadData()
-            }
-        }
-
-        
-     
-
     }
     
     //For Date Picker. Or just set that all tasks are due today or the next day.
@@ -245,10 +228,11 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
             let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment:""), style: .cancel, handler: nil)
             let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (delete) in
                 
-                guard let goalToDelete = self.goalItems?[indexPath.row] else { return }
+//                guard let goalToDelete = self.goalItems?[indexPath.row] else { return }
                 self.goalItems?.remove(at: indexPath.row)
-                self.managedContext.delete(goalToDelete)
-                self.save()
+
+                //call to CK to delete
+
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.selectNewGoal()
                 
@@ -297,7 +281,6 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         if segue.identifier == "AddGoal" {
             let nav = segue.destination as! UINavigationController
             let _ = nav.topViewController as! NewGoalViewController
-//            goalVC.managedContext = managedContext
             
             
         } else if segue.identifier == "EditGoal" {
@@ -347,9 +330,6 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         guard let tasksCount = goal.tasks?.count else { return }
         //call tasksdonelabel from the goal view cell
         
-        //This func is delcared in MainGoalsVC.
-        fetchCheckedItems(with: goal)
-        
 //        It 'controls' the text for tasks.
         if let checkedItems = checkedItems {
             if tasksCount == 0 {
@@ -368,45 +348,6 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         
     }
     
-    
-    //Do I need these here if everything is being managed in CoreDataManager?
-    func save() {
-        do {
-            try managedContext.save()
-            
-        } catch let error as NSError {
-            print(error)
-        }
-    }
-
-    
-    
-    //Do i need these here if everything is being managed in CoreDataManager?
-    func fetch() {
-        let request = NSFetchRequest<Goal>(entityName: "Goal")
-        
-        do {
-            let results = try managedContext.fetch(request)
-            goalItems?.append(contentsOf: results)
-        } catch let error as NSError {
-            print(error)
-        }
-    }
-    
-    
-    func fetchCheckedItems(with goal: Goal) {
-        let request = NSFetchRequest<Task>(entityName: "Task")
-        request.predicate = NSPredicate(format: "goal == %@ AND enabled == %@ ", goal, NSNumber(booleanLiteral: true))
-        
-        do {
-            let results = try managedContext.fetch(request)
-            checkedItems = results.count
-        } catch let error as NSError {
-            print(error)
-        }
-        
-    }
-    
     func newGoalViewController(_ controller: NewGoalViewController, didFinishEditing goal: Goal) {
         if let index = goalItems?.index(of: goal) {
             let indexPath = IndexPath(row: index, section: 0)
@@ -414,7 +355,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
                 configure(cell as! GoalTableViewCell, with: goal)
             }
         }
-        save()
+
         dismiss(animated: true, completion: nil)
     }
     

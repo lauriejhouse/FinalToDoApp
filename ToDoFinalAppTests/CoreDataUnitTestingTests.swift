@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import  Seam3
 import  CoreData
 @testable import CoreDataUnitTestingTests
 

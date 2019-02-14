@@ -23,7 +23,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     }
     
@@ -45,7 +44,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     override func viewWillAppear(_ animated: Bool) {
         //Does the gettodaytasks go here?
-        todayTasks = CoreDataManager.shared.getAllTasksForToday() ?? []
+        todayTasks = CloudKitManager.shared.getAllTasksForToday() ?? []
 //        tableView.reloadData()
         
 
@@ -70,7 +69,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        todayTasks = CoreDataManager.shared.getAllTasksForToday() ?? []
+        todayTasks = CloudKitManager.shared.getAllTasksForToday() ?? []
         tableView.reloadData()
         
 
@@ -92,7 +91,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         
         let container = NSPersistentContainer(name: "ToDoFinalApp")
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.ToDoFinalApp.TodayWidget")
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.ToDoFinalApp2.TodayWidget2")
         
         if let applicationDocumentsDirectory = directory {
             
