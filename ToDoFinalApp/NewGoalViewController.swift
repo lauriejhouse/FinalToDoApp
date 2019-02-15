@@ -25,7 +25,7 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
     var goalToEdit: Goal?
     var goals = [Goal]()
     var oldGoalName: String? = ""
-    var inEditMode = false
+    //var inEditMode = false
     
     let icons = ["No Icon", "Sports", "Self", "Business", "Computers", "Fun"]
     var placeholderGoals = ["Learn Programming", "Learn Guitar", "Build an Empire", "Become Enlightened", "Breathe Underwater", "Turn Back Time", "Run A Marathon", "Read 100 Books", "Quit Job", "Deactivate Facebook"]
@@ -49,7 +49,7 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         //Allows edit button to be clicked on and current cell be edited. But when save is clicked it adds a new cell. Need to add an if else statement to add goal?
         if let goal = goalToEdit {
             title = "Edit Goal"
-            inEditMode = true
+            //inEditMode = true
             goalTextField.text = goal.goalName
             oldGoalName = goal.goalName
             //            doneBtn.isEnabled = true
@@ -151,15 +151,18 @@ class NewGoalViewController: UITableViewController, UITextFieldDelegate, IconPic
         }
         
         
-        if inEditMode {
-            let _ = CloudKitManager.shared.editGoal(with: oldGoalName!, newName: name, iconName: iconLabel.text ?? "No Icon")
+        if let goal = goalToEdit {
+            goal.goalName = name
+            goal.iconName = iconLabel.text
+            CloudKitManager.shared.editGoal(with: goal)
+            dismiss(animated: true, completion: nil)
+
         } else {
             let _ = CloudKitManager.shared.addGoal(with: name, iconName: iconLabel.text ?? "No Icon", completion: { goal in
-                
+                self.dismiss(animated: true, completion: nil)
             })
         }
 
-        dismiss(animated: true, completion: nil)
         ///added save to try and save editws.
     }
     

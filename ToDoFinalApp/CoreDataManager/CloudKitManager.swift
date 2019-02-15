@@ -10,23 +10,35 @@ import Foundation
 import CloudKit
 //import Seam3
 
-struct CloudKitManager {
+class CloudKitManager {
     
     static var shared = CloudKitManager()
 //    var smStore: SMStore!
+    
+    
+    var container : CKContainer {
+        return CKContainer.init(identifier:"iCloud.com.las.ToDoFinalApp")
+    }
+
+    var publicDb : CKDatabase {
+        return container.publicCloudDatabase
+    }
+    
+    var goals = [Goal]()
 
     // this is how you can get the goals manually
     func getAllGoals(completion: @escaping (_ goals: [Goal]?)->()) {
 
         let query = CKQuery(recordType: "Goal", predicate: NSPredicate(value: true))
-        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+        publicDb.perform(query, inZoneWith: nil) { (records, error) in
             
             if let error = error {
                 print("There was an error: \(error.localizedDescription)")
                 return
             }
             
-            records?.forEach({ (record) in
+            /*
+            records?.forEach { record in
 
                 // System Field from property
                 let recordName = record.recordID.recordName
@@ -35,10 +47,29 @@ struct CloudKitManager {
                 // Custom Field from key path (eg: name)
                 let name = record.value(forKey: "name")
                 print("Custom Field, name: \(name ?? "")")
-            })
+            }
+            */
             
-            let goals = records?.map({ Goal(record: $0) })
-            completion(goals)
+            if let records = records {
+                /*let */self.goals = records.map{ Goal(record: $0) }
+                DispatchQueue.main.async {
+                    completion(self.goals)
+                }
+            } else {
+                self.goals = []
+            }
+            
+            self.goals.forEach { goal in
+                self.getAllTasks(for: goal) { tasks in
+                    if let tasks = tasks {
+                        goal.tasks = tasks
+                        completion(self.goals)
+                    } else {
+                        goal.tasks = [Task]()
+                    }
+                }
+            }
+            
         }
     }
     
@@ -55,25 +86,37 @@ struct CloudKitManager {
                 return
             }
             
-            let goal = savedRecords?.map({ Goal(record: $0) }).first
-            completion(goal)
+            if let goal = savedRecords?.map({ Goal(record: $0) }).first {
+                DispatchQueue.main.async {
+                completion(goal)
+                }
+                self.goals.append(goal)
+            }
         }
         
-        CKContainer.default().publicCloudDatabase.add(operation)
+        publicDb.add(operation)
     }
     
-    func editGoal(with oldName: String, newName: String, iconName: String) -> Goal? {
-//        let goalsFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
-//        goalsFetch.predicate = NSPredicate(format: "goalName = %@", oldName)
-//        do {
-//            let goals = try managedContext.fetch(goalsFetch) as! [Goal]
-//            let foundGoal = goals[0]
-//            foundGoal.setValue(newName, forKey: "goalName")
-//            return foundGoal
-//        } catch {
-//            print("Failed to fetch goals: \(error)")
-            return nil
-//        }
+    func editGoal(with goal: Goal) {
+        publicDb.fetch(withRecordID: goal.recordId) { record, error in
+            if let record = record {
+                record.setValue(goal.goalName, forKey: "goalName")
+                record.setValue(goal.iconName, forKey: "iconName")
+                
+                let operation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+                
+                operation.modifyRecordsCompletionBlock = { savedRecords, deletedRecordIDs, error in
+                    if let error = error {
+                        print("There was an error: \(error.localizedDescription)")
+                        return
+                    }
+                }
+                
+                self.publicDb.add(operation)
+                
+            } else {
+                print("Goal not found on Cloud", goal.goalName)
+            }        }
     }
     
     func addTask(to goal: Goal, with name: String, dueDate: NSDate, completion: @escaping (_ task: Task?)->()) {
@@ -93,17 +136,47 @@ struct CloudKitManager {
             }
             
             let task = savedRecords?.map({ Task(record: $0) }).first
-            completion(task)
+            DispatchQueue.main.async {
+                if let task = task {
+                goal.tasks.append(task)
+                }
+                completion(task)
+            }
         }
         
-        CKContainer.default().publicCloudDatabase.add(operation)
+        publicDb.add(operation)
+    }
+    
+    func editTask ( task : Task ) {
+        publicDb.fetch(withRecordID: task.recordId) { record, error in
+            if let record = record {
+                record.setValue(task.taskName, forKey: "taskName")
+                record.setValue(task.completed, forKey: "completed")
+                record.setValue(task.dueDate, forKey: "dueDate")
+                
+                let operation = CKModifyRecordsOperation(recordsToSave: [record], recordIDsToDelete: nil)
+                //to delete record, make records to save nil, pass through record in recordstodelete
+                
+                operation.modifyRecordsCompletionBlock = { savedRecords, deletedRecordIDs, error in
+                    if let error = error {
+                        print("There was an error: \(error.localizedDescription)")
+                        return
+                    }
+                }
+                
+                self.publicDb.add(operation)
+
+            } else {
+                print("Task not found on Cloud", task.taskName)
+            }
+        }
     }
     
     func getAllTasks(for goal: Goal, completion: @escaping (_ tasks: [Task]?)->()) {
         
         let reference = CKRecord.Reference(recordID: goal.recordId, action: .deleteSelf)
         let query = CKQuery(recordType: "Task", predicate: NSPredicate(format: "goal == %@", reference))
-        CKContainer.default().publicCloudDatabase.perform(query, inZoneWith: nil) { (records, error) in
+        publicDb.perform(query, inZoneWith: nil) { (records, error) in
             
             if let error = error {
                 print("There was an error: \(error.localizedDescription)")
@@ -122,15 +195,24 @@ struct CloudKitManager {
             })
             
             let tasks = records?.map({ Task(record: $0) })
+            DispatchQueue.main.async {
             completion(tasks)
+            }
         }
 
     }
     
-    //New today date from example
     
-    func getAllTasksForToday() -> [Task]? {
-        
+    func getAllTasksForToday( completion : @escaping (([Task]) -> Void) ) {
+        getAllGoals() { goals in
+            var tasks = [Task]()
+            goals?.forEach {
+                tasks.append(contentsOf: $0.tasks.compactMap { task in
+                    return task.widgetTask ? task : nil                    
+                } )
+            }
+            completion(tasks)
+        }
 //        let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
 //
 //        let allPredicates = NSCompoundPredicate(andPredicateWithSubpredicates: [createDatePredicate(), createNonCompletionPredicate()])
@@ -141,11 +223,12 @@ struct CloudKitManager {
 //            return tasks
 //        } catch {
 //            print("Failed to fetch tasks: \(error)")
-            return nil
+         //   return nil
 //        }
         
     }
     
+    /*
     private func createDatePredicate() -> NSCompoundPredicate {
         
         // Get the current calendar with local time zone
@@ -169,5 +252,5 @@ struct CloudKitManager {
     func createNonCompletionPredicate() -> NSPredicate {
         return NSPredicate(format: "completed == 0")
     }
-
+*/
 }

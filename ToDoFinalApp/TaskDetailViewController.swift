@@ -20,12 +20,11 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
     
     var selectedGoal: Goal?
     var selectedTask: Task?
-    lazy var tasks: [Task] = {
-        //need to fetch actual tasks from references
-        return []//selectedGoal?.tasks ?? []
+    lazy var tasks: [Task]? = {
+        return selectedGoal?.tasks
     }()
     var tasksCount: Int?
-    var checkedItems: Int?
+   // var checkedItems: Int?
 
     
     weak var delegate: TaskDetailViewControllerDelegate?
@@ -62,13 +61,12 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func didCompleteTask(_ sender: UISwitch) {
         selectedTask?.completed = sender.isOn
-        guard let tasksCount = selectedGoal?.tasks?.count else { return }
+        //guard let tasksCount = selectedGoal?.tasks.count else { return }
     }
     
     @IBAction func cancel(_ sender: Any) {
         delegate?.taskDetailViewControllerDidCancel(self)
-//        print("Registered")
-        //self.dismiss(animated: true, completion: nil)
+
 
     }
     
@@ -85,6 +83,7 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
                 task.taskName = name
                 task.dueDate = dueDate
                 delegate?.taskDetailViewController(self, didFinishAdding: task)
+                CloudKitManager.shared.editTask(task: task)
             } else {
                 
                 CloudKitManager.shared.addTask(to: goal, with: name, dueDate: dueDate, completion: { task in

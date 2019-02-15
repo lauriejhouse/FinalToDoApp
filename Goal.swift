@@ -13,13 +13,14 @@ class Goal: NSObject {
     
     var goalName: String
     var iconName: String?
-    var tasks: [CKRecord.Reference]?
+    var tasks = [Task]()
+    //var tasks: [CKRecord.Reference]?
     var recordId: CKRecord.ID
     
     init(record: CKRecord) {
         self.goalName = record.value(forKey: "goalName") as! String
         self.recordId = record.recordID
-        self.tasks = record.value(forKey: "tasks") as? [CKRecord.Reference]
+       // self.tasks = record.value(forKey: "tasks") as? [CKRecord.Reference]
     }
 }
 

@@ -9,6 +9,20 @@
 import Foundation
 import CloudKit
 
+
+extension Date {
+    var isToday : Bool {
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+        
+        // Get today's beginning & end
+        let dateFrom = calendar.startOfDay(for: Date()) // eg. 2016-10-10 00:00:00
+        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom) ?? Date.distantPast
+        
+        return self >= dateFrom && self <= dateTo
+    }
+}
+
 class Task: NSObject {
 
     var completed: Bool = false
@@ -18,12 +32,22 @@ class Task: NSObject {
     var enabled: Bool = false
     var goal: CKRecord.Reference?
     var recordId: CKRecord.ID
+    
+    var widgetTask : Bool {
+        if let dueDate = dueDate {
+            return completed == false && (dueDate as Date).isToday
+        }
+        return completed == false
+    }
 
     init(record: CKRecord) {
-        self.taskName = record.value(forKey: "taskName") as! String
+        self.taskName = record.value(forKey: "taskName") as? String ?? ""
+        self.dueDate = record.value(forKey: "dueDate") as? NSDate
+        self.completed = record.value(forKey: "completed") as? Bool ?? false
         self.recordId = record.recordID
         self.goal = record.value(forKey: "goal") as? CKRecord.Reference
     }
+    
 }
 
 

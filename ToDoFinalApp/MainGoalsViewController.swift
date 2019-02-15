@@ -8,58 +8,10 @@
 
 
 
-//Things left to do:
-/*
- 
- //Due date stuff is in coreData Manager
-
- 
-
- Today Widget - Most difficult
-    -Can use EventKit for reminders.
-  - Need to fix widget displaying all tasks from everywhere, to only display ones due today.
- -Maybe get buttons to work correctly on widget.
- -Use predicate to get correct tasks to display?
- 
- let myAppUrl = NSURL(string: "myapp://some-context")!
- extensionContext?.openURL(myAppUrl, completionHandler: { (success) in
- if (!success) {
- // let the user know it failed
- }
- })
- This is from example app, it's supposed to open the main app. The code above does the same thing, but is an older way of doing it.
- 
- @IBAction func openAppButtonTapped(_ sender: UIButton) {
- let url: URL? = URL(string: "Todododo:")!
- if let appurl = url {
- self.extensionContext!.open(appurl, completionHandler: nil)
- }
- }
- 
- 
- 
-
-
- 
- Testing/Debugging -easy
- -test that animations work?
- 
-
- Document and press kit. - easy - half done, press kit is done.
-  testing and debugging techniques - test that edit and add buttons work, and that app doesn't take up too much performance power
- 
-
- 
- 
-
- 
- 
- 
- */
 
 import UIKit
 import Foundation
-import CoreData
+//import CoreData
 import TableViewDragger
 import CloudKit
 import GoogleMobileAds
@@ -86,7 +38,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     // MARK: - Properties
     
     let rowHeight: CGFloat = 75
-    var goalItems: [Goal]? = []
+    //var goalItems: [Goal]? = []
     var checkedItems: Int?
     
     
@@ -128,27 +80,14 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         
         navigationController?.delegate = self
 
-        
-        
+        CloudKitManager.shared.getAllGoals() { goals in
+           self.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        CloudKitManager.shared.getAllGoals(completion: { goals in
-            //add this to a list of goals
-            
-            CloudKitManager.shared.addTask(to: goals!.first!, with: "do task", dueDate: NSDate(), completion: { task in
-                
-            })
-            
-            CloudKitManager.shared.getAllTasks(for: goals!.first!, completion: { tasks in
-                
-            })
-        })
-        //what comes out of the right side is put into the left.
-        //shared instance. any class changes properties those propties will be reflected eveyrwhere if you have one instance.
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     //For Date Picker. Or just set that all tasks are due today or the next day.
@@ -172,6 +111,8 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     // MARK: - Table View Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CloudKitManager.shared.goals.count
+        /*
         if let goalItems = goalItems {
             let parameters = ["Goal" : goalItems]
             Flurry.logEvent("Goal-Count", withParameters: parameters)
@@ -179,19 +120,28 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
             
         }
         return 1
+        */
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath  ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath) as! GoalTableViewCell
+        
+        let goals = CloudKitManager.shared.goals
+        if indexPath.row < goals.count {
+            let goal = goals[indexPath.row]
+            configure(cell, with: goal)
+        }
+        /*
         if let goalItems = goalItems {
             let goalItem = goalItems[indexPath.row]
             configure(cell, with: goalItem)
         }
+ */
         
         if let button = cell.viewWithTag(999) as? UIButton {
             button.tag = indexPath.row
         }
-        
+ 
         return cell
     }
     
@@ -229,12 +179,14 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
             let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (delete) in
                 
 //                guard let goalToDelete = self.goalItems?[indexPath.row] else { return }
-                self.goalItems?.remove(at: indexPath.row)
+              //todo louis  self.goalItems?.remove(at: indexPath.row)
 
                 //call to CK to delete
 
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.selectNewGoal()
+                
+                //plug in delete function here
                 
             }
             
@@ -288,9 +240,28 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
             let goalVC = nav.topViewController as! NewGoalViewController
             
             if let button = sender as? UIButton {
-                goalVC.goalToEdit = goalItems?[button.tag]
+                let goals = CloudKitManager.shared.goals
+                if button.tag < goals.count {
+                    goalVC.goalToEdit = goals[button.tag]
+                }
+                //goalVC.goalToEdit = goalItems?[button.tag]
             }
         } else if segue.identifier == "ShowGoal" {
+            let goals = CloudKitManager.shared.goals
+            if let indexPath = tableView.indexPathForSelectedRow,
+                indexPath.row < goals.count,
+                let nav = segue.destination as? UINavigationController,
+                let vc = nav.topViewController as? TaskListViewController
+                {
+                    let goal = goals[indexPath.row]
+                    vc.selectedGoal = goal
+                    if goal.tasks.count < 1 {
+                        vc.title = NSLocalizedString("Your Tasks Will Appear Here.", comment: "")
+                    } else {
+                        vc.title = goal.goalName
+                    }
+            }
+            /*
             if let indexPath = tableView.indexPathForSelectedRow {
                 let nav = segue.destination as! UINavigationController
                 let vc = nav.topViewController as! TaskListViewController
@@ -305,8 +276,8 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
                         vc.navigationItem.rightBarButtonItem?.isEnabled = false
                     }
                 }
-                
             }
+            */
         }
     }
     
@@ -327,7 +298,8 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         let tasksDoneLabel = cell.taskCountLabel
         
         
-        guard let tasksCount = goal.tasks?.count else { return }
+       // guard let tasksCount = goal.tasks?.count else { return }
+        let tasksCount = goal.tasks.count
         //call tasksdonelabel from the goal view cell
         
 //        It 'controls' the text for tasks.
@@ -349,13 +321,14 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     }
     
     func newGoalViewController(_ controller: NewGoalViewController, didFinishEditing goal: Goal) {
+        /* todo louis
         if let index = goalItems?.index(of: goal) {
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) {
                 configure(cell as! GoalTableViewCell, with: goal)
             }
         }
-
+    */
         dismiss(animated: true, completion: nil)
     }
     
@@ -373,12 +346,13 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
 
 extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerDelegate {
     func dragger(_ dragger: TableViewDragger, moveDraggingAt indexPath: IndexPath, newIndexPath: IndexPath) -> Bool {
+        /* todo louis
         let movedObject = self.goalItems?[indexPath.row]
         goalItems?.remove(at: indexPath.row)
         goalItems?.insert(movedObject!, at: newIndexPath.row)
         
         tableView.moveRow(at: indexPath, to: newIndexPath)
-        
+        */
         return true
     }
 }
