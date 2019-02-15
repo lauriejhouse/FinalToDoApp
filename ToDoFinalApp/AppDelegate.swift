@@ -79,10 +79,10 @@ import Flurry_iOS_SDK
         
         // Initialize the Google Mobile Ads SDK.
         // Sample AdMob app ID: ca-app-pub-3940256099942544~1458002511
-//        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
         
         //my ad using to dofinalapp
-         GADMobileAds.configure(withApplicationID: "ca-app-pub-5462116334906512~1231030276")
+//         GADMobileAds.configure(withApplicationID: "ca-app-pub-5462116334906512~1231030276")
         
         
         //analytics

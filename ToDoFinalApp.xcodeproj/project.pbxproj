@@ -200,12 +200,12 @@
 			path = MyWidget;
 			sourceTree = "<group>";
 		};
-		8C1C41C321C2C1590099AF6A /* CoreDataManager */ = {
+		8C1C41C321C2C1590099AF6A /* CloudKitManager */ = {
 			isa = PBXGroup;
 			children = (
 				8C3E646F21E02E2700CCFE07 /* CloudKitManager.swift */,
 			);
-			path = CoreDataManager;
+			path = CloudKitManager;
 			sourceTree = "<group>";
 		};
 		8C2FDFF121FCBA3900CCDF23 /* Animations */ = {
@@ -249,7 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				8CB8160B21DD3964005AB480 /* ToDoFinalApp.entitlements */,
-				8C1C41C321C2C1590099AF6A /* CoreDataManager */,
+				8C1C41C321C2C1590099AF6A /* CloudKitManager */,
 				8CAD826321BEE99B008AE224 /* AppDelegate.swift */,
 				8CAD826721BEE99B008AE224 /* Main.storyboard */,
 				8CAD829621BF0487008AE224 /* TaskListViewController.swift */,

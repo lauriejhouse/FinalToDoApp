@@ -165,6 +165,7 @@ class CloudKitManager {
                 }
                 
                 self.publicDb.add(operation)
+                
 
             } else {
                 print("Task not found on Cloud", task.taskName)
@@ -203,41 +204,81 @@ class CloudKitManager {
     }
     
     
-     func deleteRecordsFromCloud( list : [CKRecord], completion: @escaping (Bool) -> Void ) {
+    func deleteTask(with task: Task) {
+        publicDb.fetch(withRecordID: task.recordId) { record, error in
+            if let record = record {
+                record.setValue(task.taskName, forKey: "taskName")
+                record.setValue(task.completed, forKey: "completed")
+                record.setValue(task.dueDate, forKey: "dueDate")
+                
+//                let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [record])
+                let operation = CKModifyRecordsOperation.init(recordsToSave: nil, recordIDsToDelete: [record])
+                
+//                operation.modifyRecordsCompletionBlock = { savedRecords, deletedRecordIDs, error in
+//                    if let error = error {
+//                        print("There was an error: \(error.localizedDescription)")
+//                        return
+//                    }
+//                }
+                operation.modifyRecordsCompletionBlock = ({(savedRecords, deletedRecords, operationError) -> Void in
+                        if let error = operationError {
+                        print("deleteRecordsFromCloud, deleteRecords error:",error)
+                        } else {
+                    publicDb.deleteRecordsFromCloud(list: newList, completion: completion)
+                        }
+                        })
+                
         
-        if list.count == 0 {
-            DispatchQueue.main.async {
-                completion(true)
-            }
-            return;
-        }
-        
-        DispatchQueue.global(qos: .background).async {
-            
-            let count = min(400, list.count)
-            
-            var newList = list
-            var records : [CKRecord.ID] = []
-            
-            for _ in 0..<count {
-                let object = newList[0]
-                let objectId = object.recordID
-                records.append(objectId)
-                newList.remove(at: 0)
+                self.publicDb.add(operation)
+                
+            } else {
+//                print("Goal not found on Cloud", goal.goalName)
             }
             
-            let deleteRecords = CKModifyRecordsOperation.init(recordsToSave: nil, recordIDsToDelete: records)
-            deleteRecords.modifyRecordsCompletionBlock = ({(savedRecords, deletedRecords, operationError) -> Void in
-                if let error = operationError {
-                    print("deleteRecordsFromCloud, deleteRecords error:",error)
-                } else {
-                    Cloud.deleteRecordsFromCloud(list: newList, completion: completion)
-                }
-            })
-            
-            self.publicDb.add(deleteRecords)
         }
     }
+    
+    
+   //From louis example
+//
+//     func deleteRecordsFromCloud( list : [CKRecord], completion: @escaping (Bool) -> Void ) {
+//
+//        if list.count == 0 {
+//            DispatchQueue.main.async {
+//                completion(true)
+//            }
+//            return;
+//        }
+//
+//        DispatchQueue.global(qos: .background).async {
+//
+//            let count = min(400, list.count)
+//
+//            var newList = list
+//            var records : [CKRecord.ID] = []
+//
+//            for _ in 0..<count {
+//                let object = newList[0]
+//                let objectId = object.recordID
+//                records.append(objectId)
+//                newList.remove(at: 0)
+//            }
+//
+//            let deleteRecords = CKModifyRecordsOperation.init(recordsToSave: nil, recordIDsToDelete: records)
+//            deleteRecords.modifyRecordsCompletionBlock = ({(savedRecords, deletedRecords, operationError) -> Void in
+//                if let error = operationError {
+//                    print("deleteRecordsFromCloud, deleteRecords error:",error)
+//                } else {
+//                    publ.deleteRecordsFromCloud(list: newList, completion: completion)
+//                }
+//            })
+//
+//            self.publicDb.add(deleteRecords)
+//        }
+//    }
+    
+ 
+    
     
 //     func deleteItemFromCloud( _ item: NSManagedObject ) {
 //        

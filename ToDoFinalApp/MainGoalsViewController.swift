@@ -71,10 +71,10 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         dragger.opacityForShadowOfCell = 1
 
         //example ad
-//        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         
-        //my ad using toDoFinalApp
-        bannerView.adUnitID = "ca-app-pub-5462116334906512/1055770455"
+        //my ad using toDoFinalApp - it never shows any adverts
+//        bannerView.adUnitID = "ca-app-pub-5462116334906512/1055770455"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         
@@ -90,19 +90,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         self.tableView.reloadData()
     }
     
-    //For Date Picker. Or just set that all tasks are due today or the next day.
-//    func formattedReleaseDate() -> String {
-//        let calendar = Calendar.current
-//        var components = DateComponents()
-//        components.day = 25
-//        components.month = 9
-//        components.year = 2019
-//        let date = calendar.date(from: components)
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .medium
-//        return dateFormatter.string(from: date!)
-//    }
+
     
     
     
@@ -179,9 +167,10 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
             let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (delete) in
                 
 //                guard let goalToDelete = self.goalItems?[indexPath.row] else { return }
-              //todo louis  self.goalItems?.remove(at: indexPath.row)
+//              self.goalItems?.remove(at: indexPath.row)
 
                 //call to CK to delete
+                
 
                 tableView.deleteRows(at: [indexPath], with: .automatic)
                 self.selectNewGoal()
