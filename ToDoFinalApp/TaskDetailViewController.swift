@@ -18,20 +18,13 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Properties
     
-    var managedContext: NSManagedObjectContext!
-    
     var selectedGoal: Goal?
     var selectedTask: Task?
-    lazy var tasks: [Task] = {
-        if let tasks = selectedGoal?.tasks as? Set<Task> {
-            return Array(tasks)
-        } else {
-            return []
-        }
-    
+    lazy var tasks: [Task]? = {
+        return selectedGoal?.tasks
     }()
     var tasksCount: Int?
-    var checkedItems: Int?
+   // var checkedItems: Int?
 
     
     weak var delegate: TaskDetailViewControllerDelegate?
@@ -68,45 +61,18 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func didCompleteTask(_ sender: UISwitch) {
         selectedTask?.completed = sender.isOn
-        guard let tasksCount = selectedGoal?.tasks?.count else { return }
-        
-        
-     
-        
-        
+        //guard let tasksCount = selectedGoal?.tasks.count else { return }
     }
-    
-    //Says managed context is nil when its not?
-    //Commenting out to try and fix things.
-//    func fetchCheckedItems(with goal: Goal) {
-//        let request = NSFetchRequest<Task>(entityName: "Task")
-//        request.predicate = NSPredicate(format: "goal == %@ AND enabled == %@ ", goal, NSNumber(booleanLiteral: true))
-//
-//        do {
-//            let results = try managedContext.fetch(request)
-//            checkedItems = results.count
-//        } catch let error as NSError {
-//            print(error)
-//        }
-//
-//    }
-
-    
     
     @IBAction func cancel(_ sender: Any) {
         delegate?.taskDetailViewControllerDidCancel(self)
-//        print("Registered")
-        //self.dismiss(animated: true, completion: nil)
+
 
     }
     
    
     @IBAction func done(_ sender: Any) {
-        /*
-        let task = NSEntityDescription.insertNewObject(forEntityName: "Task", into: managedContext) as! Task
-        task.taskName = textField.text!
-        task.isChecked = false
- */
+  
         if let goal = selectedGoal,
             let name = taskNameField.text {
             
@@ -116,10 +82,13 @@ class TaskDetailViewController: UITableViewController, UITextFieldDelegate {
                 task.completed = completionSwitch.isOn
                 task.taskName = name
                 task.dueDate = dueDate
-                let _ = CoreDataManager.shared.save()
                 delegate?.taskDetailViewController(self, didFinishAdding: task)
-            } else if let task = CoreDataManager.shared.addTask(to: goal, with: name, dueDate: dueDate) {
-                delegate?.taskDetailViewController(self, didFinishAdding: task)
+                CloudKitManager.shared.editTask(task: task)
+            } else {
+                
+                CloudKitManager.shared.addTask(to: goal, with: name, dueDate: dueDate, completion: { task in
+                    self.delegate?.taskDetailViewController(self, didFinishAdding: task!)
+                })
             }
         }
         

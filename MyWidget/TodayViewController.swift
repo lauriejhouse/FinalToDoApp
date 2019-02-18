@@ -15,7 +15,6 @@ import os.log
 
 class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate, UITableViewDataSource {
     
-    //Due date stuff is in coreData Manager
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -23,16 +22,10 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CoreDataManager.shared.managedContext = self.persistentContainer.viewContext
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
     }
     
-//    @IBAction func openAppButtonTapped(_ sender: UIButton) {
-//        let url: URL? = URL(string: "ToDoFinalApp:")!
-//        if let appurl = url {
-//            self.extensionContext!.open(appurl, completionHandler: nil)
-//        }
-//    }
+
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .expanded {
@@ -45,10 +38,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     override func viewWillAppear(_ animated: Bool) {
         //Does the gettodaytasks go here?
-        todayTasks = CoreDataManager.shared.getAllTasksForToday() ?? []
-//        tableView.reloadData()
-        
-
     }
     
     
@@ -70,13 +59,15 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        todayTasks = CoreDataManager.shared.getAllTasksForToday() ?? []
-        tableView.reloadData()
-        
+        print(CloudKitManager.shared)
 
-        completionHandler(NCUpdateResult.newData)
+        print(CloudKitManager.shared.publicDb)
 
-    
+        CloudKitManager.shared.getAllTasksForToday() { tasks in
+            self.todayTasks = tasks
+            self.tableView.reloadData()
+            completionHandler(NCUpdateResult.newData)
+        }
     }
     
     
@@ -92,7 +83,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         
         let container = NSPersistentContainer(name: "ToDoFinalApp")
         
-        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.ToDoFinalApp.TodayWidget")
+        let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.las.ToDoFinalApp2.TodayWidget")
         
         if let applicationDocumentsDirectory = directory {
             

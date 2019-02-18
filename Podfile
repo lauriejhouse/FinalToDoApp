@@ -7,7 +7,6 @@ target 'ToDoFinalApp' do
 
   # Pods for ToDoFinalApp
 #pod TableViewDragger
-pod 'Seam3'
 pod 'TableViewDragger'
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'

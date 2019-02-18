@@ -16,7 +16,7 @@ class GoalTableViewCell: UITableViewCell {
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var taskCountLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
-    var checkedItems: Int?
+   // var checkedItems: Int?
 
 
     
@@ -38,28 +38,29 @@ class GoalTableViewCell: UITableViewCell {
         )
     }
     
-    // This one is also linked ot MainGoalsVC. Do I need both?
     func configureIncomingGoal (incomingGoal: Goal) {
         goalLabel.text = incomingGoal.goalName
         
-        if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
+       // if let taskSet = incomingGoal.tasks, let tasks = Array(taskSet) as? [Task] {
 
-            let allTasksCount = tasks.count
-            let completedTasksCount = tasks.filter({ $0.completed }).count
-            //use these two counts to do your label logic
-
-            if allTasksCount == 0 {
-                taskCountLabel?.text = NSLocalizedString("Select Goal To Add New Tasks.", comment: "")
-            } else if completedTasksCount == 0 {
-                taskCountLabel?.text = "\(allTasksCount) \(NSLocalizedString("to complete", comment:""))"
-            } else if completedTasksCount == allTasksCount {
-                taskCountLabel?.text = NSLocalizedString("All Tasks Completed! You Did It", comment: "")
-            } else {
-                taskCountLabel?.text = "\(completedTasksCount) \(NSLocalizedString("of", comment:"")) \(allTasksCount) \(NSLocalizedString("completed", comment:""))"
-                
-            }
-
+        let tasks = incomingGoal.tasks
+       
+        let allTasksCount = tasks.count
+        let completedTasksCount = tasks.filter({ $0.completed }).count
+        
+        print("Goal", incomingGoal.goalName, incomingGoal.tasks.count)
+        
+        if allTasksCount == 0 {
+            taskCountLabel?.text = NSLocalizedString("Select Goal To Add New Tasks.", comment: "")
+        } else if completedTasksCount == 0 {
+            taskCountLabel?.text = "\(allTasksCount) \(NSLocalizedString("to complete", comment:""))"
+        } else if completedTasksCount == allTasksCount {
+            taskCountLabel?.text = NSLocalizedString("All Tasks Completed! You Did It", comment: "")
+        } else {
+            taskCountLabel?.text = "\(completedTasksCount) \(NSLocalizedString("of", comment:"")) \(allTasksCount) \(NSLocalizedString("completed", comment:""))"
+            
         }
+        
         
       
 
