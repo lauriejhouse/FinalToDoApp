@@ -353,7 +353,7 @@ class CloudKitManager {
 
 /* Louie Example delete stuff from cloud.
  //delete both entry and data set, delete row on table, and on cloudkit.
- /*
+ 
  
  class func deleteRecordsFromCloud( list : [CKRecord], completion: @escaping (Bool) -> Void ) {
  
@@ -411,4 +411,4 @@ class CloudKitManager {
  
  */
  
- */
+ 
