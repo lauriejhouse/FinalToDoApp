@@ -135,19 +135,24 @@ open class TableViewDragger: NSObject {
     }
 
     func copiedCell(at indexPath: IndexPath) -> UIView? {
-        if let view = dataSource?.dragger?(self, cellForRowAt: indexPath) {
+        
+        if let view = dataSource?.dragger?(self, cellForRowAt: indexPath){
             return view
-        }
-
-        if let cell = targetTableView?.cellForRow(at: indexPath) {
-            if let view = cell.snapshotView(afterScreenUpdates: false) {
+        }else if let cell = targetTableView?.cellForRow(at: indexPath){
+            if let view = cell.snapshotView(afterScreenUpdates: false){
                 return view
-            } else if let view = cell.captured() {
-                view.frame = cell.bounds
-                return view
+            }else{
+                
+                let data = NSKeyedArchiver.archivedData(withRootObject: cell)
+                if let tempCell = NSKeyedUnarchiver.unarchiveObject(with: data) as? UITableViewCell{
+                    tempCell.frame = cell.bounds
+                    return tempCell
+                }else{
+                    return nil
+                }
             }
         }
-
+        
         return nil
     }
 

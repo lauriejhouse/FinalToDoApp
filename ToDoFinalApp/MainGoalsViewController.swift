@@ -160,34 +160,42 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
 //
 //    }
     
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete  {
-//
-//
-//            let deleteAlertController = UIAlertController(title: NSLocalizedString("Delete Goal?", comment: ""), message:NSLocalizedString("This will remove your goal and tasks.", comment: "alert action"), preferredStyle: .alert)
-//            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment:""), style: .cancel, handler: nil)
-//            let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (delete) in
-//
-//
-//
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete  {
+
+
+            let deleteAlertController = UIAlertController(title: NSLocalizedString("Delete Goal?", comment: ""), message:NSLocalizedString("This will remove your goal and tasks.", comment: "alert action"), preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment:""), style: .cancel, handler: nil)
+            let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (delete) in
+
+
+
 //                guard let goalToDelete = self.goalItems?[indexPath.row] else { return }
 //              self.goalItems?.remove(at: indexPath.row)
-//
-//                //call to CK to delete
-//   
+                let goal = CloudKitManager.shared.goals[indexPath.row]
+
+
+                //call to CK to delete
+   
+                CloudKitManager.shared.deleteGoal(with: goal, completion: {
+                    CloudKitManager.shared.getAllGoals() { goals in
+                        self.tableView.reloadData()
+                    }
+                })
+                
 //                tableView.deleteRows(at: [indexPath], with: .automatic)
 //                self.selectNewGoal()
-//
-//                //plug in delete function here
-//
-//            }
-//
-//            deleteAlertController.addAction(cancelAction)
-//            deleteAlertController.addAction(deleteAction)
-//            present(deleteAlertController, animated: true, completion: nil)
-//
-//        }
-//    }
+
+                //plug in delete function here
+
+            }
+
+            deleteAlertController.addAction(cancelAction)
+            deleteAlertController.addAction(deleteAction)
+            present(deleteAlertController, animated: true, completion: nil)
+
+        }
+    }
     
     
     
@@ -331,6 +339,7 @@ extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerD
         goalItems.insert(movedObject, at: newIndexPath.row)
         
         tableView.moveRow(at: indexPath, to: newIndexPath)
+        //save needs to go here.
         
         return true
     }
