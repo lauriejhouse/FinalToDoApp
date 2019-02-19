@@ -336,10 +336,15 @@ extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerD
         var goalItems = CloudKitManager.shared.goals
         let movedObject = goalItems[indexPath.row]
         goalItems.remove(at: indexPath.row)
+//        goalItems.insert(movedObject, at: newIndexPath.row)
         goalItems.insert(movedObject, at: newIndexPath.row)
+
         
         tableView.moveRow(at: indexPath, to: newIndexPath)
         //save needs to go here.
+        
+        let goalNameSortDescription = NSSortDescriptor(key: "goalName", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        let sortedByGoalName = (goalItems as NSArray).sortedArray(using: [goalNameSortDescription])
 
         return true
     }
