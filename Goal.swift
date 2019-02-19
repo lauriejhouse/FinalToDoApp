@@ -20,7 +20,9 @@ class Goal: NSObject {
     init(record: CKRecord) {
         self.goalName = record.value(forKey: "goalName") as! String
         self.recordId = record.recordID
-       // self.tasks = record.value(forKey: "tasks") as? [CKRecord.Reference]
+        // self.tasks = record.value(forKey: "tasks") as? [CKRecord.Reference]
+
+
     }
 }
 
