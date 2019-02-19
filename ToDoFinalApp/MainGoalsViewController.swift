@@ -170,7 +170,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
                 
                 let goal = CloudKitManager.shared.goals[indexPath.row]
 //              self.goalItems?.remove(at: indexPath.row)
-                let goal = CloudKitManager.shared.goals[indexPath.row]
+//                let goal = CloudKitManager.shared.goals[indexPath.row]
 
 
                 //call to CK to delete

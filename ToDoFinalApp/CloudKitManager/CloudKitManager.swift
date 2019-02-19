@@ -293,20 +293,20 @@ class CloudKitManager {
     
     
     
-    func deleteGoal(with goal: Goal, completion: @escaping ()->()) {
-        
-        publicDb.delete(withRecordID: goal.recordId, completionHandler: { recordId, error in
-            
-            if let error = error {
-                print("There was a deleteGoal error: \(error.localizedDescription)")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                completion()
-            }
-        })
-    }
+//    func deleteGoal(with goal: Goal, completion: @escaping ()->()) {
+//        
+//        publicDb.delete(withRecordID: goal.recordId, completionHandler: { recordId, error in
+//            
+//            if let error = error {
+//                print("There was a deleteGoal error: \(error.localizedDescription)")
+//                return
+//            }
+//            
+//            DispatchQueue.main.async {
+//                completion()
+//            }
+//        })
+//    }
     
     
 
