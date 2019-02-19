@@ -343,8 +343,8 @@ extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerD
         tableView.moveRow(at: indexPath, to: newIndexPath)
         //save needs to go here.
         
-        let goalNameSortDescription = NSSortDescriptor(key: "goalName", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
-        let sortedByGoalName = (goalItems as NSArray).sortedArray(using: [goalNameSortDescription])
+//        let goalNameSortDescription = NSSortDescriptor(key: "goalName", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+//        let sortedByGoalName = (goalItems as NSArray).sortedArray(using: [goalNameSortDescription])
 
         return true
     }
