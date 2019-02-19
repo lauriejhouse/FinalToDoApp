@@ -16,7 +16,6 @@ import Flurry_iOS_SDK
    
 
     var window: UIWindow?
-    //var smStore: SMStore!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -24,21 +23,11 @@ import Flurry_iOS_SDK
         // Sample AdMob app ID: ca-app-pub-3940256099942544~1458002511
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
         
-        //my ad using to dofinalapp
+        //my ad using to dofinalapp - doesn't work even though example does.
 //         GADMobileAds.configure(withApplicationID: "ca-app-pub-5462116334906512~1231030276")
         
         
-        //analytics
-//        guard let gai = GAI.sharedInstance() else {
-//            assert(false, "Google Analytics not configured correctly")
-//        }
-//        gai.tracker(withTrackingId: "YOUR_TRACKING_ID")
-//        // Optional: automatically report uncaught exceptions.
-//        gai.trackUncaughtExceptions = true
-//        
-//        // Optional: set Logger to VERBOSE for debug information.
-//        // Remove before app release.
-//        gai.logger.logLevel = .verbose;
+
         
         //Flurry anyalitics
         Flurry.startSession("V7K6HQZ9WBN8ZZX8T2ZD", with: FlurrySessionBuilder

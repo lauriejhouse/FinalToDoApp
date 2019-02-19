@@ -8,12 +8,10 @@
 
 import Foundation
 import CloudKit
-//import Seam3
 
 class CloudKitManager {
     
     static var shared = CloudKitManager()
-//    var smStore: SMStore!
     
     
     var container : CKContainer {
@@ -37,19 +35,7 @@ class CloudKitManager {
                 return
             }
             
-            /*
-            records?.forEach { record in
-
-                // System Field from property
-                let recordName = record.recordID.recordName
-                print("System Field, recordName: \(recordName)")
-
-                // Custom Field from key path (eg: name)
-                let name = record.value(forKey: "name")
-                print("Custom Field, name: \(name ?? "")")
-            }
-            */
-            
+ 
             if let records = records {
                 /*let */self.goals = records.map{ Goal(record: $0) }
                 DispatchQueue.main.async {
@@ -72,6 +58,8 @@ class CloudKitManager {
             
         }
     }
+    
+    
     
     func addGoal(with name: String, iconName: String, completion: @escaping (_ goal: Goal?)->()) {
         
@@ -97,6 +85,8 @@ class CloudKitManager {
         publicDb.add(operation)
     }
     
+    
+    
     func editGoal(with goal: Goal) {
         publicDb.fetch(withRecordID: goal.recordId) { record, error in
             if let record = record {
@@ -116,8 +106,12 @@ class CloudKitManager {
                 
             } else {
                 print("Goal not found on Cloud", goal.goalName)
-            }        }
+            }
+            
+        }
     }
+    
+    
     
     func addTask(to goal: Goal, with name: String, dueDate: NSDate, completion: @escaping (_ task: Task?)->()) {
         
@@ -147,6 +141,9 @@ class CloudKitManager {
         publicDb.add(operation)
     }
     
+    
+    
+    
     func editTask ( task : Task ) {
         publicDb.fetch(withRecordID: task.recordId) { record, error in
             if let record = record {
@@ -172,6 +169,8 @@ class CloudKitManager {
             }
         }
     }
+    
+    
     
     func getAllTasks(for goal: Goal, completion: @escaping (_ tasks: [Task]?)->()) {
         
@@ -288,46 +287,29 @@ class CloudKitManager {
             }
             completion(tasks)
         }
-//        let tasksFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-//
-//        let allPredicates = NSCompoundPredicate(andPredicateWithSubpredicates: [createDatePredicate(), createNonCompletionPredicate()])
-//
-//        tasksFetch.predicate = allPredicates
-//        do {
-//            let tasks = try managedContext.fetch(tasksFetch) as! [Task]
-//            return tasks
-//        } catch {
-//            print("Failed to fetch tasks: \(error)")
-         //   return nil
-//        }
+
         
     }
     
-    /*
-    private func createDatePredicate() -> NSCompoundPredicate {
+    
+    
+    func deleteGoal(with goal: Goal, completion: @escaping ()->()) {
         
-        // Get the current calendar with local time zone
-        var calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
-        
-        // Get today's beginning & end
-        let dateFrom = calendar.startOfDay(for: Date()) // eg. 2016-10-10 00:00:00
-        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
-        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
-        
-        // Set predicate as date being today's date
-        let fromPredicate = NSPredicate(format: "dueDate >= %@", dateFrom as NSDate)
-        
-        //         let beforeTomorrow = NSPredicate (format: "dueDate < %@", NSDate(timeInterval: 60 * 60 * 24, since: Date()) )
-        let toPredicate = NSPredicate(format: "dueDate < %@", dateTo! as NSDate)
-        
-        return NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+        publicDb.delete(withRecordID: goal.recordId, completionHandler: { recordId, error in
+            
+            if let error = error {
+                print("There was a deleteGoal error: \(error.localizedDescription)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion()
+            }
+        })
     }
     
-    func createNonCompletionPredicate() -> NSPredicate {
-        return NSPredicate(format: "completed == 0")
-    }
-*/
+    
+
 }
 
 

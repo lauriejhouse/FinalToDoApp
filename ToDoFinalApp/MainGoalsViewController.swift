@@ -11,12 +11,10 @@
 
 import UIKit
 import Foundation
-//import CoreData
 import TableViewDragger
 import CloudKit
 import GoogleMobileAds
 import Flurry_iOS_SDK
-//import Seam3
 
 class MainGoalsViewController: UITableViewController, UINavigationControllerDelegate {
     
@@ -38,7 +36,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     // MARK: - Properties
     
     let rowHeight: CGFloat = 75
-    //var goalItems: [Goal]? = []
+    var goalItems: [Goal]? = []
     var checkedItems: Int?
     
     
@@ -109,6 +107,8 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
         }
         return 1
         */
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath  ) -> UITableViewCell {
@@ -162,12 +162,16 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete  {
+
+
             let deleteAlertController = UIAlertController(title: NSLocalizedString("Delete Goal?", comment: ""), message:NSLocalizedString("This will remove your goal and tasks.", comment: "alert action"), preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment:""), style: .cancel, handler: nil)
             let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (delete) in
                 
                 let goal = CloudKitManager.shared.goals[indexPath.row]
 //              self.goalItems?.remove(at: indexPath.row)
+                let goal = CloudKitManager.shared.goals[indexPath.row]
+
 
                 //call to CK to delete
                 CloudKitManager.shared.deleteGoal(with: goal, completion: {
@@ -180,15 +184,19 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
 //                self.selectNewGoal()
                 
                 //plug in delete function here
-                
+
             }
-            
+
             deleteAlertController.addAction(cancelAction)
             deleteAlertController.addAction(deleteAction)
             present(deleteAlertController, animated: true, completion: nil)
-            
+
         }
     }
+    
+    
+    
+    
     
    
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -254,23 +262,7 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
                         vc.title = goal.goalName
                     }
             }
-            /*
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let nav = segue.destination as! UINavigationController
-                let vc = nav.topViewController as! TaskListViewController
-                if let goalItems = goalItems {
-                    if !goalItems.isEmpty {
-                        let item = goalItems[indexPath.row]
-                        vc.selectedGoal = item
-                        vc.title = item.goalName
-                    } else {
-                        // If the goalItems array has nothing in it, then we show this below
-                        vc.title = NSLocalizedString("Your Tasks Will Appear Here.", comment: "")
-                        vc.navigationItem.rightBarButtonItem?.isEnabled = false
-                    }
-                }
-            }
-            */
+            
         }
     }
     
@@ -314,14 +306,13 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
     }
     
     func newGoalViewController(_ controller: NewGoalViewController, didFinishEditing goal: Goal) {
-        /* todo louis
         if let index = goalItems?.index(of: goal) {
             let indexPath = IndexPath(row: index, section: 0)
             if let cell = tableView.cellForRow(at: indexPath) {
                 configure(cell as! GoalTableViewCell, with: goal)
             }
         }
-    */
+ 
         dismiss(animated: true, completion: nil)
     }
     
@@ -339,15 +330,19 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
 
 extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerDelegate {
     func dragger(_ dragger: TableViewDragger, moveDraggingAt indexPath: IndexPath, newIndexPath: IndexPath) -> Bool {
-        /* todo louis
-        let movedObject = self.goalItems?[indexPath.row]
-        goalItems?.remove(at: indexPath.row)
-        goalItems?.insert(movedObject!, at: newIndexPath.row)
+        var goalItems = CloudKitManager.shared.goals
+        let movedObject = goalItems[indexPath.row]
+        goalItems.remove(at: indexPath.row)
+        goalItems.insert(movedObject, at: newIndexPath.row)
         
         tableView.moveRow(at: indexPath, to: newIndexPath)
-        */
+        //save needs to go here.
+
         return true
     }
+    
+    
+    
 }
 
 
