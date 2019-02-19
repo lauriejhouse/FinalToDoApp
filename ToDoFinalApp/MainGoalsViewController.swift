@@ -166,14 +166,18 @@ class MainGoalsViewController: UITableViewController, UINavigationControllerDele
             let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment:""), style: .cancel, handler: nil)
             let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (delete) in
                 
-//                guard let goalToDelete = self.goalItems?[indexPath.row] else { return }
+                let goal = CloudKitManager.shared.goals[indexPath.row]
 //              self.goalItems?.remove(at: indexPath.row)
 
                 //call to CK to delete
-                
+                CloudKitManager.shared.deleteGoal(with: goal, completion: {
+                    CloudKitManager.shared.getAllGoals() { goals in
+                        self.tableView.reloadData()
+                    }
+                })
 
-                tableView.deleteRows(at: [indexPath], with: .automatic)
-                self.selectNewGoal()
+//                tableView.deleteRows(at: [indexPath], with: .automatic)
+//                self.selectNewGoal()
                 
                 //plug in delete function here
                 

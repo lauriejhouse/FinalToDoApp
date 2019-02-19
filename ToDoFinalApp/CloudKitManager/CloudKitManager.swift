@@ -197,47 +197,28 @@ class CloudKitManager {
             
             let tasks = records?.map({ Task(record: $0) })
             DispatchQueue.main.async {
-            completion(tasks)
+                completion(tasks)
             }
         }
 
     }
     
     
-//    func deleteTask(with task: Task) {
-//        publicDb.fetch(withRecordID: task.recordId) { record, error in
-////            if let record = record {
-////                record.setValue(task.taskName, forKey: "taskName")
-////                record.setValue(task.completed, forKey: "completed")
-////                record.setValue(task.dueDate, forKey: "dueDate")
-//            
-//
-//                let operation = CKModifyRecordsOperation.init(recordsToSave: nil, recordIDsToDelete: [record])
-//                
-////                operation.modifyRecordsCompletionBlock = { savedRecords, deletedRecordIDs, error in
-////                    if let error = error {
-////                        print("There was an error: \(error.localizedDescription)")
-////                        return
-////                    }
-////                }
-//                operation.modifyRecordsCompletionBlock = ({(savedRecords, deletedRecords, operationError) -> Void in
-//                        if let error = operationError {
-//                        print("deleteRecordsFromCloud, deleteRecords error:",error)
-//                        } else {
-//                    publicDb.deleteRecordsFromCloud(list: newList, completion: completion)
-//                        }
-//                        })
-//                
-//        
-//                self.publicDb.add(operation)
-//                
-//            } else {
-////                print("Goal not found on Cloud", goal.goalName)
-//            }
-//            
-//        }
-//    }
-    
+    func deleteGoal(with goal: Goal, completion: @escaping ()->()) {
+        
+        publicDb.delete(withRecordID: goal.recordId, completionHandler: { recordId, error in
+            
+            if let error = error {
+                print("There was a deleteGoal error: \(error.localizedDescription)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                completion()
+            }
+        })
+    }
+
     
    //From louis example
 //
