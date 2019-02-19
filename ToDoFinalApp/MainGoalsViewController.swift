@@ -340,7 +340,7 @@ extension MainGoalsViewController: TableViewDraggerDataSource, TableViewDraggerD
         
         tableView.moveRow(at: indexPath, to: newIndexPath)
         //save needs to go here.
-        
+
         return true
     }
     
